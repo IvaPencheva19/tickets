@@ -9,7 +9,11 @@ module bg.tuvarna.sit.group5.tickets {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires log4j;
 
-    opens bg.tuvarna.sit.group5.tickets to javafx.fxml;
-    exports bg.tuvarna.sit.group5.tickets;
+    exports bg.tuvarna.sit.group5.tickets.application;
+    opens bg.tuvarna.sit.group5.tickets.application to javafx.fxml;
+
+    exports bg.tuvarna.sit.group5.tickets.presentation.controllers;
+    opens bg.tuvarna.sit.group5.tickets.presentation.controllers to javafx.fxml;
 }
