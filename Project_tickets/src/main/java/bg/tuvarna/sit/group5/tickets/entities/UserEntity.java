@@ -3,6 +3,7 @@ package bg.tuvarna.sit.group5.tickets.entities;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "user", schema = "tickets_oop")
@@ -13,9 +14,9 @@ public class UserEntity {
     private String firstname;
     private String lastname;
     private String phone;
-    private Collection<AdminEntity> adminsByIdUser;
-    private Collection<DistributorEntity> distributorsByIdUser;
-    private Collection<OrganizerEntity> organizersByIdUser;
+    private Set<AdminEntity> adminsByIdUser;
+    private Set<DistributorEntity> distributorsByIdUser;
+    private Set<OrganizerEntity> organizersByIdUser;
 
     @Id
     @Column(name = "idUser")
@@ -94,29 +95,29 @@ public class UserEntity {
     }
 
     @OneToMany(mappedBy = "userByUserIdUser")
-    public Collection<AdminEntity> getAdminsByIdUser() {
+    public Set<AdminEntity> getAdminsByIdUser() {
         return adminsByIdUser;
     }
 
-    public void setAdminsByIdUser(Collection<AdminEntity> adminsByIdUser) {
+    public void setAdminsByIdUser(Set<AdminEntity> adminsByIdUser) {
         this.adminsByIdUser = adminsByIdUser;
     }
 
     @OneToMany(mappedBy = "user")
-    public Collection<DistributorEntity> getDistributorsByIdUser() {
+    public Set<DistributorEntity> getDistributorsByIdUser() {
         return distributorsByIdUser;
     }
 
-    public void setDistributorsByIdUser(Collection<DistributorEntity> distributorsByIdUser) {
+    public void setDistributorsByIdUser(Set<DistributorEntity> distributorsByIdUser) {
         this.distributorsByIdUser = distributorsByIdUser;
     }
 
     @OneToMany(mappedBy = "userByUserIdUser")
-    public Collection<OrganizerEntity> getOrganizersByIdUser() {
+    public Set<OrganizerEntity> getOrganizersByIdUser() {
         return organizersByIdUser;
     }
 
-    public void setOrganizersByIdUser(Collection<OrganizerEntity> organizersByIdUser) {
+    public void setOrganizersByIdUser(Set<OrganizerEntity> organizersByIdUser) {
         this.organizersByIdUser = organizersByIdUser;
     }
 }

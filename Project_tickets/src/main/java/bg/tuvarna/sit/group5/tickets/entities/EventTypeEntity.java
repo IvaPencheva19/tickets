@@ -3,13 +3,14 @@ package bg.tuvarna.sit.group5.tickets.entities;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "event_type", schema = "tickets_oop")
 public class EventTypeEntity {
     private int idEventType;
     private String typeNamel;
-    private Collection<EventEntity> eventsByIdEventType;
+    private Set<EventEntity> eventsByIdEventType;
 
     @Id
     @Column(name = "idEvent_type")
@@ -45,11 +46,11 @@ public class EventTypeEntity {
     }
 
     @OneToMany(mappedBy = "eventType")
-    public Collection<EventEntity> getEventsByIdEventType() {
+    public Set<EventEntity> getEventsByIdEventType() {
         return eventsByIdEventType;
     }
 
-    public void setEventsByIdEventType(Collection<EventEntity> eventsByIdEventType) {
+    public void setEventsByIdEventType(Set<EventEntity> eventsByIdEventType) {
         this.eventsByIdEventType = eventsByIdEventType;
     }
 }

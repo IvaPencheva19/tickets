@@ -3,6 +3,7 @@ package bg.tuvarna.sit.group5.tickets.entities;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "admin", schema = "tickets_oop")
@@ -10,8 +11,8 @@ public class AdminEntity {
     private int idAdmin;
     private int userIdUser;
     private UserEntity userByUserIdUser;
-    private Collection<DistributorEntity> distributorsByIdAdmin;
-    private Collection<OrganizerEntity> organizersByIdAdmin;
+    private Set<DistributorEntity> distributorsByIdAdmin;
+    private Set<OrganizerEntity> organizersByIdAdmin;
 
     @Id
     @Column(name = "idAdmin")
@@ -57,20 +58,20 @@ public class AdminEntity {
     }
 
     @OneToMany(mappedBy = "admin")
-    public Collection<DistributorEntity> getDistributorsByIdAdmin() {
+    public Set<DistributorEntity> getDistributorsByIdAdmin() {
         return distributorsByIdAdmin;
     }
 
-    public void setDistributorsByIdAdmin(Collection<DistributorEntity> distributorsByIdAdmin) {
+    public void setDistributorsByIdAdmin(Set<DistributorEntity> distributorsByIdAdmin) {
         this.distributorsByIdAdmin = distributorsByIdAdmin;
     }
 
     @OneToMany(mappedBy = "admin")
-    public Collection<OrganizerEntity> getOrganizersByIdAdmin() {
+    public Set<OrganizerEntity> getOrganizersByIdAdmin() {
         return organizersByIdAdmin;
     }
 
-    public void setOrganizersByIdAdmin(Collection<OrganizerEntity> organizersByIdAdmin) {
+    public void setOrganizersByIdAdmin(Set<OrganizerEntity> organizersByIdAdmin) {
         this.organizersByIdAdmin = organizersByIdAdmin;
     }
 }

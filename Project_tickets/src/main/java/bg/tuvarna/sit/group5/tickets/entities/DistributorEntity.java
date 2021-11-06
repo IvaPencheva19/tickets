@@ -3,6 +3,7 @@ package bg.tuvarna.sit.group5.tickets.entities;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "distributor", schema = "tickets_oop")
@@ -12,7 +13,7 @@ public class DistributorEntity {
     private Double rating;
     private int adminIdAdmin;
     private int userIdUser;
-    private Collection<DistribEventEntity> distribEvents;
+    private Set<DistribEventEntity> distribEvents;
     private AdminEntity admin;
     private UserEntity user;
 
@@ -80,11 +81,11 @@ public class DistributorEntity {
     }
 
     @OneToMany(mappedBy = "distributorsEvent")
-    public Collection<DistribEventEntity> getDistribEvents() {
+    public Set<DistribEventEntity> getDistribEvents() {
         return distribEvents;
     }
 
-    public void setDistribEvents(Collection<DistribEventEntity> distribEvents) {
+    public void setDistribEvents(Set<DistribEventEntity> distribEvents) {
         this.distribEvents = distribEvents;
     }
 

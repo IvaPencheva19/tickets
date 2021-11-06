@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "event", schema = "tickets_oop")
@@ -16,10 +17,10 @@ public class EventEntity {
     private Byte status;
     private int eventTypeIdEventType;
     private int organizerIdOrganizer;
-    private Collection<DistribEventEntity> distribEvent;
+    private Set<DistribEventEntity> distribEvent;
     private EventTypeEntity eventType;
     private OrganizerEntity organizer;
-    private Collection<TicketsEntity> ticketsByIdEvent;
+    private Set<TicketsEntity> ticketsByIdEvent;
 
     @Id
     @Column(name = "idEvent")
@@ -105,11 +106,11 @@ public class EventEntity {
     }
 
     @OneToMany(mappedBy = "event")
-    public Collection<DistribEventEntity> getDistribEvent() {
+    public Set<DistribEventEntity> getDistribEvent() {
         return distribEvent;
     }
 
-    public void setDistribEvent(Collection<DistribEventEntity> distribEvent) {
+    public void setDistribEvent(Set<DistribEventEntity> distribEvent) {
         this.distribEvent = distribEvent;
     }
 
@@ -134,11 +135,11 @@ public class EventEntity {
     }
 
     @OneToMany(mappedBy = "eventByEventIdEvent")
-    public Collection<TicketsEntity> getTicketsByIdEvent() {
+    public Set<TicketsEntity> getTicketsByIdEvent() {
         return ticketsByIdEvent;
     }
 
-    public void setTicketsByIdEvent(Collection<TicketsEntity> ticketsByIdEvent) {
+    public void setTicketsByIdEvent(Set<TicketsEntity> ticketsByIdEvent) {
         this.ticketsByIdEvent = ticketsByIdEvent;
     }
 }
