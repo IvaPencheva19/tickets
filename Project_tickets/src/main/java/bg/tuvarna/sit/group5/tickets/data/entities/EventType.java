@@ -1,16 +1,15 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "event_type", schema = "tickets_oop")
-public class EventTypeEntity {
+public class EventType {
     private int idEventType;
     private String typeNamel;
-    private Set<EventEntity> eventsByIdEventType;
+    private Set<Event> eventsByIdEventType;
 
     @Id
     @Column(name = "idEvent_type")
@@ -36,7 +35,7 @@ public class EventTypeEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EventTypeEntity that = (EventTypeEntity) o;
+        EventType that = (EventType) o;
         return idEventType == that.idEventType && Objects.equals(typeNamel, that.typeNamel);
     }
 
@@ -46,11 +45,11 @@ public class EventTypeEntity {
     }
 
     @OneToMany(mappedBy = "eventType")
-    public Set<EventEntity> getEventsByIdEventType() {
+    public Set<Event> getEventsByIdEventType() {
         return eventsByIdEventType;
     }
 
-    public void setEventsByIdEventType(Set<EventEntity> eventsByIdEventType) {
+    public void setEventsByIdEventType(Set<Event> eventsByIdEventType) {
         this.eventsByIdEventType = eventsByIdEventType;
     }
 }

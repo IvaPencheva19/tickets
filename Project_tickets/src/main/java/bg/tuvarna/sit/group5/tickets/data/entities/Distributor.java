@@ -1,21 +1,20 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "distributor", schema = "tickets_oop")
-public class DistributorEntity {
+public class Distributor {
     private int idDistributor;
     private Double honor;
     private Double rating;
     private int adminIdAdmin;
     private int userIdUser;
-    private Set<DistribEventEntity> distribEvents;
-    private AdminEntity admin;
-    private UserEntity user;
+    private Set<DistribEvent> distribEvents;
+    private Admin admin;
+    private User user;
 
     @Id
     @Column(name = "idDistributor")
@@ -71,7 +70,7 @@ public class DistributorEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DistributorEntity that = (DistributorEntity) o;
+        Distributor that = (Distributor) o;
         return idDistributor == that.idDistributor && adminIdAdmin == that.adminIdAdmin && userIdUser == that.userIdUser && Objects.equals(honor, that.honor) && Objects.equals(rating, that.rating);
     }
 
@@ -81,31 +80,31 @@ public class DistributorEntity {
     }
 
     @OneToMany(mappedBy = "distributorsEvent")
-    public Set<DistribEventEntity> getDistribEvents() {
+    public Set<DistribEvent> getDistribEvents() {
         return distribEvents;
     }
 
-    public void setDistribEvents(Set<DistribEventEntity> distribEvents) {
+    public void setDistribEvents(Set<DistribEvent> distribEvents) {
         this.distribEvents = distribEvents;
     }
 
     @ManyToOne
     @JoinColumn(name = "Admin_idAdmin", referencedColumnName = "idAdmin", nullable = false)
-    public AdminEntity getAdmin() {
+    public Admin getAdmin() {
         return admin;
     }
 
-    public void setAdmin(AdminEntity admin) {
+    public void setAdmin(Admin admin) {
         this.admin = admin;
     }
 
     @ManyToOne
     @JoinColumn(name = "User_idUser", referencedColumnName = "idUser", nullable = false)
-    public UserEntity getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }

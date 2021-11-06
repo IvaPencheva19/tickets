@@ -1,22 +1,21 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "user", schema = "tickets_oop")
-public class UserEntity {
+public class User {
     private int idUser;
     private String username;
     private String password;
     private String firstname;
     private String lastname;
     private String phone;
-    private Set<AdminEntity> adminsByIdUser;
-    private Set<DistributorEntity> distributorsByIdUser;
-    private Set<OrganizerEntity> organizersByIdUser;
+    private Set<Admin> adminsByIdUser;
+    private Set<Distributor> distributorsByIdUser;
+    private Set<Organizer> organizersByIdUser;
 
     @Id
     @Column(name = "idUser")
@@ -82,7 +81,7 @@ public class UserEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserEntity that = (UserEntity) o;
+        User that = (User) o;
         return idUser == that.idUser && Objects.equals(username, that.username)
                 && Objects.equals(password, that.password)
                 && Objects.equals(firstname, that.firstname)
@@ -95,29 +94,29 @@ public class UserEntity {
     }
 
     @OneToMany(mappedBy = "userByUserIdUser")
-    public Set<AdminEntity> getAdminsByIdUser() {
+    public Set<Admin> getAdminsByIdUser() {
         return adminsByIdUser;
     }
 
-    public void setAdminsByIdUser(Set<AdminEntity> adminsByIdUser) {
+    public void setAdminsByIdUser(Set<Admin> adminsByIdUser) {
         this.adminsByIdUser = adminsByIdUser;
     }
 
     @OneToMany(mappedBy = "user")
-    public Set<DistributorEntity> getDistributorsByIdUser() {
+    public Set<Distributor> getDistributorsByIdUser() {
         return distributorsByIdUser;
     }
 
-    public void setDistributorsByIdUser(Set<DistributorEntity> distributorsByIdUser) {
+    public void setDistributorsByIdUser(Set<Distributor> distributorsByIdUser) {
         this.distributorsByIdUser = distributorsByIdUser;
     }
 
     @OneToMany(mappedBy = "userByUserIdUser")
-    public Set<OrganizerEntity> getOrganizersByIdUser() {
+    public Set<Organizer> getOrganizersByIdUser() {
         return organizersByIdUser;
     }
 
-    public void setOrganizersByIdUser(Set<OrganizerEntity> organizersByIdUser) {
+    public void setOrganizersByIdUser(Set<Organizer> organizersByIdUser) {
         this.organizersByIdUser = organizersByIdUser;
     }
 }

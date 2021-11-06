@@ -1,18 +1,17 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "admin", schema = "tickets_oop")
-public class AdminEntity {
+public class Admin {
     private int idAdmin;
     private int userIdUser;
-    private UserEntity userByUserIdUser;
-    private Set<DistributorEntity> distributorsByIdAdmin;
-    private Set<OrganizerEntity> organizersByIdAdmin;
+    private User userByUserIdUser;
+    private Set<Distributor> distributorsByIdAdmin;
+    private Set<Organizer> organizersByIdAdmin;
 
     @Id
     @Column(name = "idAdmin")
@@ -38,7 +37,7 @@ public class AdminEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AdminEntity that = (AdminEntity) o;
+        Admin that = (Admin) o;
         return idAdmin == that.idAdmin && userIdUser == that.userIdUser;
     }
 
@@ -49,29 +48,29 @@ public class AdminEntity {
 
     @ManyToOne
     @JoinColumn(name = "User_idUser", referencedColumnName = "idUser", nullable = false)
-    public UserEntity getUserByUserIdUser() {
+    public User getUserByUserIdUser() {
         return userByUserIdUser;
     }
 
-    public void setUserByUserIdUser(UserEntity userByUserIdUser) {
+    public void setUserByUserIdUser(User userByUserIdUser) {
         this.userByUserIdUser = userByUserIdUser;
     }
 
     @OneToMany(mappedBy = "admin")
-    public Set<DistributorEntity> getDistributorsByIdAdmin() {
+    public Set<Distributor> getDistributorsByIdAdmin() {
         return distributorsByIdAdmin;
     }
 
-    public void setDistributorsByIdAdmin(Set<DistributorEntity> distributorsByIdAdmin) {
+    public void setDistributorsByIdAdmin(Set<Distributor> distributorsByIdAdmin) {
         this.distributorsByIdAdmin = distributorsByIdAdmin;
     }
 
     @OneToMany(mappedBy = "admin")
-    public Set<OrganizerEntity> getOrganizersByIdAdmin() {
+    public Set<Organizer> getOrganizersByIdAdmin() {
         return organizersByIdAdmin;
     }
 
-    public void setOrganizersByIdAdmin(Set<OrganizerEntity> organizersByIdAdmin) {
+    public void setOrganizersByIdAdmin(Set<Organizer> organizersByIdAdmin) {
         this.organizersByIdAdmin = organizersByIdAdmin;
     }
 }

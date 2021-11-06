@@ -1,15 +1,14 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "event", schema = "tickets_oop")
-public class EventEntity {
+public class Event {
     private int idEvent;
     private Date date;
     private Time time;
@@ -17,10 +16,10 @@ public class EventEntity {
     private Byte status;
     private int eventTypeIdEventType;
     private int organizerIdOrganizer;
-    private Set<DistribEventEntity> distribEvent;
-    private EventTypeEntity eventType;
-    private OrganizerEntity organizer;
-    private Set<TicketsEntity> ticketsByIdEvent;
+    private Set<DistribEvent> distribEvent;
+    private EventType eventType;
+    private Organizer organizer;
+    private Set<Tickets> ticketsByIdEvent;
 
     @Id
     @Column(name = "idEvent")
@@ -96,7 +95,7 @@ public class EventEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EventEntity that = (EventEntity) o;
+        Event that = (Event) o;
         return idEvent == that.idEvent && eventTypeIdEventType == that.eventTypeIdEventType && organizerIdOrganizer == that.organizerIdOrganizer && Objects.equals(date, that.date) && Objects.equals(time, that.time) && Objects.equals(place, that.place) && Objects.equals(status, that.status);
     }
 
@@ -106,40 +105,40 @@ public class EventEntity {
     }
 
     @OneToMany(mappedBy = "event")
-    public Set<DistribEventEntity> getDistribEvent() {
+    public Set<DistribEvent> getDistribEvent() {
         return distribEvent;
     }
 
-    public void setDistribEvent(Set<DistribEventEntity> distribEvent) {
+    public void setDistribEvent(Set<DistribEvent> distribEvent) {
         this.distribEvent = distribEvent;
     }
 
     @ManyToOne
     @JoinColumn(name = "Event_type_idEvent_type", referencedColumnName = "idEvent_type", nullable = false)
-    public EventTypeEntity getEventType() {
+    public EventType getEventType() {
         return eventType;
     }
 
-    public void setEventType(EventTypeEntity eventType) {
+    public void setEventType(EventType eventType) {
         this.eventType = eventType;
     }
 
     @ManyToOne
     @JoinColumn(name = "Organizer_idOrganizer", referencedColumnName = "idOrganizer", nullable = false)
-    public OrganizerEntity getOrganizer() {
+    public Organizer getOrganizer() {
         return organizer;
     }
 
-    public void setOrganizer(OrganizerEntity organizer) {
+    public void setOrganizer(Organizer organizer) {
         this.organizer = organizer;
     }
 
     @OneToMany(mappedBy = "eventByEventIdEvent")
-    public Set<TicketsEntity> getTicketsByIdEvent() {
+    public Set<Tickets> getTicketsByIdEvent() {
         return ticketsByIdEvent;
     }
 
-    public void setTicketsByIdEvent(Set<TicketsEntity> ticketsByIdEvent) {
+    public void setTicketsByIdEvent(Set<Tickets> ticketsByIdEvent) {
         this.ticketsByIdEvent = ticketsByIdEvent;
     }
 }

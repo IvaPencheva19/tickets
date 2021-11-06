@@ -1,19 +1,18 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "distrib_event", schema = "tickets_oop")
-public class DistribEventEntity {
+public class DistribEvent {
     private int idDistEvent;
     private int eventIdEvent1;
     private int distributorIdDistributor1;
-    private EventEntity event;
-    private DistributorEntity distributorsEvent;
-    private Set<SellTicketsEntity> sellTicketsByIdDistEvent;
+    private Event event;
+    private Distributor distributorsEvent;
+    private Set<SellTickets> sellTicketsByIdDistEvent;
 
     @Id
     @Column(name = "idDistEvent")
@@ -49,7 +48,7 @@ public class DistribEventEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DistribEventEntity that = (DistribEventEntity) o;
+        DistribEvent that = (DistribEvent) o;
         return idDistEvent == that.idDistEvent && eventIdEvent1 == that.eventIdEvent1 && distributorIdDistributor1 == that.distributorIdDistributor1;
     }
 
@@ -60,30 +59,30 @@ public class DistribEventEntity {
 
     @ManyToOne
     @JoinColumn(name = "Event_idEvent1", referencedColumnName = "idEvent", nullable = false)
-    public EventEntity getEvent() {
+    public Event getEvent() {
         return event;
     }
 
-    public void setEvent(EventEntity event) {
+    public void setEvent(Event event) {
         this.event = event;
     }
 
     @ManyToOne
     @JoinColumn(name = "Distributor_idDistributor1", referencedColumnName = "idDistributor", nullable = false)
-    public DistributorEntity getDistributorsEvent() {
+    public Distributor getDistributorsEvent() {
         return distributorsEvent;
     }
 
-    public void setDistributorsEvent(DistributorEntity distributorsEvent) {
+    public void setDistributorsEvent(Distributor distributorsEvent) {
         this.distributorsEvent = distributorsEvent;
     }
 
     @OneToMany(mappedBy = "distribEvent")
-    public Set<SellTicketsEntity> getSellTicketsByIdDistEvent() {
+    public Set<SellTickets> getSellTicketsByIdDistEvent() {
         return sellTicketsByIdDistEvent;
     }
 
-    public void setSellTicketsByIdDistEvent(Set<SellTicketsEntity> sellTicketsByIdDistEvent) {
+    public void setSellTicketsByIdDistEvent(Set<SellTickets> sellTicketsByIdDistEvent) {
         this.sellTicketsByIdDistEvent = sellTicketsByIdDistEvent;
     }
 }

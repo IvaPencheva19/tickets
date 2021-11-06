@@ -1,20 +1,19 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "organizer", schema = "tickets_oop")
-public class OrganizerEntity {
+public class Organizer {
     private int idOrganizer;
     private Double honor;
     private int adminIdAdmin;
     private int userIdUser;
-    private Set<EventEntity> eventsByIdOrganizer;
-    private AdminEntity admin;
-    private UserEntity userByUserIdUser;
+    private Set<Event> eventsByIdOrganizer;
+    private Admin admin;
+    private User userByUserIdUser;
 
     @Id
     @Column(name = "idOrganizer")
@@ -60,7 +59,7 @@ public class OrganizerEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrganizerEntity that = (OrganizerEntity) o;
+        Organizer that = (Organizer) o;
         return idOrganizer == that.idOrganizer && adminIdAdmin == that.adminIdAdmin && userIdUser == that.userIdUser && Objects.equals(honor, that.honor);
     }
 
@@ -70,31 +69,31 @@ public class OrganizerEntity {
     }
 
     @OneToMany(mappedBy = "organizer")
-    public Set<EventEntity> getEventsByIdOrganizer() {
+    public Set<Event> getEventsByIdOrganizer() {
         return eventsByIdOrganizer;
     }
 
-    public void setEventsByIdOrganizer(Set<EventEntity> eventsByIdOrganizer) {
+    public void setEventsByIdOrganizer(Set<Event> eventsByIdOrganizer) {
         this.eventsByIdOrganizer = eventsByIdOrganizer;
     }
 
     @ManyToOne
     @JoinColumn(name = "Admin_idAdmin", referencedColumnName = "idAdmin", nullable = false)
-    public AdminEntity getAdmin() {
+    public Admin getAdmin() {
         return admin;
     }
 
-    public void setAdmin(AdminEntity admin) {
+    public void setAdmin(Admin admin) {
         this.admin = admin;
     }
 
     @ManyToOne
     @JoinColumn(name = "User_idUser", referencedColumnName = "idUser", nullable = false)
-    public UserEntity getUserByUserIdUser() {
+    public User getUserByUserIdUser() {
         return userByUserIdUser;
     }
 
-    public void setUserByUserIdUser(UserEntity userByUserIdUser) {
+    public void setUserByUserIdUser(User userByUserIdUser) {
         this.userByUserIdUser = userByUserIdUser;
     }
 }

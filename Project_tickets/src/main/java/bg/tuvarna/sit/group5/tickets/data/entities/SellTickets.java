@@ -1,15 +1,15 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "sell_tickets", schema = "tickets_oop")
-public class SellTicketsEntity {
+public class SellTickets {
     private int idSell;
     private Integer count;
     private int distribEventIdDistEvent;
-    private DistribEventEntity distribEvent;
+    private DistribEvent distribEvent;
 
     @Id
     @Column(name = "idSell")
@@ -45,7 +45,7 @@ public class SellTicketsEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SellTicketsEntity that = (SellTicketsEntity) o;
+        SellTickets that = (SellTickets) o;
         return idSell == that.idSell && distribEventIdDistEvent == that.distribEventIdDistEvent && Objects.equals(count, that.count);
     }
 
@@ -56,11 +56,11 @@ public class SellTicketsEntity {
 
     @ManyToOne
     @JoinColumn(name = "Distrib_event_idDistEvent", referencedColumnName = "idDistEvent", nullable = false)
-    public DistribEventEntity getDistribEvent() {
+    public DistribEvent getDistribEvent() {
         return distribEvent;
     }
 
-    public void setDistribEvent(DistribEventEntity distribEvent) {
+    public void setDistribEvent(DistribEvent distribEvent) {
         this.distribEvent = distribEvent;
     }
 }

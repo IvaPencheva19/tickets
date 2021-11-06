@@ -1,17 +1,17 @@
-package bg.tuvarna.sit.group5.tickets.entities;
+package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tickets", schema = "tickets_oop")
-public class TicketsEntity {
+public class Tickets {
     private int idTickets;
     private String type;
     private Double price;
     private Integer count;
     private int eventIdEvent;
-    private EventEntity eventByEventIdEvent;
+    private Event eventByEventIdEvent;
 
     @Id
     @Column(name = "idTickets")
@@ -67,7 +67,7 @@ public class TicketsEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TicketsEntity that = (TicketsEntity) o;
+        Tickets that = (Tickets) o;
         return idTickets == that.idTickets && eventIdEvent == that.eventIdEvent && Objects.equals(type, that.type) && Objects.equals(price, that.price) && Objects.equals(count, that.count);
     }
 
@@ -78,11 +78,11 @@ public class TicketsEntity {
 
     @ManyToOne
     @JoinColumn(name = "Event_idEvent", referencedColumnName = "idEvent", nullable = false)
-    public EventEntity getEventByEventIdEvent() {
+    public Event getEventByEventIdEvent() {
         return eventByEventIdEvent;
     }
 
-    public void setEventByEventIdEvent(EventEntity eventByEventIdEvent) {
+    public void setEventByEventIdEvent(Event eventByEventIdEvent) {
         this.eventByEventIdEvent = eventByEventIdEvent;
     }
 }
