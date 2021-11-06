@@ -4,8 +4,17 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url"/>
-        <property name="connection.driver_class"/>
+        <property name="connection.url">jdbc:mysql://localhost:3306/tickets_oop</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.AdminEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.DistribEventEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.DistributorEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.EventEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.EventTypeEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.OrganizerEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.SellTicketsEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.TicketsEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.entities.UserEntity"/>
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->
 
