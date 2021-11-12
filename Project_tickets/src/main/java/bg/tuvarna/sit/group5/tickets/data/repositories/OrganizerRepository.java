@@ -75,23 +75,24 @@ public class OrganizerRepository implements DAORepository<Organizer>{
     }
 
     @Override
-    public List<Organizer> getById(Long id) {
+    public Organizer getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<Organizer>organizers=new LinkedList<>();
+        Organizer retOrganizer;
 
         try {
             String jql="SELECT o FROM Organizer o WHERE o.idOrganizer=id";
-            organizers.addAll(session.createQuery(jql, Organizer.class).getResultList());
+            retOrganizer=session.createQuery(jql, Organizer.class).getSingleResult();
             log.info("Get organizer by id");
         }
         catch (Exception ex){
+            retOrganizer=null;
             log.error("Get organizer error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return organizers;
+        return retOrganizer;
     }
 
     @Override

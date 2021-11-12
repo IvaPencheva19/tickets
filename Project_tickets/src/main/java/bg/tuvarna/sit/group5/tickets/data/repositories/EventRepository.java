@@ -75,23 +75,24 @@ public class EventRepository implements DAORepository<Event>{
     }
 
     @Override
-    public List<Event> getById(Long id) {
+    public Event getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<Event>events=new LinkedList<>();
+        Event retEvent;
 
         try {
             String jql="SELECT e FROM Event e WHERE e.idEvent=id";
-            events.addAll(session.createQuery(jql, Event.class).getResultList());
+            retEvent=session.createQuery(jql, Event.class).getSingleResult();
             log.info("Get event by id");
         }
         catch (Exception ex){
+            retEvent=null;
             log.error("Get event error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return events;
+        return retEvent;
     }
 
     @Override

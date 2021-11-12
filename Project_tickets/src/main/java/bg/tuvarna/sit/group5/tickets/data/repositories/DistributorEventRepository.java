@@ -76,23 +76,23 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
     }
 
     @Override
-    public List<DistribEvent> getById(Long id) {
+    public DistribEvent getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<DistribEvent>distributorEvents=new LinkedList<>();
-
+        DistribEvent retDistEv;
         try {
             String jql="SELECT de FROM DistribEvent de WHERE de.idDistEvent=id";
-            distributorEvents.addAll(session.createQuery(jql, DistribEvent.class).getResultList());
+            retDistEv=session.createQuery(jql, DistribEvent.class).getSingleResult();
             log.info("Get distributorEvent by id");
         }
         catch (Exception ex){
+            retDistEv=null;
             log.error("Get distributorEvent error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return distributorEvents;
+        return retDistEv;
     }
 
     @Override

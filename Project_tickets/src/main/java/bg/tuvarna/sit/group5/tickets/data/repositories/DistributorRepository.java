@@ -75,23 +75,24 @@ public class DistributorRepository implements DAORepository<Distributor>{
     }
 
     @Override
-    public List<Distributor> getById(Long id) {
+    public Distributor getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<Distributor>distributors=new LinkedList<>();
+        Distributor retDist;
 
         try {
             String jql="SELECT d FROM Distributor d WHERE d.idDistributor=id";
-            distributors.addAll(session.createQuery(jql, Distributor.class).getResultList());
+            retDist=session.createQuery(jql, Distributor.class).getSingleResult();
             log.info("Get Distributor by id");
         }
         catch (Exception ex){
+            retDist=null;
             log.error("Get Distributor error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return distributors;
+        return retDist;
     }
 
     @Override

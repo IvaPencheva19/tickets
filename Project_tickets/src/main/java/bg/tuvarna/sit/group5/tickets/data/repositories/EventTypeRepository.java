@@ -75,23 +75,24 @@ public class EventTypeRepository implements DAORepository<EventType>{
     }
 
     @Override
-    public List<EventType> getById(Long id) {
+    public EventType getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<EventType>eventTypes=new LinkedList<>();
+        EventType retEvType;
 
         try {
             String jql="SELECT et FROM EventType et WHERE et.id=idEventType";
-            eventTypes.addAll(session.createQuery(jql, EventType.class).getResultList());
+           retEvType=session.createQuery(jql, EventType.class).getSingleResult();
             log.info("Get event type by id");
         }
         catch (Exception ex){
+            retEvType=null;
             log.error("Get event type error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return eventTypes;
+        return retEvType;
     }
 
     @Override

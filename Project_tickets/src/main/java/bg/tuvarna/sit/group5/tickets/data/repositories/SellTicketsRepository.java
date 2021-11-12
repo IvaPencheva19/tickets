@@ -75,23 +75,24 @@ public class SellTicketsRepository implements DAORepository<SellTickets>{
     }
 
     @Override
-    public List<SellTickets> getById(Long id) {
+    public SellTickets getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<SellTickets>sellTickets=new LinkedList<>();
+        SellTickets retSellTickets;
 
         try {
             String jql="SELECT st FROM SellTickets st WHERE st.id=idSell";
-            sellTickets.addAll(session.createQuery(jql, SellTickets.class).getResultList());
+            retSellTickets=session.createQuery(jql, SellTickets.class).getSingleResult();
             log.info("Get sell tickets by id");
         }
         catch (Exception ex){
+            retSellTickets=null;
             log.error("Get sell tickets error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return sellTickets;
+        return retSellTickets;
     }
 
     @Override

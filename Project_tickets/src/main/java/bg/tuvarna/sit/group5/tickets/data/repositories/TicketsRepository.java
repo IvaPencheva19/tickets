@@ -75,23 +75,24 @@ public class TicketsRepository implements DAORepository<Tickets>{
     }
 
     @Override
-    public List<Tickets> getById(Long id) {
+    public Tickets getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<Tickets>tickets=new LinkedList<>();
+        Tickets retTickets;
 
         try {
             String jql="SELECT t FROM Tickets t WHERE t.idTickets=id";
-            tickets.addAll(session.createQuery(jql, Tickets.class).getResultList());
+            retTickets=session.createQuery(jql, Tickets.class).getSingleResult();
             log.info("Get tickets by id");
         }
         catch (Exception ex){
+            retTickets=null;
             log.error("Get tickets error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return tickets;
+        return retTickets;
     }
 
     @Override

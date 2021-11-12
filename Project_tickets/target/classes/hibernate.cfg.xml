@@ -11,14 +11,14 @@
         <property name="connection.password">99990000</property>
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.AdminEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.DistribEventEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.DistributorEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.EventEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.EventTypeEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.OrganizerEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.SellTicketsEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.TicketsEntity"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.entities.UserEntity"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Admin"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.DistribEvent"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Distributor"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Event"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.EventType"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Organizer"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.SellTickets"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Tickets"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.User"/>
     </session-factory>
 </hibernate-configuration>

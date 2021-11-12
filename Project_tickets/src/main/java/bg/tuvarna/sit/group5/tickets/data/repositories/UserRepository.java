@@ -75,23 +75,23 @@ public class UserRepository implements DAORepository<User>{
     }
 
     @Override
-    public List<User> getById(Long id) {
+    public User getById(Long id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
-        List<User>users=new LinkedList<>();
-
+        User retUser;
         try {
             String jql="SELECT u FROM User u WHERE u.idUser=id";
-            users.addAll(session.createQuery(jql, User.class).getResultList());
+            retUser=(session.createQuery(jql, User.class)).getSingleResult();
             log.info("Get user by id");
         }
         catch (Exception ex){
+            retUser=null;
             log.error("Get User error: " +ex.getMessage());
         }
         finally {
             transaction.commit();
         }
-        return users;
+        return retUser;
     }
 
     @Override
