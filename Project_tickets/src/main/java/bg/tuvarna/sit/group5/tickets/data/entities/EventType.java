@@ -7,12 +7,17 @@ import java.util.Set;
 @Entity
 @Table(name = "event_type", schema = "tickets_oop")
 public class EventType {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idEvent_type")
     private int idEventType;
+    @Basic
+    @Column(name = "type_namel")
     private String typeNamel;
+    @OneToMany(mappedBy = "eventType")
     private Set<Event> eventsByIdEventType;
 
-    @Id
-    @Column(name = "idEvent_type")
+
     public int getIdEventType() {
         return idEventType;
     }
@@ -21,8 +26,7 @@ public class EventType {
         this.idEventType = idEventType;
     }
 
-    @Basic
-    @Column(name = "type_namel")
+
     public String getTypeNamel() {
         return typeNamel;
     }
@@ -44,7 +48,7 @@ public class EventType {
         return Objects.hash(idEventType, typeNamel);
     }
 
-    @OneToMany(mappedBy = "eventType")
+
     public Set<Event> getEventsByIdEventType() {
         return eventsByIdEventType;
     }

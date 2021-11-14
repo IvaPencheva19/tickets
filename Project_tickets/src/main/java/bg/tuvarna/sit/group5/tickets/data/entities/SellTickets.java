@@ -6,13 +6,21 @@ import java.util.Objects;
 @Entity
 @Table(name = "sell_tickets", schema = "tickets_oop")
 public class SellTickets {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idSell")
     private int idSell;
+    @Basic
+    @Column(name = "count")
     private Integer count;
+    @Basic
+    @Column(name = "Distrib_event_idDistEvent")
     private int distribEventIdDistEvent;
+    @ManyToOne
+    @JoinColumn(name = "Distrib_event_idDistEvent", referencedColumnName = "idDistEvent", nullable = false)
     private DistribEvent distribEvent;
 
-    @Id
-    @Column(name = "idSell")
+
     public int getIdSell() {
         return idSell;
     }
@@ -21,8 +29,7 @@ public class SellTickets {
         this.idSell = idSell;
     }
 
-    @Basic
-    @Column(name = "count")
+
     public Integer getCount() {
         return count;
     }
@@ -31,8 +38,7 @@ public class SellTickets {
         this.count = count;
     }
 
-    @Basic
-    @Column(name = "Distrib_event_idDistEvent")
+
     public int getDistribEventIdDistEvent() {
         return distribEventIdDistEvent;
     }
@@ -54,8 +60,7 @@ public class SellTickets {
         return Objects.hash(idSell, count, distribEventIdDistEvent);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "Distrib_event_idDistEvent", referencedColumnName = "idDistEvent", nullable = false)
+
     public DistribEvent getDistribEvent() {
         return distribEvent;
     }

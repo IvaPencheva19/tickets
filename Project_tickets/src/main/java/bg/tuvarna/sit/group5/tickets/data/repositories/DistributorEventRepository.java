@@ -76,7 +76,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
     }
 
     @Override
-    public DistribEvent getById(Long id) {
+    public DistribEvent getById(int id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
         DistribEvent retDistEv;

@@ -6,15 +6,27 @@ import java.util.Objects;
 @Entity
 @Table(name = "tickets", schema = "tickets_oop")
 public class Tickets {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idTickets")
     private int idTickets;
+    @Basic
+    @Column(name = "type")
     private String type;
+    @Basic
+    @Column(name = "price")
     private Double price;
+    @Basic
+    @Column(name = "count")
     private Integer count;
+    @Basic
+    @Column(name = "Event_idEvent")
     private int eventIdEvent;
+    @ManyToOne
+    @JoinColumn(name = "Event_idEvent", referencedColumnName = "idEvent", nullable = false)
     private Event eventByEventIdEvent;
 
-    @Id
-    @Column(name = "idTickets")
+
     public int getIdTickets() {
         return idTickets;
     }
@@ -23,8 +35,7 @@ public class Tickets {
         this.idTickets = idTickets;
     }
 
-    @Basic
-    @Column(name = "type")
+
     public String getType() {
         return type;
     }
@@ -33,8 +44,7 @@ public class Tickets {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "price")
+
     public Double getPrice() {
         return price;
     }
@@ -43,8 +53,7 @@ public class Tickets {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "count")
+
     public Integer getCount() {
         return count;
     }
@@ -53,8 +62,7 @@ public class Tickets {
         this.count = count;
     }
 
-    @Basic
-    @Column(name = "Event_idEvent")
+
     public int getEventIdEvent() {
         return eventIdEvent;
     }
@@ -76,8 +84,7 @@ public class Tickets {
         return Objects.hash(idTickets, type, price, count, eventIdEvent);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "Event_idEvent", referencedColumnName = "idEvent", nullable = false)
+
     public Event getEventByEventIdEvent() {
         return eventByEventIdEvent;
     }

@@ -9,20 +9,40 @@ import java.util.Set;
 @Entity
 @Table(name = "event", schema = "tickets_oop")
 public class Event {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idEvent")
     private int idEvent;
+    @Basic
+    @Column(name = "date")
     private Date date;
+    @Basic
+    @Column(name = "time")
     private Time time;
+    @Basic
+    @Column(name = "place")
     private String place;
+    @Basic
+    @Column(name = "status")
     private Byte status;
+    @Basic
+    @Column(name = "Event_type_idEvent_type")
     private int eventTypeIdEventType;
+    @Basic
+    @Column(name = "User_idUser")
     private int organizerIdOrganizer;
+    @OneToMany(mappedBy = "event")
     private Set<DistribEvent> distribEvent;
+    @ManyToOne
+    @JoinColumn(name = "Event_type_idEvent_type", referencedColumnName = "idEvent_type", nullable = false)
     private EventType eventType;
-    private Organizer organizer;
+    @ManyToOne
+    @JoinColumn(name = "User_idUser", referencedColumnName = "idUser", nullable = false)
+    private User organizer;
+    @OneToMany(mappedBy = "eventByEventIdEvent")
     private Set<Tickets> ticketsByIdEvent;
 
-    @Id
-    @Column(name = "idEvent")
+
     public int getIdEvent() {
         return idEvent;
     }
@@ -31,8 +51,7 @@ public class Event {
         this.idEvent = idEvent;
     }
 
-    @Basic
-    @Column(name = "date")
+
     public Date getDate() {
         return date;
     }
@@ -41,8 +60,7 @@ public class Event {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "time")
+
     public Time getTime() {
         return time;
     }
@@ -51,8 +69,7 @@ public class Event {
         this.time = time;
     }
 
-    @Basic
-    @Column(name = "place")
+
     public String getPlace() {
         return place;
     }
@@ -61,8 +78,7 @@ public class Event {
         this.place = place;
     }
 
-    @Basic
-    @Column(name = "status")
+
     public Byte getStatus() {
         return status;
     }
@@ -71,8 +87,7 @@ public class Event {
         this.status = status;
     }
 
-    @Basic
-    @Column(name = "Event_type_idEvent_type")
+
     public int getEventTypeIdEventType() {
         return eventTypeIdEventType;
     }
@@ -81,8 +96,7 @@ public class Event {
         this.eventTypeIdEventType = eventTypeIdEventType;
     }
 
-    @Basic
-    @Column(name = "Organizer_idOrganizer")
+
     public int getOrganizerIdOrganizer() {
         return organizerIdOrganizer;
     }
@@ -104,7 +118,7 @@ public class Event {
         return Objects.hash(idEvent, date, time, place, status, eventTypeIdEventType, organizerIdOrganizer);
     }
 
-    @OneToMany(mappedBy = "event")
+
     public Set<DistribEvent> getDistribEvent() {
         return distribEvent;
     }
@@ -113,8 +127,7 @@ public class Event {
         this.distribEvent = distribEvent;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "Event_type_idEvent_type", referencedColumnName = "idEvent_type", nullable = false)
+
     public EventType getEventType() {
         return eventType;
     }
@@ -123,17 +136,16 @@ public class Event {
         this.eventType = eventType;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "Organizer_idOrganizer", referencedColumnName = "idOrganizer", nullable = false)
-    public Organizer getOrganizer() {
+
+    public User getOrganizer() {
         return organizer;
     }
 
-    public void setOrganizer(Organizer organizer) {
+    public void setOrganizer(User organizer) {
         this.organizer = organizer;
     }
 
-    @OneToMany(mappedBy = "eventByEventIdEvent")
+
     public Set<Tickets> getTicketsByIdEvent() {
         return ticketsByIdEvent;
     }

@@ -75,7 +75,7 @@ public class EventRepository implements DAORepository<Event>{
     }
 
     @Override
-    public Event getById(Long id) {
+    public Event getById(int id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
         Event retEvent;

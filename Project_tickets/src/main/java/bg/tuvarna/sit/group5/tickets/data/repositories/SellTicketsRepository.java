@@ -75,7 +75,7 @@ public class SellTicketsRepository implements DAORepository<SellTickets>{
     }
 
     @Override
-    public SellTickets getById(Long id) {
+    public SellTickets getById(int id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
         SellTickets retSellTickets;

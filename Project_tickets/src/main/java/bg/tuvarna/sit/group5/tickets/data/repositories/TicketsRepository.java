@@ -75,7 +75,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
     }
 
     @Override
-    public Tickets getById(Long id) {
+    public Tickets getById(int id) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
         Tickets retTickets;

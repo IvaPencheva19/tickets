@@ -7,15 +7,26 @@ import java.util.Set;
 @Entity
 @Table(name = "distrib_event", schema = "tickets_oop")
 public class DistribEvent {
-    private int idDistEvent;
-    private int eventIdEvent1;
-    private int distributorIdDistributor1;
-    private Event event;
-    private Distributor distributorsEvent;
-    private Set<SellTickets> sellTicketsByIdDistEvent;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idDistEvent")
+    private int idDistEvent;
+    @Basic
+    @Column(name = "Event_idEvent1")
+    private int eventIdEvent1;
+    @Basic
+    @Column(name = "User_idUser")
+    private int distributorIdDistributor1;
+    @ManyToOne
+    @JoinColumn(name = "Event_idEvent1", referencedColumnName = "idEvent", nullable = false)
+    private Event event;
+    @ManyToOne
+    @JoinColumn(name = "User_idUser", referencedColumnName = "idUser", nullable = false)
+    private User distributorsEvent;
+    @OneToMany(mappedBy = "distribEvent")
+    private Set<SellTickets> sellTicketsByIdDistEvent;
+
     public int getIdDistEvent() {
         return idDistEvent;
     }
@@ -24,8 +35,7 @@ public class DistribEvent {
         this.idDistEvent = idDistEvent;
     }
 
-    @Basic
-    @Column(name = "Event_idEvent1")
+
     public int getEventIdEvent1() {
         return eventIdEvent1;
     }
@@ -34,8 +44,7 @@ public class DistribEvent {
         this.eventIdEvent1 = eventIdEvent1;
     }
 
-    @Basic
-    @Column(name = "Distributor_idDistributor1")
+
     public int getDistributorIdDistributor1() {
         return distributorIdDistributor1;
     }
@@ -57,8 +66,7 @@ public class DistribEvent {
         return Objects.hash(idDistEvent, eventIdEvent1, distributorIdDistributor1);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "Event_idEvent1", referencedColumnName = "idEvent", nullable = false)
+
     public Event getEvent() {
         return event;
     }
@@ -67,17 +75,16 @@ public class DistribEvent {
         this.event = event;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "Distributor_idDistributor1", referencedColumnName = "idDistributor", nullable = false)
-    public Distributor getDistributorsEvent() {
+
+    public User getDistributorsEvent() {
         return distributorsEvent;
     }
 
-    public void setDistributorsEvent(Distributor distributorsEvent) {
+    public void setDistributorsEvent(User distributorsEvent) {
         this.distributorsEvent = distributorsEvent;
     }
 
-    @OneToMany(mappedBy = "distribEvent")
+
     public Set<SellTickets> getSellTicketsByIdDistEvent() {
         return sellTicketsByIdDistEvent;
     }
