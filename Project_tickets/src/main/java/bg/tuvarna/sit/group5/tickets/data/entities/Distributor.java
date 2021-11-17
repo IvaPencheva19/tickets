@@ -2,29 +2,57 @@ package bg.tuvarna.sit.group5.tickets.data.entities;
 
 
 import javax.persistence.*;
+import java.util.Objects;
+import java.util.Set;
+
 @Entity
 @DiscriminatorValue("distributor")
 public class Distributor extends User{
     @Basic
     @Column(name = "honor")
-    private String honor;
+    private Double honor;
     @Basic
     @Column(name = "rating")
-    private String rating;
+    private Double rating;
 
-    public String getHonor() {
+    @OneToMany(mappedBy = "distributorsEvent")
+    private Set<DistribEvent> eventsByDistributor;
+
+    public double getHonor() {
         return honor;
     }
 
-    public void setHonor(String honor) {
+    public void setHonor(Double honor) {
         this.honor = honor;
     }
 
-    public String getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public Set<DistribEvent> getEventsByDistributor() {
+        return eventsByDistributor;
+    }
+
+    public void setEventsByDistributor(Set<DistribEvent> eventsByDistributor) {
+        this.eventsByDistributor = eventsByDistributor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Distributor that = (Distributor) o;
+        return Objects.equals(honor, that.honor) && Objects.equals(rating, that.rating) && Objects.equals(eventsByDistributor, that.eventsByDistributor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), honor, rating, eventsByDistributor);
     }
 }

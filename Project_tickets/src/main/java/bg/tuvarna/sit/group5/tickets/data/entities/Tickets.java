@@ -19,11 +19,9 @@ public class Tickets {
     @Basic
     @Column(name = "count")
     private Integer count;
-    @Basic
-    @Column(name = "Event_idEvent")
-    private int eventIdEvent;
+
     @ManyToOne
-    @JoinColumn(name = "Event_idEvent", referencedColumnName = "idEvent", nullable = false)
+    @JoinColumn(name = "Event_idEvent", nullable = false)
     private Event eventByEventIdEvent;
 
 
@@ -62,34 +60,24 @@ public class Tickets {
         this.count = count;
     }
 
-
-    public int getEventIdEvent() {
-        return eventIdEvent;
-    }
-
-    public void setEventIdEvent(int eventIdEvent) {
-        this.eventIdEvent = eventIdEvent;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tickets that = (Tickets) o;
-        return idTickets == that.idTickets && eventIdEvent == that.eventIdEvent && Objects.equals(type, that.type) && Objects.equals(price, that.price) && Objects.equals(count, that.count);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idTickets, type, price, count, eventIdEvent);
-    }
-
-
     public Event getEventByEventIdEvent() {
         return eventByEventIdEvent;
     }
 
     public void setEventByEventIdEvent(Event eventByEventIdEvent) {
         this.eventByEventIdEvent = eventByEventIdEvent;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tickets tickets = (Tickets) o;
+        return idTickets == tickets.idTickets && Objects.equals(type, tickets.type) && Objects.equals(price, tickets.price) && Objects.equals(count, tickets.count) && Objects.equals(eventByEventIdEvent, tickets.eventByEventIdEvent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idTickets, type, price, count, eventByEventIdEvent);
     }
 }

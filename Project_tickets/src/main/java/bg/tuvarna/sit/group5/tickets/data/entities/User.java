@@ -9,7 +9,7 @@ import java.util.Set;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="type",discriminatorType=DiscriminatorType.STRING)
 @DiscriminatorValue(value="user")
-public class User {
+public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +33,6 @@ public class User {
     @Basic
     @Column(name = "email")
     private String email;
-
-
 
 
     public int getIdUser() {
@@ -94,22 +92,18 @@ public class User {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User that = (User) o;
-        return idUser == that.idUser && Objects.equals(username, that.username)
-                && Objects.equals(password, that.password)
-                && Objects.equals(firstname, that.firstname)
-                && Objects.equals(lastname, that.lastname) && Objects.equals(phone, that.phone);
+        User user = (User) o;
+        return idUser == user.idUser && Objects.equals(username, user.username) && Objects.equals(password, user.password)
+                && Objects.equals(firstname, user.firstname) && Objects.equals(lastname, user.lastname)
+                && Objects.equals(phone, user.phone) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idUser, username, password, firstname, lastname, phone);
+        return Objects.hash(idUser, username, password, firstname, lastname, phone, email);
     }
-
-
 }

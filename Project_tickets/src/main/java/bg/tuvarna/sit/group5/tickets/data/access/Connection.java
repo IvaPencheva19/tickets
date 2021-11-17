@@ -8,7 +8,7 @@ private static final Logger log=Logger.getLogger(Connection.class);
 private static SessionFactory sessionFactory;
 static{
     try{
-        sessionFactory=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        sessionFactory=new Configuration().configure().buildSessionFactory();
     }
     catch(Throwable ex){
         log.error("Initial SessionFactory created failed "+ex);
@@ -21,4 +21,22 @@ public static void openSessionClose(){
     sessionFactory.close();
 }
 
+/*   private static final Logger log = Logger.getLogger(Connection.class);
+    private static SessionFactory sessionFactory;
+
+    static {
+        try {
+            sessionFactory = new Configuration().configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            log.error("Initial SessionFactory created failed" + ex);
+        }
+    }
+
+    public static Session openSession() {
+        return sessionFactory.openSession();
+    }
+
+    public static void openSessionClose() {
+        sessionFactory.close();
+    }*/
 }

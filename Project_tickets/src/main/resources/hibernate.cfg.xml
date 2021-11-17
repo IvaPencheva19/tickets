@@ -9,16 +9,17 @@
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">99990000</property>
-        <property name="show_sql">true</property>
+        <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Admin"/>
+
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.DistribEvent"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Distributor"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Event"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.EventType"/>
-        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Organizer"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.SellTickets"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Tickets"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.User"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Admin"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Organizer"/>
+        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Distributor"/>
     </session-factory>
 </hibernate-configuration>

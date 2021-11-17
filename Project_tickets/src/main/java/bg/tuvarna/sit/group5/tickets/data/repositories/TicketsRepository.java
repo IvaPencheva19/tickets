@@ -15,7 +15,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
 
     private static final Logger log= Logger.getLogger(TicketsRepository.class);
 
-    private static TicketsRepository getInstance(){
+   public static TicketsRepository getInstance(){
         return TicketsRepository.TicketsRepositoryHolder.INSTANCE;
     }
 
@@ -47,10 +47,10 @@ public class TicketsRepository implements DAORepository<Tickets>{
         Transaction transaction = session.beginTransaction();
         try {
             session.update(obj);
-            log.info("Tickets saved successfully");
+            log.info("Tickets updated successfully");
         }
         catch (Exception ex){
-            log.error(("Tickets save error" + ex.getMessage()));
+            log.error(("Tickets update error" + ex.getMessage()));
         }
         finally {
             transaction.commit();
@@ -63,10 +63,10 @@ public class TicketsRepository implements DAORepository<Tickets>{
         Transaction transaction = session.beginTransaction();
         try {
             session.delete(obj);
-            log.info("Tickets saved successfully");
+            log.info("Tickets deleted successfully");
         }
         catch (Exception ex){
-            log.error(("Tickets save error" + ex.getMessage()));
+            log.error(("Tickets delete error" + ex.getMessage()));
         }
         finally {
             transaction.commit();

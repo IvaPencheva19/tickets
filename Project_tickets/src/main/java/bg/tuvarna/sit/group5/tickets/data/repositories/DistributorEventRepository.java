@@ -16,7 +16,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
 
     private static final Logger log= Logger.getLogger(DistributorEventRepository.class);
 
-    private static DistributorEventRepository getInstance(){
+    public static DistributorEventRepository getInstance(){
         return DistributorEventRepository.DistributorEventRepositoryHolder.INSTANCE;
     }
 
@@ -48,10 +48,10 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         Transaction transaction = session.beginTransaction();
         try {
             session.update(obj);
-            log.info("DistributorEvent saved successfully");
+            log.info("DistributorEvent updated successfully");
         }
         catch (Exception ex){
-            log.error(("DistributorEvent save error" + ex.getMessage()));
+            log.error(("DistributorEvent update error" + ex.getMessage()));
         }
         finally {
             transaction.commit();
@@ -64,10 +64,10 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         Transaction transaction = session.beginTransaction();
         try {
             session.delete(obj);
-            log.info("DistributorEvent saved successfully");
+            log.info("DistributorEvent deleted successfully");
         }
         catch (Exception ex){
-            log.error(("DistributorEvent save error" + ex.getMessage()));
+            log.error(("DistributorEvent delete error" + ex.getMessage()));
         }
         finally {
             transaction.commit();

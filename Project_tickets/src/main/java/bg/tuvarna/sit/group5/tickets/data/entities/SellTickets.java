@@ -13,11 +13,9 @@ public class SellTickets {
     @Basic
     @Column(name = "count")
     private Integer count;
-    @Basic
-    @Column(name = "Distrib_event_idDistEvent")
-    private int distribEventIdDistEvent;
+
     @ManyToOne
-    @JoinColumn(name = "Distrib_event_idDistEvent", referencedColumnName = "idDistEvent", nullable = false)
+    @JoinColumn(name = "Distrib_event_idDistEvent", nullable = false)
     private DistribEvent distribEvent;
 
 
@@ -25,7 +23,7 @@ public class SellTickets {
         return idSell;
     }
 
-    public void setIdSell(int idSell) {
+    public void setIdSell(Integer idSell) {
         this.idSell = idSell;
     }
 
@@ -34,32 +32,9 @@ public class SellTickets {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(int count) {
         this.count = count;
     }
-
-
-    public int getDistribEventIdDistEvent() {
-        return distribEventIdDistEvent;
-    }
-
-    public void setDistribEventIdDistEvent(int distribEventIdDistEvent) {
-        this.distribEventIdDistEvent = distribEventIdDistEvent;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SellTickets that = (SellTickets) o;
-        return idSell == that.idSell && distribEventIdDistEvent == that.distribEventIdDistEvent && Objects.equals(count, that.count);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idSell, count, distribEventIdDistEvent);
-    }
-
 
     public DistribEvent getDistribEvent() {
         return distribEvent;
@@ -67,5 +42,18 @@ public class SellTickets {
 
     public void setDistribEvent(DistribEvent distribEvent) {
         this.distribEvent = distribEvent;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SellTickets that = (SellTickets) o;
+        return idSell == that.idSell && Objects.equals(count, that.count) && Objects.equals(distribEvent, that.distribEvent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idSell, count, distribEvent);
     }
 }

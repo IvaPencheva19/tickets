@@ -14,6 +14,13 @@ module bg.tuvarna.sit.group5.tickets {
     requires org.hibernate.orm.core;
     requires log4j;
     requires java.naming;
+
+    opens bg.tuvarna.sit.group5.tickets.data.entities to org.hibernate.orm.core;
+    exports bg.tuvarna.sit.group5.tickets.data.entities;
+
+    opens bg.tuvarna.sit.group5.tickets.data.access to org.hibernate.orm.core;
+    exports bg.tuvarna.sit.group5.tickets.data.access;
+
     exports bg.tuvarna.sit.group5.tickets.application;
     opens bg.tuvarna.sit.group5.tickets.application to javafx.fxml;
 

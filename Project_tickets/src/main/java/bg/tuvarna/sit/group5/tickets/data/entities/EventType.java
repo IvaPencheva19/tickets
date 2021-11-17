@@ -11,9 +11,11 @@ public class EventType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idEvent_type")
     private int idEventType;
+
     @Basic
     @Column(name = "type_namel")
     private String typeNamel;
+
     @OneToMany(mappedBy = "eventType")
     private Set<Event> eventsByIdEventType;
 

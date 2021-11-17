@@ -15,7 +15,7 @@ public class EventTypeRepository implements DAORepository<EventType>{
 
     private static final Logger log= Logger.getLogger(EventTypeRepository.class);
 
-    private static EventTypeRepository getInstance(){
+    public static EventTypeRepository getInstance(){
         return EventTypeRepository.EventTypeRepositoryHolder.INSTANCE;
     }
 
@@ -47,10 +47,10 @@ public class EventTypeRepository implements DAORepository<EventType>{
         Transaction transaction = session.beginTransaction();
         try {
             session.update(obj);
-            log.info("EventType saved successfully");
+            log.info("EventType updated successfully");
         }
         catch (Exception ex){
-            log.error(("EventType save error" + ex.getMessage()));
+            log.error(("EventType update error" + ex.getMessage()));
         }
         finally {
             transaction.commit();
@@ -63,10 +63,10 @@ public class EventTypeRepository implements DAORepository<EventType>{
         Transaction transaction = session.beginTransaction();
         try {
             session.delete(obj);
-            log.info("EventType saved successfully");
+            log.info("EventType deleted successfully");
         }
         catch (Exception ex){
-            log.error(("EventType save error" + ex.getMessage()));
+            log.error(("EventType delete error" + ex.getMessage()));
         }
         finally {
             transaction.commit();

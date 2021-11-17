@@ -25,20 +25,18 @@ public class Event {
     @Basic
     @Column(name = "status")
     private Byte status;
-    @Basic
-    @Column(name = "Event_type_idEvent_type")
-    private int eventTypeIdEventType;
-    @Basic
-    @Column(name = "User_idUser")
-    private int organizerIdOrganizer;
+
     @OneToMany(mappedBy = "event")
     private Set<DistribEvent> distribEvent;
+
     @ManyToOne
-    @JoinColumn(name = "Event_type_idEvent_type", referencedColumnName = "idEvent_type", nullable = false)
+    @JoinColumn(name = "Event_type_idEvent_type", nullable = false)
     private EventType eventType;
+
     @ManyToOne
-    @JoinColumn(name = "User_idUser", referencedColumnName = "idUser", nullable = false)
-    private User organizer;
+    @JoinColumn(name = "User_idUser", nullable = false)
+    private Organizer organizer;
+
     @OneToMany(mappedBy = "eventByEventIdEvent")
     private Set<Tickets> ticketsByIdEvent;
 
@@ -87,38 +85,6 @@ public class Event {
         this.status = status;
     }
 
-
-    public int getEventTypeIdEventType() {
-        return eventTypeIdEventType;
-    }
-
-    public void setEventTypeIdEventType(int eventTypeIdEventType) {
-        this.eventTypeIdEventType = eventTypeIdEventType;
-    }
-
-
-    public int getOrganizerIdOrganizer() {
-        return organizerIdOrganizer;
-    }
-
-    public void setOrganizerIdOrganizer(int organizerIdOrganizer) {
-        this.organizerIdOrganizer = organizerIdOrganizer;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Event that = (Event) o;
-        return idEvent == that.idEvent && eventTypeIdEventType == that.eventTypeIdEventType && organizerIdOrganizer == that.organizerIdOrganizer && Objects.equals(date, that.date) && Objects.equals(time, that.time) && Objects.equals(place, that.place) && Objects.equals(status, that.status);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idEvent, date, time, place, status, eventTypeIdEventType, organizerIdOrganizer);
-    }
-
-
     public Set<DistribEvent> getDistribEvent() {
         return distribEvent;
     }
@@ -141,7 +107,7 @@ public class Event {
         return organizer;
     }
 
-    public void setOrganizer(User organizer) {
+    public void setOrganizer(Organizer organizer) {
         this.organizer = organizer;
     }
 
@@ -152,5 +118,18 @@ public class Event {
 
     public void setTicketsByIdEvent(Set<Tickets> ticketsByIdEvent) {
         this.ticketsByIdEvent = ticketsByIdEvent;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return idEvent == event.idEvent && Objects.equals(date, event.date) && Objects.equals(time, event.time) && Objects.equals(place, event.place) && Objects.equals(status, event.status) && Objects.equals(distribEvent, event.distribEvent) && Objects.equals(eventType, event.eventType) && Objects.equals(organizer, event.organizer) && Objects.equals(ticketsByIdEvent, event.ticketsByIdEvent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idEvent, date, time, place, status, distribEvent, eventType, organizer, ticketsByIdEvent);
     }
 }

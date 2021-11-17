@@ -1,21 +1,25 @@
 package bg.tuvarna.sit.group5.tickets.data.repositories;
 
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
+import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
+import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.Query;
+import java.sql.Time;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
-public class EventRepository implements DAORepository<Event>{
+public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
 
     private static final Logger log= Logger.getLogger(EventRepository.class);
 
-    private static EventRepository getInstance(){
+    public static EventRepository getInstance(){
         return EventRepository.EventRepositoryHolder.INSTANCE;
     }
 
@@ -47,10 +51,10 @@ public class EventRepository implements DAORepository<Event>{
         Transaction transaction = session.beginTransaction();
         try {
             session.update(obj);
-            log.info("Event saved successfully");
+            log.info("Event updated successfully");
         }
         catch (Exception ex){
-            log.error(("Event save error" + ex.getMessage()));
+            log.error(("Event update error" + ex.getMessage()));
         }
         finally {
             transaction.commit();
@@ -63,10 +67,10 @@ public class EventRepository implements DAORepository<Event>{
         Transaction transaction = session.beginTransaction();
         try {
             session.delete(obj);
-            log.info("Event saved successfully");
+            log.info("Event deleted successfully");
         }
         catch (Exception ex){
-            log.error(("Event save error" + ex.getMessage()));
+            log.error(("Event delete error" + ex.getMessage()));
         }
         finally {
             transaction.commit();
@@ -114,6 +118,50 @@ public class EventRepository implements DAORepository<Event>{
         }
         return events;
     }
+    @Override
+    public List<Event> getAllEventsByPlace(String place) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Event>events=new LinkedList<>();
+
+        try {
+            String jql = "SELECT e FROM Event e WHERE  e.place= :place";
+            Query query = session.createQuery(jql);
+            query.setParameter("place", place);
+            events.addAll(query.getResultList());
+            log.info("Get all distributors");
+        }
+        catch (Exception ex){
+            log.error("Get Distributor error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+        }
+        return events;
+    }
+    @Override
+    public List<Event> getAllEventsByDate(Date date) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Event>events=new LinkedList<>();
+
+        try {
+            String jql = "SELECT e FROM Event e WHERE  e.date= :date";
+            Query query = session.createQuery(jql);
+            query.setParameter("date", date);
+            events.addAll(query.getResultList());
+            log.info("Get all distributors");
+        }
+        catch (Exception ex){
+            log.error("Get Distributor error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+        }
+        return events;
+    }
+
+
 
 
 }
