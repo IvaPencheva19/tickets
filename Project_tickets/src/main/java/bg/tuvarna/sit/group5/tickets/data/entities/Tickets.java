@@ -7,14 +7,7 @@ import java.util.Objects;
 @Table(name = "tickets", schema = "tickets_oop")
 public class Tickets {
 
-    public Tickets(){}
 
-    public Tickets(String type, Double price, Integer count, Event eventByEventIdEvent) {
-        this.type = type;
-        this.price = price;
-        this.count = count;
-        this.eventByEventIdEvent = eventByEventIdEvent;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +27,14 @@ public class Tickets {
     @JoinColumn(name = "Event_idEvent", nullable = false)
     private Event eventByEventIdEvent;
 
+    public Tickets(){}
+
+    public Tickets(String type, Double price, Integer count, Event eventByEventIdEvent) {
+        this.type = type;
+        this.price = price;
+        this.count = count;
+        this.eventByEventIdEvent = eventByEventIdEvent;
+    }
 
     public int getIdTickets() {
         return idTickets;

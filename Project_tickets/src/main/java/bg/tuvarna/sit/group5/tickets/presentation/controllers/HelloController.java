@@ -1,8 +1,8 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
-import bg.tuvarna.sit.group5.tickets.presentation.models.AllOrganizerModel;
+import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.HelloModel;
-import bg.tuvarna.sit.group5.tickets.service.UserService;
+import bg.tuvarna.sit.group5.tickets.service.OrganizerService;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,13 +16,13 @@ public class HelloController implements EventHandler<MouseEvent> {
     private Label welcomeText;
 
    // private final EventTypeService service=EventTypeService.getInstance();
-   private final UserService service=UserService.getInstance();
+   private final OrganizerService service=OrganizerService.getInstance();
     @FXML
     private Button helloButton;
     private final HelloModel model;
     @FXML
     //private ListView<EventTypeModel> listView;
-    private ListView<AllOrganizerModel> listView;
+    private ListView<OrganizerModel> listView;
     public HelloController() {
         this.model = new HelloModel();
     }
@@ -38,7 +38,7 @@ public class HelloController implements EventHandler<MouseEvent> {
         welcomeText.setText(model.getWelcomeMessage());
        // ObservableList<EventTypeModel>eventTypeModels=service.getAll();
       // ObservableList<EventTypeModel>eventTypeModels=service.getType();
-        ObservableList<AllOrganizerModel>orgModels=service.getAllOrganizers();
+        ObservableList<OrganizerModel>orgModels=service.getAllOrganizers();
         listView.setItems(orgModels);
 
     }

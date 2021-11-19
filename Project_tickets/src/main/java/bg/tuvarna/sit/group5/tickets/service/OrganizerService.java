@@ -2,16 +2,22 @@ package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
+import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class OrganizerService {
     private final UserRepository repository = UserRepository.getInstance();
 
-    public static UserService getInstance() {
+    public static OrganizerService getInstance() {
         return OrganizerService.UserHolder.INSTANCE;
     }
 
     private static class UserHolder {
-        public static final UserService INSTANCE = new UserService();
+        public static final OrganizerService INSTANCE = new OrganizerService();
     }
 
 
@@ -54,5 +60,13 @@ public class OrganizerService {
     public void changeHonor(Organizer organizer, double honor){
         organizer.setHonor(honor);
         repository.update(organizer);
+    }
+
+    public ObservableList<OrganizerModel> getAllOrganizers() {
+        List<Organizer> orgs = repository.getAllOrganizers();
+
+        return FXCollections.observableList(
+                orgs.stream().map(t -> new OrganizerModel(t.getUsername(),t.getPassword(),t.getFirstname(),
+                        t.getLastname(), t.getPhone(), t.getEmail(), t.getHonor())).collect(Collectors.toList()));
     }
 }

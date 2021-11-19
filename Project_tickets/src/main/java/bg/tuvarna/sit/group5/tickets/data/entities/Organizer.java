@@ -8,13 +8,7 @@ import java.util.Set;
 @DiscriminatorValue("organizer")
 public class Organizer extends User{
 
-    public Organizer() {}
 
-    public Organizer(String username, String password, String firstname, String lastname,
-                     String phone, String email, double honor) {
-        super(username, password, firstname, lastname, phone, email);
-        this.honor = honor;
-    }
 
     @Basic
     @Column(name = "honor")
@@ -22,6 +16,14 @@ public class Organizer extends User{
 
     @OneToMany(mappedBy = "organizer")
     private Set<Event> events;
+
+    public Organizer() {}
+
+    public Organizer(String username, String password, String firstname, String lastname,
+                     String phone, String email, double honor) {
+        super(username, password, firstname, lastname, phone, email);
+        this.honor = honor;
+    }
 
 
     public Double getHonor() {

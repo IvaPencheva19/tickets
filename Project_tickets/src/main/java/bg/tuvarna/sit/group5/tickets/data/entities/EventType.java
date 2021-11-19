@@ -8,11 +8,7 @@ import java.util.Set;
 @Table(name = "event_type", schema = "tickets_oop")
 public class EventType {
 
-    public EventType(){}
 
-    public EventType(String typeNamel) {
-        this.typeNamel = typeNamel;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +22,11 @@ public class EventType {
     @OneToMany(mappedBy = "eventType")
     private Set<Event> eventsByIdEventType;
 
+    public EventType(){}
+
+    public EventType(String typeNamel) {
+        this.typeNamel = typeNamel;
+    }
 
     public int getIdEventType() {
         return idEventType;

@@ -1,8 +1,5 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
-import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
-import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
-import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 
 public class AdminService {
@@ -15,4 +12,6 @@ public class AdminService {
     private static class UserHolder {
         public static final UserService INSTANCE = new UserService();
     }
+
+
 }

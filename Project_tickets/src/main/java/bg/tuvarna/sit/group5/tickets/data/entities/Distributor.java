@@ -8,14 +8,7 @@ import java.util.Set;
 @Entity
 @DiscriminatorValue("distributor")
 public class Distributor extends User{
-    public Distributor(){}
 
-    public Distributor(String username, String password, String firstname, String lastname,
-                       String phone, String email, double honor, double rating) {
-        super(username, password, firstname, lastname, phone, email);
-        this.honor = honor;
-        this.rating = rating;
-    }
 
     @Basic
     @Column(name = "honor")
@@ -26,6 +19,15 @@ public class Distributor extends User{
 
     @OneToMany(mappedBy = "distributorsEvent")
     private Set<DistribEvent> eventsByDistributor;
+
+    public Distributor(){}
+
+    public Distributor(String username, String password, String firstname, String lastname,
+                       String phone, String email, double honor, double rating) {
+        super(username, password, firstname, lastname, phone, email);
+        this.honor = honor;
+        this.rating = rating;
+    }
 
     public double getHonor() {
         return honor;

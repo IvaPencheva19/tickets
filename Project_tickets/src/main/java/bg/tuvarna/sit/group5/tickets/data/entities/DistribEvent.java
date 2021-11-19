@@ -7,12 +7,7 @@ import java.util.Set;
 @Entity
 @Table(name = "distrib_event", schema = "tickets_oop")
 public class DistribEvent {
-    public DistribEvent(){}
 
-    public DistribEvent(Event event, Distributor distributorsEvent) {
-        this.event = event;
-        this.distributorsEvent = distributorsEvent;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +24,13 @@ public class DistribEvent {
 
     @OneToMany(mappedBy = "distribEvent")
     private Set<SellTickets> sellTicketsByIdDistEvent;
+
+    public DistribEvent(){}
+
+    public DistribEvent(Event event, Distributor distributorsEvent) {
+        this.event = event;
+        this.distributorsEvent = distributorsEvent;
+    }
 
     public int getIdDistEvent() {
         return idDistEvent;
