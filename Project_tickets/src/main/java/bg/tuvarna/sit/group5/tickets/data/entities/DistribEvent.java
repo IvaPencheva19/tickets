@@ -7,6 +7,12 @@ import java.util.Set;
 @Entity
 @Table(name = "distrib_event", schema = "tickets_oop")
 public class DistribEvent {
+    public DistribEvent(){}
+
+    public DistribEvent(Event event, Distributor distributorsEvent) {
+        this.event = event;
+        this.distributorsEvent = distributorsEvent;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

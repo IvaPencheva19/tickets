@@ -1,7 +1,9 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
+import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import bg.tuvarna.sit.group5.tickets.data.repositories.EventTypeRepository;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.AllOrganizerModel;
@@ -29,7 +31,8 @@ public class UserService {
 
         return FXCollections.observableList(
                 orgs.stream().map(t -> new AllOrganizerModel(t.getUsername())).collect(Collectors.toList()));
-
     }
-
+    public void deleteUser(User user){
+        repository.delete(user);
+    }
 }

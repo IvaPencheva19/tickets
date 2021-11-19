@@ -7,6 +7,13 @@ import java.util.Set;
 @Entity
 @Table(name = "event_type", schema = "tickets_oop")
 public class EventType {
+
+    public EventType(){}
+
+    public EventType(String typeNamel) {
+        this.typeNamel = typeNamel;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idEvent_type")

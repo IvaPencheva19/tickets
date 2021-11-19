@@ -6,6 +6,18 @@ import java.util.Objects;
 @Entity
 @Table(name = "sell_tickets", schema = "tickets_oop")
 public class SellTickets {
+
+    public SellTickets(){}
+
+    public SellTickets(Integer count, Integer seat, String custumer_name,
+                       Tickets ticket_type, DistribEvent distribEvent) {
+        this.count = count;
+        this.seat = seat;
+        this.custumer_name = custumer_name;
+        this.ticket_type = ticket_type;
+        this.distribEvent = distribEvent;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idSell")
@@ -19,8 +31,8 @@ public class SellTickets {
     @Basic
     @Column(name = "custumer_name")
     private String custumer_name;
-    @OneToOne
-    @JoinColumn(name="tickets")
+    @ManyToOne
+    @JoinColumn(name="tickets_idTickets")
     private Tickets ticket_type;
 
     @ManyToOne

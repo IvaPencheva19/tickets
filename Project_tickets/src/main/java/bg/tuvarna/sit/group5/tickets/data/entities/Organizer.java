@@ -7,6 +7,15 @@ import java.util.Set;
 @Entity
 @DiscriminatorValue("organizer")
 public class Organizer extends User{
+
+    public Organizer() {}
+
+    public Organizer(String username, String password, String firstname, String lastname,
+                     String phone, String email, double honor) {
+        super(username, password, firstname, lastname, phone, email);
+        this.honor = honor;
+    }
+
     @Basic
     @Column(name = "honor")
     private Double honor;

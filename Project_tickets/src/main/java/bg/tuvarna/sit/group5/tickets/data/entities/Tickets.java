@@ -6,6 +6,16 @@ import java.util.Objects;
 @Entity
 @Table(name = "tickets", schema = "tickets_oop")
 public class Tickets {
+
+    public Tickets(){}
+
+    public Tickets(String type, Double price, Integer count, Event eventByEventIdEvent) {
+        this.type = type;
+        this.price = price;
+        this.count = count;
+        this.eventByEventIdEvent = eventByEventIdEvent;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idTickets")

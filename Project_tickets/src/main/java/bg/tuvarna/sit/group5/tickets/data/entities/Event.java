@@ -9,6 +9,19 @@ import java.util.Set;
 @Entity
 @Table(name = "event", schema = "tickets_oop")
 public class Event {
+
+    public Event(){}
+
+    public Event(Date date, Time time,
+                 String place, Byte status, EventType eventType, Organizer organizer) {
+        this.date = date;
+        this.time = time;
+        this.place = place;
+        this.status = status;
+        this.eventType = eventType;
+        this.organizer = organizer;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idEvent")

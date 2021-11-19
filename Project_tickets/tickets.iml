@@ -14,7 +14,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="tickets" value="78aa3934-a237-4bbf-bc4b-be4f21d89230" />
+          <factory-entry name="tickets" value="f077524e-1ad9-4064-b943-4426b6acbbbd" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
