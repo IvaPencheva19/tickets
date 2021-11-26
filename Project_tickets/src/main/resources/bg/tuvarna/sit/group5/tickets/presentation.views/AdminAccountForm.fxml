@@ -13,7 +13,7 @@
          <font>
             <Font size="27.0" />
          </font></Label>
-      <Button fx:id="addOrg" layoutX="166.0" layoutY="414.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add organizer">
+      <Button fx:id="addOrg" layoutX="166.0" layoutY="419.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add organizer">
          <font>
             <Font size="19.0" />
          </font></Button>
@@ -38,7 +38,7 @@
             <Image url="@../profile.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="144.0" layoutY="170.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="144.0" layoutY="175.0">
          <image>
             <Image url="@../user.png" />
          </image>
@@ -63,5 +63,10 @@
             <Image url="@../user%20(2).png" />
          </image>
       </ImageView>
+      <Button fx:id="logout" layoutX="1059.0" layoutY="40.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Log out">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

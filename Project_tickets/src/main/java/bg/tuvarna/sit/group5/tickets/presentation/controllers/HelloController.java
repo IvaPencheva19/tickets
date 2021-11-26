@@ -54,14 +54,14 @@ public class HelloController  {
     private PasswordField password;
     @FXML
     private Label res;
-
+   public static User user;
  @FXML
  private void userLogIn(ActionEvent event){
 
      String uname = this.username.getText();
      String pass = this.password.getText();
 
-     User user = loginService.validateUserLogin(uname, pass);
+      user = loginService.validateUserLogin(uname, pass);
      if (user != null)
      {
          String name=user.getUsername();
@@ -77,5 +77,6 @@ public class HelloController  {
          this.username.requestFocus();
      }
  }
+
 
 }
