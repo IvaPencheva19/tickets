@@ -21,5 +21,6 @@
         <Label layoutX="397.0" layoutY="325.0" text="Phone" />
         <Label layoutX="407.0" layoutY="372.0" text="Email" />
         <TextField fx:id="honor" layoutX="522.0" layoutY="442.0" />
+      <Label layoutX="404.0" layoutY="458.0" prefHeight="18.0" prefWidth="62.0" text="Honor" />
     </children>
 </AnchorPane>
