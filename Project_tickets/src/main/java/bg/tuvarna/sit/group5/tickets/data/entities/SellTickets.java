@@ -26,7 +26,7 @@ public class SellTickets {
     @JoinColumn(name="tickets_idTickets")
     private Tickets ticket_type;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "Distrib_event_idDistEvent", nullable = false)
     private DistribEvent distribEvent;
 

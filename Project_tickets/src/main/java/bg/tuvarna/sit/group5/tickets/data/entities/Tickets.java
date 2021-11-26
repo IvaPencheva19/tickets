@@ -23,7 +23,7 @@ public class Tickets {
     @Column(name = "count")
     private Integer count;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "Event_idEvent", nullable = false)
     private Event eventByEventIdEvent;
 

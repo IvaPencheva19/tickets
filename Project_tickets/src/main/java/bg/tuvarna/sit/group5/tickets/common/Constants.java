@@ -2,7 +2,8 @@ package bg.tuvarna.sit.group5.tickets.common;
 
 public class Constants {
     public static class View{
-        public static final String HELLO_VIEW="/bg/tuvarna/sit/group5/tickets/presentation.views/hello-view.fxml";
+        public static final String HELLO_VIEW="/bg/tuvarna/sit/group5/tickets/presentation.views/WelcomeLoginForm.fxml";
+        public static final String DISTRIBUTOR_VIEW="/bg/tuvarna/sit/group5/tickets/presentation.views/DistributorAccountForm.fxml";
     }
 
     public static class Configurations{

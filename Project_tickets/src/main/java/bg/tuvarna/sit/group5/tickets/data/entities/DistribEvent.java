@@ -14,15 +14,15 @@ public class DistribEvent {
     @Column(name = "idDistEvent")
     private int idDistEvent;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "Event_idEvent1", nullable = false)
     private Event event;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "User_idUser", nullable = false)
     private Distributor distributorsEvent;
 
-    @OneToMany(mappedBy = "distribEvent")
+    @OneToMany(mappedBy = "distribEvent",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SellTickets> sellTicketsByIdDistEvent;
 
     public DistribEvent(){}

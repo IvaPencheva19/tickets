@@ -29,18 +29,18 @@ public class Event {
     @Column(name = "status")
     private Byte status;
 
-    @OneToMany(mappedBy = "event")
+    @OneToMany(mappedBy = "event",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DistribEvent> distribEvent;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "Event_type_idEvent_type", nullable = false)
     private EventType eventType;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "User_idUser", nullable = false)
     private Organizer organizer;
 
-    @OneToMany(mappedBy = "eventByEventIdEvent")
+    @OneToMany(mappedBy = "eventByEventIdEvent",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Tickets> ticketsByIdEvent;
 
     public Event(){}

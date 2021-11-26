@@ -116,4 +116,6 @@ public abstract class User {
     public int hashCode() {
         return Objects.hash(idUser, username, password, firstname, lastname, phone, email);
     }
+
+    public abstract void loadController();
 }

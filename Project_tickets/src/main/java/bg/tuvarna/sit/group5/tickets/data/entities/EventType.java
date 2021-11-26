@@ -19,7 +19,7 @@ public class EventType {
     @Column(name = "type_namel")
     private String typeNamel;
 
-    @OneToMany(mappedBy = "eventType")
+    @OneToMany(mappedBy = "eventType",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Event> eventsByIdEventType;
 
     public EventType(){}

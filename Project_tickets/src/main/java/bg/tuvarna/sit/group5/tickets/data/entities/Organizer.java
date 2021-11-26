@@ -1,5 +1,10 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
+import bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController;
+import bg.tuvarna.sit.group5.tickets.presentation.controllers.OrganizerAccountController;
+import javafx.fxml.FXMLLoader;
+
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
@@ -14,7 +19,7 @@ public class Organizer extends User{
     @Column(name = "honor")
     private Double honor;
 
-    @OneToMany(mappedBy = "organizer")
+    @OneToMany(mappedBy = "organizer",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Event> events;
 
     public Organizer() {}
@@ -54,5 +59,12 @@ public class Organizer extends User{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), honor, events);
+    }
+    @Override
+    public void loadController()
+    {
+        FXMLLoader loader = OpenForm.openNewForm("OrganizerAccountForm.fxml", "Organizer");
+        OrganizerAccountController next = loader.getController();
+        next.setUser(this);
     }
 }

@@ -1,18 +1,20 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.User;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.HelloModel;
+import bg.tuvarna.sit.group5.tickets.service.LoginService;
 import bg.tuvarna.sit.group5.tickets.service.OrganizerService;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-
-public class HelloController implements EventHandler<MouseEvent> {
-    @FXML
+//implements EventHandler<MouseEvent>
+public class HelloController  {
+  /*  @FXML
     private Label welcomeText;
 
    // private final EventTypeService service=EventTypeService.getInstance();
@@ -41,5 +43,39 @@ public class HelloController implements EventHandler<MouseEvent> {
         ObservableList<OrganizerModel>orgModels=service.getAllOrganizers();
         listView.setItems(orgModels);
 
-    }
+    }*/
+
+    private LoginService loginService=new LoginService();
+    @FXML
+    private Button login;
+    @FXML
+    private TextField username;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private Label res;
+
+ @FXML
+ private void userLogIn(ActionEvent event){
+
+     String uname = this.username.getText();
+     String pass = this.password.getText();
+
+     User user = loginService.validateUserLogin(uname, pass);
+     if (user != null)
+     {
+         String name=user.getUsername();
+        // res.setText("Hello"+name);
+         user.loadController();
+         CloseForm.closeForm(event);
+
+     } else
+     {
+         res.setText("Wrong username or password");
+         this.username.clear();
+         this.password.clear();
+         this.username.requestFocus();
+     }
+ }
+
 }

@@ -1,7 +1,15 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 
 
+import bg.tuvarna.sit.group5.tickets.common.Constants;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
+import bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
 import javax.persistence.*;
+import java.net.URL;
 import java.util.Objects;
 import java.util.Set;
 
@@ -17,7 +25,7 @@ public class Distributor extends User{
     @Column(name = "rating")
     private Double rating;
 
-    @OneToMany(mappedBy = "distributorsEvent")
+    @OneToMany(mappedBy = "distributorsEvent",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DistribEvent> eventsByDistributor;
 
     public Distributor(){}
@@ -65,5 +73,13 @@ public class Distributor extends User{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), honor, rating, eventsByDistributor);
+    }
+
+    @Override
+    public void loadController()
+    {
+        FXMLLoader loader = OpenForm.openNewForm("DistributorAccountForm.fxml", "Distributor");
+        DistributorAccountController next = loader.getController();
+        next.setUser(this);
     }
 }
