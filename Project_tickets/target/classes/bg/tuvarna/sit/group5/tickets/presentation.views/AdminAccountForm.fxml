@@ -13,23 +13,23 @@
          <font>
             <Font size="27.0" />
          </font></Label>
-      <Button fx:id="addOrg" layoutX="166.0" layoutY="414.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add organizer">
+      <Button id="addOrganizer" fx:id="addOrg" layoutX="166.0" layoutY="414.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add organizer">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button fx:id="addDist" layoutX="548.0" layoutY="418.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add distributor">
+      <Button id="addDistributor" fx:id="addDist" layoutX="548.0" layoutY="418.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add distributor">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="742.0" layoutY="699.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update organizer">
+      <Button id="updateOrganizer" layoutX="321.0" layoutY="706.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update organizer">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="334.0" layoutY="699.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update distributor">
+      <Button id="updateDistributor" layoutX="744.0" layoutY="706.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update distributor">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="923.0" layoutY="416.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="173.0" style="-fx-background-color: #b2d0a1;" text="Change account">
+      <Button id="changeAccount" layoutX="923.0" layoutY="416.0" mnemonicParsing="false" onAction="#changeAccount" prefHeight="41.0" prefWidth="173.0" style="-fx-background-color: #b2d0a1;" text="Change account">
          <font>
             <Font size="19.0" />
          </font></Button>

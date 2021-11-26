@@ -36,5 +36,11 @@ public class AdminAccountController {
 
     }
 
+    public void changeAccount(){
+        FXMLLoader loader = OpenForm.openNewForm("ChangeAdminAccountForm.fxml", "Admin");
+        ChangeAdminAccountController next = loader.getController();
+        next.loadCombo();
+    }
+
 
 }
