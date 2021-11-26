@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.AdminAccountController">
+<AnchorPane opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.AdminAccountController">
     <children>
-        <Label fx:id="helloDist" layoutX="548.0" layoutY="84.0" prefHeight="39.0" prefWidth="235.0" text="Hello Admin">
+        <Label fx:id="helloDist" layoutX="548.0" layoutY="84.0" prefHeight="40.0" prefWidth="273.0" style="-fx-background-color: #fee04f;" text="Hello Admin">
          <font>
             <Font size="27.0" />
          </font></Label>
+      <Button fx:id="addOrg" layoutX="254.0" layoutY="304.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" text="Add organizer" />
+      <Button fx:id="addDist" layoutX="606.0" layoutY="377.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="30.0" prefWidth="159.0" text="Add distributor" />
+      <Button layoutX="355.0" layoutY="497.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="159.0" text="Update organizer" />
+      <Button layoutX="578.0" layoutY="482.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="159.0" text="Update distributor" />
+      <Button layoutX="698.0" layoutY="564.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="159.0" text="Change account" />
     </children>
 </AnchorPane>
