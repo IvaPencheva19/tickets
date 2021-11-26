@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.OrganizerAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.OrganizerAccountController">
     <children>
-        <Label fx:id="helloDist" layoutX="584.0" layoutY="101.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer">
+        <Label fx:id="helloDist" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#bac2ff">
          <font>
             <Font size="27.0" />
          </font></Label>
+      <Button id="addChangeEvent" layoutX="83.0" layoutY="398.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Add/change event">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="73.0" fitWidth="79.0" layoutX="36.0" layoutY="43.0">
+         <image>
+            <Image url="@../profile1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="108.0" layoutY="164.0">
+         <image>
+            <Image url="@../3163622.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="523.0" layoutY="171.0">
+         <image>
+            <Image url="@../3984692.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="935.0" layoutY="163.0">
+         <image>
+            <Image url="@../1765601.png" />
+         </image>
+      </ImageView>
+      <Button id="viewEvents" layoutX="549.0" layoutY="399.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="View events">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button id="viewDistributors" layoutX="932.0" layoutY="401.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="194.0" style="-fx-background-color: #bac2ff;" text="View distributors">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="298.0" layoutY="469.0">
+         <image>
+            <Image url="@../notification.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="733.0" layoutY="460.0">
+         <image>
+            <Image url="@../user2.png" />
+         </image>
+      </ImageView>
+      <Button id="notifications" layoutX="306.0" layoutY="699.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="172.0" style="-fx-background-color: #bac2ff;" text="Notifications">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button id="accountInformation" layoutX="745.0" layoutY="701.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="209.0" style="-fx-background-color: #bac2ff;" text="Account information ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
