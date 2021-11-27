@@ -6,6 +6,7 @@ import bg.tuvarna.sit.group5.tickets.service.AdminService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class ChangeAdminAccountController {
@@ -13,6 +14,8 @@ public class ChangeAdminAccountController {
     private ComboBox changeCombo;
     @FXML
     private TextField newValue;
+    @FXML
+    private Label hello;
     public void loadCombo(){
         changeCombo.getItems().addAll("username", "password", "firstname", "lastname", "phone",
                 "email");
@@ -56,6 +59,9 @@ public class ChangeAdminAccountController {
     public void goBack(ActionEvent event){
         HelloController.user.loadController();
         CloseForm.closeForm(event);
+    }
+    public void setUser() {
+        hello.setText (HelloController.user.getUsername());
     }
 
 

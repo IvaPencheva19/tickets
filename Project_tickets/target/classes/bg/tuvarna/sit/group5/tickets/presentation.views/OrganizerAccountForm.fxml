@@ -63,7 +63,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button id="accountInformation" layoutX="745.0" layoutY="701.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="209.0" style="-fx-background-color: #bac2ff;" text="Account information ">
+      <Button id="accountInformation" layoutX="745.0" layoutY="701.0" mnemonicParsing="false" onAction="#accInfo" prefHeight="42.0" prefWidth="209.0" style="-fx-background-color: #bac2ff;" text="Account information ">
          <font>
             <Font size="19.0" />
          </font>
