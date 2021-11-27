@@ -66,10 +66,7 @@ public class AdminAccountController {
         FXMLLoader loader = OpenForm.openNewForm("UpdateDistributorAccountForm.fxml", "Update Distributor");
         UpdateDistributorAccountController next = loader.getController();
         next.loadDist();
+        next.setUser();
         CloseForm.closeForm(event);
     }
-
-
-
-
 }

@@ -44,7 +44,6 @@ public class UpdateOrganizerAccountController {
 
         if(res.equals("username")){
             service.changeUserName(org, newVal);
-
         }
 
         if(res.equals("password")){
@@ -74,6 +73,14 @@ public class UpdateOrganizerAccountController {
         newValue.clear();
         userName.clear();
     }
+
+    public void deleteOrganizer(){
+        String uname=userName.getText();
+        Organizer org=service.getByUsername(uname);
+
+        service.deleteOrganizer(org);
+    }
+
     public void goBack(ActionEvent event){
         HelloController.user.loadController();
         CloseForm.closeForm(event);

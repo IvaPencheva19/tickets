@@ -1,6 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
+import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
 import javafx.collections.FXCollections;
@@ -61,12 +62,23 @@ public class DistributorService {
         repository.update(distributor);
     }
 
+    public void changeRating(Distributor distributor, double rating){
+        distributor.setRating(rating);
+        repository.update(distributor);
+    }
+
+
     public ObservableList<DistributorModel> getAllDistributors() {
         List<Distributor> distribs = repository.getAllDistributors();
 
         return FXCollections.observableList(
                 distribs.stream().map(t -> new DistributorModel(t.getUsername(),t.getPassword(),t.getFirstname(),
                         t.getLastname(), t.getPhone(), t.getEmail(), t.getHonor(), t.getRating())).collect(Collectors.toList()));
+    }
+
+    public Distributor getByUsername(String username){
+        Distributor ret=(Distributor) repository.getByUsername(username);
+        return ret;
     }
 
 }
