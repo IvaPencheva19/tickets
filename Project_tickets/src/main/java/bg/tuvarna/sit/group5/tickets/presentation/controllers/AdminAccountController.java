@@ -36,7 +36,7 @@ public class AdminAccountController {
         CloseForm.closeForm(event);
     }
     public void addDistributor(ActionEvent event){
-        FXMLLoader loader = OpenForm.openNewForm("AddDistributorAccountForm.fxml", "Admin");
+        FXMLLoader loader = OpenForm.openNewForm("AddDistributorAccountForm.fxml", "Admin-");
         AddDistributorAccountController next = loader.getController();
         next.setUser();
         CloseForm.closeForm(event);
