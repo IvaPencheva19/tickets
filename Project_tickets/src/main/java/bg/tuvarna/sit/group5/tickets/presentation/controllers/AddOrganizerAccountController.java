@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import org.apache.log4j.Logger;
 
 public class AddOrganizerAccountController {
+
     private OrganizerService orgService=new OrganizerService();
     @FXML
     private Button add;
@@ -33,6 +34,8 @@ public class AddOrganizerAccountController {
     @FXML
     private TextField honor;
     @FXML
+    private Label hello;
+    @FXML
     private void addOrganizer(ActionEvent event){
 
         String uname = this.username.getText();
@@ -46,4 +49,12 @@ public class AddOrganizerAccountController {
         orgService.createOrganizer(newOrg);
 
     }
+    public void goBack(ActionEvent event){
+        HelloController.user.loadController();
+        CloseForm.closeForm(event);
+    }
+    public void setUser() {
+        hello.setText (HelloController.user.getUsername());
+    }
+
 }

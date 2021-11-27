@@ -68,5 +68,10 @@
             <Font size="19.0" />
          </font>
       </Button>
+      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#logOut" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Log out">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

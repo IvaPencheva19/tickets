@@ -22,8 +22,12 @@
             <Image url="@../profile.png" />
          </image>
       </ImageView>
-      <TextField layoutX="484.0" layoutY="325.0" />
-      <ComboBox id="changeCombo" fx:id="changeCombo" layoutX="261.0" layoutY="238.0" prefHeight="30.0" prefWidth="609.0" />
-      <Button layoutX="533.0" layoutY="407.0" mnemonicParsing="false" text="Button" />
+      <TextField fx:id="newValue" layoutX="514.0" layoutY="321.0" prefHeight="43.0" prefWidth="232.0" />
+      <ComboBox fx:id="changeCombo" layoutX="327.0" layoutY="231.0" prefHeight="45.0" prefWidth="630.0" />
+      <Button layoutX="554.0" layoutY="408.0" mnemonicParsing="false" onAction="#changeValue" prefHeight="46.0" prefWidth="147.0" style="-fx-background-color: #b2d0a1;" text="Change">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

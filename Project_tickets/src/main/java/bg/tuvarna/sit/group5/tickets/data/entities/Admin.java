@@ -24,4 +24,5 @@ public class Admin extends User{
         AdminAccountController next = loader.getController();
         next.setUser(this);
     }
+
 }

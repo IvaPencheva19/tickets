@@ -18,12 +18,12 @@
             <Image url="@../profile_dist.png" />
          </image>
       </ImageView>
-      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Sell ticket">
+      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Sell ticket">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="events" layoutX="558.0" layoutY="428.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #e8c4ff;" text="Events">
+      <Button fx:id="events" layoutX="558.0" layoutY="428.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #e8c4ff;" text="Events">
          <font>
             <Font size="19.0" />
          </font>
@@ -68,5 +68,10 @@
             <Image url="@../3163690.png" />
          </image>
       </ImageView>
+      <Button fx:id="logout" layoutX="1071.0" layoutY="52.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Log out">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
