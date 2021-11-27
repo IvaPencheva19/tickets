@@ -69,4 +69,8 @@ public class OrganizerService {
                 orgs.stream().map(t -> new OrganizerModel(t.getUsername(),t.getPassword(),t.getFirstname(),
                         t.getLastname(), t.getPhone(), t.getEmail(), t.getHonor())).collect(Collectors.toList()));
     }
+    public Organizer getByUsername(String username){
+        Organizer ret=(Organizer)repository.getByUsername(username);
+        return ret;
+    }
 }

@@ -74,3 +74,4 @@
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - User update errorIllegal attempt to associate a collection with two open sessions. Collection : [bg.tuvarna.sit.group5.tickets.data.entities.Organizer.events#7]

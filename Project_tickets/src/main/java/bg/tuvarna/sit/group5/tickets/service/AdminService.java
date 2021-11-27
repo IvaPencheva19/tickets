@@ -37,8 +37,8 @@ public class AdminService {
        adm.setPhone(phone);
         repository.update(adm);
     }
-    public void changeEmail(Admin adm, String email){
-       adm.setEmail(email);
+    public void changeEmail(Admin adm, String email) {
+        adm.setEmail(email);
         repository.update(adm);
     }
 

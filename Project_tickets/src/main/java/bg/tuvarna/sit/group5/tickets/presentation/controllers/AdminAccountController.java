@@ -58,6 +58,7 @@ public class AdminAccountController {
         FXMLLoader loader = OpenForm.openNewForm("UpdateOrganizerAccountForm.fxml", "Update Organizer");
         UpdateOrganizerAccountController next = loader.getController();
         next.load();
+        next.setUser();
         CloseForm.closeForm(event);
     }
 

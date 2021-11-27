@@ -40,6 +40,7 @@ public class UserRepository implements DAORepository<User>,DAOUser{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -134,6 +135,7 @@ public class UserRepository implements DAORepository<User>,DAOUser{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return retUser;
     }
@@ -155,6 +157,7 @@ public class UserRepository implements DAORepository<User>,DAOUser{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return users;
     }
@@ -176,6 +179,7 @@ public class UserRepository implements DAORepository<User>,DAOUser{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return users;
     }
