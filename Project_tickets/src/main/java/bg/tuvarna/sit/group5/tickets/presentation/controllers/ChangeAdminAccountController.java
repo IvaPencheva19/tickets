@@ -1,7 +1,9 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Admin;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.service.AdminService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -49,6 +51,11 @@ public class ChangeAdminAccountController {
             admSer.changeEmail(adm, val);
             newValue.clear();
         }
+    }
+
+    public void goBack(ActionEvent event){
+        HelloController.user.loadController();
+        CloseForm.closeForm(event);
     }
 
 

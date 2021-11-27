@@ -39,6 +39,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -55,6 +56,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -71,6 +73,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
 
     }
@@ -91,6 +94,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return retDistEv;
     }
@@ -111,6 +115,7 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return distributorEvents;
     }

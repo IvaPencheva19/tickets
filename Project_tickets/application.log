@@ -74,3 +74,6 @@
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: query did not return a unique result: 2
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: query did not return a unique result: 2
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: query did not return a unique result: 2

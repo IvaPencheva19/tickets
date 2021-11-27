@@ -25,7 +25,7 @@
             <font>
                 <Font size="19.0" />
             </font></Button>
-        <Button layoutX="751.0" layoutY="689.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update distributor">
+        <Button layoutX="751.0" layoutY="689.0" mnemonicParsing="false" onAction="#updateDistributorAccount" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update distributor">
             <font>
                 <Font size="19.0" />
             </font></Button>
