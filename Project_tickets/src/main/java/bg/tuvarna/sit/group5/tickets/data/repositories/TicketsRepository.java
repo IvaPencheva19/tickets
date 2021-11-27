@@ -38,6 +38,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -54,6 +55,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -70,6 +72,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
 
     }
@@ -91,6 +94,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return retTickets;
     }
@@ -111,6 +115,7 @@ public class TicketsRepository implements DAORepository<Tickets>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return tickets;
     }

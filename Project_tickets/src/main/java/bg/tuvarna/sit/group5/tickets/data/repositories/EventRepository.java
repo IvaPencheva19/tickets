@@ -42,6 +42,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -58,6 +59,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
     }
 
@@ -74,6 +76,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
 
     }
@@ -95,6 +98,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return retEvent;
     }
@@ -115,6 +119,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return events;
     }
@@ -136,6 +141,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return events;
     }
@@ -157,6 +163,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+            session.close();
         }
         return events;
     }
