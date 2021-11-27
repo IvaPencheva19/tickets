@@ -51,6 +51,7 @@ public class AdminAccountController {
         FXMLLoader loader = OpenForm.openNewForm("ChangeAdminAccountForm.fxml", "Admin");
         ChangeAdminAccountController next = loader.getController();
         next.loadCombo();
+        next.setUser();
         CloseForm.closeForm(event);
     }
 

@@ -27,4 +27,12 @@ public class OrganizerAccountController {
         FXMLLoader loader = OpenForm.openNewForm("WelcomeLoginForm.fxml", "Login");
         CloseForm.closeForm(event);
     }
+    public void accInfo(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("OrganizerAccountInformationForm.fxml", "Update Distributor");
+        OrganizerAccountInformationController next = loader.getController();
+        next.load();
+        next.setUser();
+
+        CloseForm.closeForm(event);
+    }
 }
