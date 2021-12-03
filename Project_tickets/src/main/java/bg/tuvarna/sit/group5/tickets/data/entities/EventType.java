@@ -1,8 +1,10 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 @Table(name = "event_type", schema = "tickets_oop")
@@ -19,8 +21,8 @@ public class EventType {
     @Column(name = "type_namel")
     private String typeNamel;
 
-    @OneToMany(mappedBy = "eventType",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Event> eventsByIdEventType;
+    @OneToMany(mappedBy = "eventType",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Event> eventsByIdEventType=new HashSet<>();
 
     public EventType(){}
 
@@ -65,5 +67,8 @@ public class EventType {
 
     public void setEventsByIdEventType(Set<Event> eventsByIdEventType) {
         this.eventsByIdEventType = eventsByIdEventType;
+    }
+    public void addEvent(Event event){
+        this.eventsByIdEventType.add(event);
     }
 }

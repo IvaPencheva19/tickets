@@ -1,5 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
+import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.repositories.EventTypeRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventTypeModel;
@@ -34,4 +36,21 @@ public class EventTypeService {
         return FXCollections.observableList(
                 types.stream().map(t -> new EventTypeModel(t.getTypeNamel())).collect(Collectors.toList()));
     }
+    public EventType getEventByName(String name){
+        EventType ret= repository.getByName(name);
+        return ret;
+    }
+    public void createEventType(EventType evType){
+        repository.save(evType);
+    }
+
+    public void deleteEventType(EventType evType){
+        repository.delete(evType);
+    }
+
+    public void addEvent(EventType et, Event event){
+        et.addEvent(event);
+        repository.update(et);
+    }
+
 }

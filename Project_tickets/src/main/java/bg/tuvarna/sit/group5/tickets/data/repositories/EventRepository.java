@@ -3,6 +3,7 @@ package bg.tuvarna.sit.group5.tickets.data.repositories;
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
+import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -10,6 +11,7 @@ import org.hibernate.Transaction;
 
 import javax.persistence.Query;
 import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -59,6 +61,7 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         }
         finally {
             transaction.commit();
+
             session.close();
         }
     }
@@ -124,15 +127,16 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         return events;
     }
     @Override
-    public List<Event> getAllEventsByPlace(String place) {
+    public List<Event> getAllEventsByPlace(Organizer org,String place) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
         List<Event>events=new LinkedList<>();
 
         try {
-            String jql = "SELECT e FROM Event e WHERE  e.place= :place";
+            String jql = "SELECT e FROM Event e WHERE  e.place= :place AND e.organizer= :org";
             Query query = session.createQuery(jql);
             query.setParameter("place", place);
+            query.setParameter("org", org);
             events.addAll(query.getResultList());
             log.info("Get all distributors");
         }
@@ -146,15 +150,16 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         return events;
     }
     @Override
-    public List<Event> getAllEventsByDate(Date date) {
+    public List<Event> getAllEventsByDate(Organizer org,Date date) {
         Session session=Connection.openSession();
         Transaction transaction=session.beginTransaction();
         List<Event>events=new LinkedList<>();
 
         try {
-            String jql = "SELECT e FROM Event e WHERE  e.date= :date";
+            String jql = "SELECT e FROM Event e WHERE  e.date= :date AND e.organizer= :org";
             Query query = session.createQuery(jql);
             query.setParameter("date", date);
+            query.setParameter("org", org);
             events.addAll(query.getResultList());
             log.info("Get all distributors");
         }
@@ -168,7 +173,95 @@ public class EventRepository implements DAORepository<Event>,DAOEvent<Event>{
         return events;
     }
 
+    public List<Event> getAllEventsByDates(Organizer org, LocalDate date, LocalDate date2) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Event>events=new LinkedList<>();
 
+        try {
+            String jql = "SELECT e FROM Event e WHERE  e.date> :date AND e.date< :date2 AND e.organizer= :org";
+            Query query = session.createQuery(jql);
+            query.setParameter("date", date);
+            query.setParameter("date2", date2);
+            query.setParameter("org", org);
+            events.addAll(query.getResultList());
+            log.info("Get all distributors");
+        }
+        catch (Exception ex){
+            log.error("Get Distributor error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+            session.close();
+        }
+        return events;
+    }
 
+    public Event getByName(String name) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        Event retEvent;
 
+        try {
+            String jql = "SELECT u FROM Event u WHERE name = :name";
+            Query query = session.createQuery(jql, Event.class);
+            query.setParameter("name", name);
+            retEvent= (Event)query.getSingleResult();
+            log.info("Get type by name");
+        }
+        catch (Exception ex){
+            retEvent=null;
+            log.error("Get event error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+            session.close();
+        }
+        return retEvent;
+    }
+
+    public List<Event> getAllEventsByStatus(Organizer org,Byte status) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Event>events=new LinkedList<>();
+
+        try {
+            String jql = "SELECT e FROM Event e WHERE  e.status= :status AND e.organizer= :org";
+            Query query = session.createQuery(jql);
+            query.setParameter("status", status);
+            query.setParameter("org", org);
+            events.addAll(query.getResultList());
+            log.info("Get all distributors");
+        }
+        catch (Exception ex){
+            log.error("Get Distributor error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+            session.close();
+        }
+        return events;
+    }
+
+    public List<Event> getAllEventsByOrganizer(Organizer org) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Event>events=new LinkedList<>();
+
+        try {
+            String jql = "SELECT e FROM Event e WHERE  e.organizer= :organizer";
+            Query query = session.createQuery(jql);
+            query.setParameter("organizer", org);
+            events.addAll(query.getResultList());
+            log.info("Get all events");
+        }
+        catch (Exception ex){
+            log.error("Get Events error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+            session.close();
+        }
+        return events;
+    }
 }

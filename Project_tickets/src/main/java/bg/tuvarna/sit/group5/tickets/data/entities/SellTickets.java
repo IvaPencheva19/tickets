@@ -26,19 +26,22 @@ public class SellTickets {
     @JoinColumn(name="tickets_idTickets")
     private Tickets ticket_type;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "Distrib_event_idDistEvent", nullable = false)
-    private DistribEvent distribEvent;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_idUser", nullable = false)
+    private Distributor distrib;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "event_idEvent", nullable = false)
+    private Event event;
 
     public SellTickets(){}
 
     public SellTickets(Integer count, Integer seat, String custumer_name,
-                       Tickets ticket_type, DistribEvent distribEvent) {
+                       Tickets ticket_type, Distributor distribEvent) {
         this.count = count;
         this.seat = seat;
         this.custumer_name = custumer_name;
         this.ticket_type = ticket_type;
-        this.distribEvent = distribEvent;
+        this.distrib = distribEvent;
     }
 
 
@@ -59,12 +62,12 @@ public class SellTickets {
         this.count = count;
     }
 
-    public DistribEvent getDistribEvent() {
-        return distribEvent;
+    public Distributor getDistributor() {
+        return distrib;
     }
 
-    public void setDistribEvent(DistribEvent distribEvent) {
-        this.distribEvent = distribEvent;
+    public void setDistribEvent(Distributor distribEvent) {
+        this.distrib = distribEvent;
     }
 
     public Integer getSeat() {
@@ -91,17 +94,37 @@ public class SellTickets {
         this.ticket_type = ticket_type;
     }
 
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public Distributor getDistrib() {
+        return distrib;
+    }
+
+    public void setDistrib(Distributor distrib) {
+        this.distrib = distrib;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SellTickets that = (SellTickets) o;
-        return idSell == that.idSell && Objects.equals(count, that.count) && Objects.equals(seat, that.seat) && Objects.equals(custumer_name, that.custumer_name) && Objects.equals(ticket_type, that.ticket_type) && Objects.equals(distribEvent, that.distribEvent);
+        return idSell == that.idSell && Objects.equals(count, that.count) && Objects.equals(seat, that.seat) && Objects.equals(custumer_name, that.custumer_name) && Objects.equals(ticket_type, that.ticket_type) && Objects.equals(distrib, that.distrib) && Objects.equals(event, that.event);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idSell, count, seat, custumer_name, ticket_type, distribEvent);
+        return Objects.hash(idSell, count, seat, custumer_name, ticket_type, distrib, event);
     }
 }
 

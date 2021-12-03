@@ -1,4 +1,4 @@
-package bg.tuvarna.sit.group5.tickets.presentation.models;
+/*package bg.tuvarna.sit.group5.tickets.presentation.models;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
@@ -16,3 +16,4 @@ public class DistribEventModel {
         return  String.format("%s %s ",event, distributor);
     }
 }
+*/

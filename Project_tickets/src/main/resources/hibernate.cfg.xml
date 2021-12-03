@@ -12,7 +12,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.DistribEvent"/>
+
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.Event"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.EventType"/>
         <mapping class="bg.tuvarna.sit.group5.tickets.data.entities.SellTickets"/>

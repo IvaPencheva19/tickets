@@ -1,4 +1,4 @@
-package bg.tuvarna.sit.group5.tickets.data.entities;
+/*package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -49,11 +49,11 @@ public class DistribEvent {
     }
 
 
-    public User getDistributorsEvent() {
+    public Distributor getDistributor() {
         return distributorsEvent;
     }
 
-    public void setDistributorsEvent(Distributor distributorsEvent) {
+    public void setDistributor(Distributor distributorsEvent) {
         this.distributorsEvent = distributorsEvent;
     }
 
@@ -78,4 +78,4 @@ public class DistribEvent {
     public int hashCode() {
         return Objects.hash(idDistEvent, event, distributorsEvent, sellTicketsByIdDistEvent);
     }
-}
+}*/

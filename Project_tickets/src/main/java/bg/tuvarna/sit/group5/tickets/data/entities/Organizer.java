@@ -6,8 +6,10 @@ import bg.tuvarna.sit.group5.tickets.presentation.controllers.OrganizerAccountCo
 import javafx.fxml.FXMLLoader;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 @DiscriminatorValue("organizer")
@@ -19,8 +21,8 @@ public class Organizer extends User{
     @Column(name = "honor")
     private Double honor;
 
-    @OneToMany(mappedBy = "organizer",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Event> events;
+    @OneToMany(mappedBy = "organizer",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Event> events=new HashSet<>();
 
     public Organizer() {}
 
@@ -46,6 +48,9 @@ public class Organizer extends User{
     public void setEvents(Set<Event> events) {
         this.events = events;
     }
+    public void addEvent(Event event){
+        events.add(event);
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -56,10 +61,7 @@ public class Organizer extends User{
         return Objects.equals(honor, organizer.honor) && Objects.equals(events, organizer.events);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), honor, events);
-    }
+
     @Override
     public void loadController()
     {

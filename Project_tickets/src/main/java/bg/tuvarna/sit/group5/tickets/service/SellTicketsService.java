@@ -33,7 +33,7 @@ public class SellTicketsService {
 
         return FXCollections.observableList(
                 sellTickets.stream().map(t -> new SellTicketsModel(t.getCount(),t.getSeat(),t.getCustumer_name(),
-                        t.getTicket_type(), t.getDistribEvent())).collect(Collectors.toList()));
+                        t.getTicket_type(), t.getDistributor())).collect(Collectors.toList()));
     }
 
 

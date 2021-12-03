@@ -10,8 +10,10 @@ import javafx.scene.Scene;
 
 import javax.persistence.*;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 @DiscriminatorValue("distributor")
@@ -25,8 +27,14 @@ public class Distributor extends User{
     @Column(name = "rating")
     private Double rating;
 
-    @OneToMany(mappedBy = "distributorsEvent",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<DistribEvent> eventsByDistributor;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="distrib_event",joinColumns=@JoinColumn(name="user_idUser1"),
+    inverseJoinColumns=@JoinColumn(name="event_idEvent"))
+    private Set<Event> eventsByDistributor=new HashSet<>();
+
+    @OneToMany(mappedBy = "distrib",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<SellTickets> sellTickets;
+
 
     public Distributor(){}
 
@@ -53,13 +61,32 @@ public class Distributor extends User{
         this.rating = rating;
     }
 
-    public Set<DistribEvent> getEventsByDistributor() {
+    public Set<Event> getEventsByDistributor() {
         return eventsByDistributor;
     }
 
-    public void setEventsByDistributor(Set<DistribEvent> eventsByDistributor) {
+    public void setEventsByDistributor(Set<Event> eventsByDistributor) {
         this.eventsByDistributor = eventsByDistributor;
     }
+
+    public Set<SellTickets> getSellTickets() {
+        return sellTickets;
+    }
+
+    public void setSellTickets(Set<SellTickets> sellTickets) {
+        this.sellTickets = sellTickets;
+    }
+
+    public void addEvent(Event event){
+        eventsByDistributor.add(event);
+    }
+    public void addSellTicket(SellTickets ticket){
+       sellTickets.add(ticket);
+    }
+    public void removeEvent(Event event){
+        eventsByDistributor.remove(event);
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -67,12 +94,12 @@ public class Distributor extends User{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Distributor that = (Distributor) o;
-        return Objects.equals(honor, that.honor) && Objects.equals(rating, that.rating) && Objects.equals(eventsByDistributor, that.eventsByDistributor);
+        return Objects.equals(honor, that.honor) && Objects.equals(rating, that.rating) && Objects.equals(eventsByDistributor, that.eventsByDistributor) && Objects.equals(sellTickets, that.sellTickets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), honor, rating, eventsByDistributor);
+        return Objects.hash(super.hashCode(), honor);
     }
 
     @Override

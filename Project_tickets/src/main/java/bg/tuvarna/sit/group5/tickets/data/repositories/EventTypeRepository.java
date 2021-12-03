@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.data.repositories;
 
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
 import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
+import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -120,5 +121,27 @@ public class EventTypeRepository implements DAORepository<EventType>{
         return eventTypes;
     }
 
+
+    public EventType getByName(String name) {
+        Session session=Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        EventType retType;
+        try {
+            String jql = "SELECT u FROM EventType u WHERE typeNamel = :name";
+            Query query = session.createQuery(jql,EventType.class);
+            query.setParameter("name", name);
+            retType= (EventType)query.getSingleResult();
+            log.info("Get type by name");
+        }
+        catch (Exception ex){
+            retType=null;
+            log.error("Get type error: " +ex.getMessage());
+        }
+        finally {
+            transaction.commit();
+            session.close();
+        }
+        return retType;
+    }
 
 }

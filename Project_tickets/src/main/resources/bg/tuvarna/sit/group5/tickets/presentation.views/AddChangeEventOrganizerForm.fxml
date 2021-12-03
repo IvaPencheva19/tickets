@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.AddChangeEventOrganizerController">
+   <children>
+      <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#bac2ff">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Button id="addChangeEvent" layoutX="188.0" layoutY="409.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Add event">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="73.0" fitWidth="79.0" layoutX="36.0" layoutY="43.0">
+         <image>
+            <Image url="@../profile1.png" />
+         </image>
+      </ImageView>
+      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button id="addChangeEvent" layoutX="529.0" layoutY="409.0" mnemonicParsing="false" onAction="#changeEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Change event">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button id="addChangeEvent" layoutX="882.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Delete event">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

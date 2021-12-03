@@ -2,7 +2,7 @@ package bg.tuvarna.sit.group5.tickets.data.repositories;
 
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
 
-import bg.tuvarna.sit.group5.tickets.data.entities.DistribEvent;
+
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
-public class DistributorEventRepository implements DAORepository<DistribEvent>{
+/*public class DistributorEventRepository implements DAORepository<DistribEvent>{
 
     private static final Logger log= Logger.getLogger(DistributorEventRepository.class);
 
@@ -121,4 +121,4 @@ public class DistributorEventRepository implements DAORepository<DistribEvent>{
     }
 
 
-}
+}*/

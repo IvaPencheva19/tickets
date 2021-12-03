@@ -3,16 +3,17 @@ package bg.tuvarna.sit.group5.tickets.service;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
+import bg.tuvarna.sit.group5.tickets.data.entities.Tickets;
 import bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository;
-import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
-import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class EventService {
@@ -34,12 +35,12 @@ public class EventService {
         repository.delete(event);
     }
 
-    public void changeDate(Event event, Date date){
+    public void changeDate(Event event, LocalDate date){
         event.setDate(date);
         repository.update(event);
     }
 
-    public void changeTime(Event event, Time time){
+    public void changeTime(Event event, LocalTime time){
         event.setTime(time);
         repository.update(event);
     }
@@ -61,16 +62,46 @@ public class EventService {
         event.setOrganizer(organizer);
         repository.update(event);
     }
-//da napravim set-ovete
+    public void changeName(Event event, String name){
+        event.setName(name);
+        repository.update(event);
+    }
+    public void changeDescription(Event event, String desc){
+        event.setDescription(desc);
+        repository.update(event);
+    }
 
 
     public ObservableList<EventModel> getAllEvents() {
         List<Event> events = repository.getAll();
 
         return FXCollections.observableList(
-                events.stream().map(t -> new EventModel(t.getDate(),t.getTime(),t.getPlace(),
+                events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
                         t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
     }
+    public void addTickets(Event event, Set<Tickets> tickets){
+     event.setTicketsByIdEvent(tickets);
+    }
+public Event getById(int id){
+        Event ret=repository.getById(id);
+        return ret;
+}
+public Event getByName(String name){
+    Event ret=repository.getByName(name);
+    return ret;
+}
+    public ObservableList<EventModel> getAllByOrganizer(Organizer org) {
+        List<Event> events = repository.getAllEventsByOrganizer(org);
 
+        return FXCollections.observableList(
+                events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
+                        t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
+    }
+    public ObservableList<EventModel> getAllByDates(Organizer org, LocalDate date,LocalDate date2) {
+        List<Event> events = repository.getAllEventsByDates(org,date,date2);
 
+        return FXCollections.observableList(
+                events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
+                        t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
+    }
 }

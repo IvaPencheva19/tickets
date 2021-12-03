@@ -23,17 +23,18 @@ public class Tickets {
     @Column(name = "count")
     private Integer count;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Event_idEvent", nullable = false)
     private Event eventByEventIdEvent;
 
     public Tickets(){}
 
-    public Tickets(String type, Double price, Integer count, Event eventByEventIdEvent) {
+    public Tickets(String type, Double price, Integer count,Event event) {
         this.type = type;
         this.price = price;
         this.count = count;
-        this.eventByEventIdEvent = eventByEventIdEvent;
+        this.eventByEventIdEvent=event;
+
     }
 
     public int getIdTickets() {
@@ -79,7 +80,7 @@ public class Tickets {
         this.eventByEventIdEvent = eventByEventIdEvent;
     }
 
-    @Override
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -87,8 +88,6 @@ public class Tickets {
         return idTickets == tickets.idTickets && Objects.equals(type, tickets.type) && Objects.equals(price, tickets.price) && Objects.equals(count, tickets.count) && Objects.equals(eventByEventIdEvent, tickets.eventByEventIdEvent);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(idTickets, type, price, count, eventByEventIdEvent);
-    }
+
+
 }

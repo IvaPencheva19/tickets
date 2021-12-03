@@ -1,5 +1,6 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
@@ -72,5 +73,9 @@ public class OrganizerService {
     public Organizer getByUsername(String username){
         Organizer ret=(Organizer)repository.getByUsername(username);
         return ret;
+    }
+    public void addEvent(Organizer org, Event event){
+        org.addEvent(event);
+        repository.update(org);
     }
 }

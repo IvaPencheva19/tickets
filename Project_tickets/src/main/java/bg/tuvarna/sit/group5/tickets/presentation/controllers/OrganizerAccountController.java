@@ -28,11 +28,23 @@ public class OrganizerAccountController {
         CloseForm.closeForm(event);
     }
     public void accInfo(ActionEvent event){
-        FXMLLoader loader = OpenForm.openNewForm("OrganizerAccountInformationForm.fxml", "Update Distributor");
+        FXMLLoader loader = OpenForm.openNewForm("OrganizerAccountInformationForm.fxml", "Organizer information");
         OrganizerAccountInformationController next = loader.getController();
         next.load();
         next.setUser();
 
+        CloseForm.closeForm(event);
+    }
+    public void manageEvents(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("AddChangeEventOrganizerForm.fxml", "Manage Events");
+        AddChangeEventOrganizerController next = loader.getController();
+        next.setUser();
+        CloseForm.closeForm(event);
+    }
+    public void viewEvents(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("ViewEventsByOrganizerForm.fxml", "View Events");
+        ViewEventsByOrganizerController next = loader.getController();
+      //  next.setUser();
         CloseForm.closeForm(event);
     }
 }

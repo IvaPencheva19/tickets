@@ -1,6 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
+import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
@@ -79,6 +80,14 @@ public class DistributorService {
     public Distributor getByUsername(String username){
         Distributor ret=(Distributor) repository.getByUsername(username);
         return ret;
+    }
+    public void addEvent(Distributor distributor, Event event){
+        distributor.addEvent(event);
+        repository.update(distributor);
+    }
+    public void removeEvent(Distributor distributor, Event event){
+        distributor.removeEvent(event);
+        repository.update(distributor);
     }
 
 }

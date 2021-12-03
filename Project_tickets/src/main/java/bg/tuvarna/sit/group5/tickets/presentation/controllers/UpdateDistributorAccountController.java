@@ -30,6 +30,7 @@ public class UpdateDistributorAccountController {
 
     public void loadDist() {
         ObservableList<DistributorModel> distributors=service.getAllDistributors();
+
         loadList.setItems(distributors);
         changeCombo.getItems().addAll("username", "password", "firstname", "lastname", "phone",
                 "email","honor", "rating");
