@@ -45,7 +45,7 @@ public class Distributor extends User{
         this.rating = rating;
     }
 
-    public double getHonor() {
+    public Double getHonor() {
         return honor;
     }
 

@@ -28,7 +28,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="accountinfo" layoutX="752.0" layoutY="709.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: #e8c4ff;" text="Account information">
+      <Button fx:id="accountinfo" layoutX="752.0" layoutY="709.0" mnemonicParsing="false" onAction="#accInfo" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: #e8c4ff;" text="Account information">
          <font>
             <Font size="19.0" />
          </font>

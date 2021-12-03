@@ -28,4 +28,12 @@ public class DistributorAccountController {
         FXMLLoader loader = OpenForm.openNewForm("WelcomeLoginForm.fxml", "Login");
         CloseForm.closeForm(event);
     }
+    public void accInfo(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("DistributorAccountInformationForm.fxml", "Distributor info");
+        DistributorAccountInformationController next = loader.getController();
+        next.loadDist();
+        next.setUser();
+
+        CloseForm.closeForm(event);
+    }
 }
