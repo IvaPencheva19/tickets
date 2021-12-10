@@ -36,4 +36,13 @@ public class DistributorAccountController {
 
         CloseForm.closeForm(event);
     }
+    public void viewEvents(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("ViewEventsByDistributorForm.fxml", "View events");
+       ViewEventsByDistributorController next = loader.getController();
+
+        next.setUser();
+
+        CloseForm.closeForm(event);
+    }
+
 }

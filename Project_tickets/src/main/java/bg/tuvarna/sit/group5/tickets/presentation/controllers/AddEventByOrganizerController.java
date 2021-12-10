@@ -123,8 +123,7 @@ public class AddEventByOrganizerController {
         for(Distributor d:distributors){
             dserv.addEvent(d,toAdd);
         }
-          //Event ev=evserv.getById(id);
-        //evserv.
+
          tickets.clear();
         distributors.clear();
 

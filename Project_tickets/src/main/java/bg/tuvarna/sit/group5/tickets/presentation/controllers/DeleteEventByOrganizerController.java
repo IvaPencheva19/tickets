@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
+import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
@@ -37,7 +38,7 @@ public class DeleteEventByOrganizerController {
 
     public void load(){
 
-        ObservableList<EventModel> events=evserv.getAllEvents();
+        ObservableList<EventModel> events=evserv.getAllByOrganizer((Organizer)HelloController.user);
         listEvents.setItems(events);
 
     }

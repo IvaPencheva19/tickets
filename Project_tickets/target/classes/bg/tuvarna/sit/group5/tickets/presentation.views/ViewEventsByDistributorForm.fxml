@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" styleClass="button" stylesheets="@ButtonsStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.ViewEventsByOrganizerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.ViewEventsByDistributorController">
    <children>
-      <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#bac2ff">
+      <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#ffccdd">
          <font>
             <Font size="27.0" />
          </font>
@@ -21,12 +21,12 @@
             <Image url="@../profile1.png" />
          </image>
       </ImageView>
-      <Button layoutX="591.0" layoutY="655.0" mnemonicParsing="false" onAction="#viewEvents" prefHeight="42.0" prefWidth="157.0" text="View events">
+      <Button id="viewEvents" layoutX="591.0" layoutY="655.0" mnemonicParsing="false" onAction="#viewEvents" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #e8c4ff;" text="View events">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" text="Back">
+      <Button id="viewEvents" fx:id="goBack" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #e8c4ff;" text="Back">
          <font>
             <Font size="19.0" />
          </font>
@@ -34,12 +34,12 @@
       <ListView fx:id="listEvents" layoutX="245.0" layoutY="271.0" prefHeight="235.0" prefWidth="841.0" />
       <DatePicker fx:id="fromDate" layoutX="405.0" layoutY="570.0" />
       <DatePicker fx:id="toDate" layoutX="843.0" layoutY="567.0" />
-      <Label fx:id="hello2" layoutX="258.0" layoutY="224.0" prefHeight="39.0" prefWidth="99.0" text="Name" textFill="#bac2ff">
+      <Label fx:id="hello2" layoutX="258.0" layoutY="224.0" prefHeight="39.0" prefWidth="99.0" text="Name" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello21" layoutX="390.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Date" textFill="#bac2ff">
+      <Label fx:id="hello21" layoutX="390.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Date" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
@@ -49,37 +49,37 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello211" layoutX="502.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Time" textFill="#bac2ff">
+      <Label fx:id="hello211" layoutX="502.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Time" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello2111" layoutX="602.0" layoutY="221.0" prefHeight="39.0" prefWidth="99.0" text="Place" textFill="#bac2ff">
+      <Label fx:id="hello2111" layoutX="602.0" layoutY="221.0" prefHeight="39.0" prefWidth="99.0" text="Place" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello21111" layoutX="707.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Status" textFill="#bac2ff">
+      <Label fx:id="hello21111" layoutX="707.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Status" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello21112" layoutX="833.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Type" textFill="#bac2ff">
+      <Label fx:id="hello21112" layoutX="833.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Type" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello21113" layoutX="926.0" layoutY="221.0" prefHeight="39.0" prefWidth="131.0" text="Organizer" textFill="#bac2ff">
+      <Label fx:id="hello21113" layoutX="926.0" layoutY="221.0" prefHeight="39.0" prefWidth="131.0" text="Organizer" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello21114" layoutX="300.0" layoutY="564.0" prefHeight="39.0" prefWidth="99.0" text="From" textFill="#bac2ff">
+      <Label fx:id="hello21114" layoutX="300.0" layoutY="564.0" prefHeight="39.0" prefWidth="99.0" text="From" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="hello21115" layoutX="770.0" layoutY="558.0" prefHeight="39.0" prefWidth="50.0" text="To" textFill="#bac2ff">
+      <Label fx:id="hello21115" layoutX="770.0" layoutY="558.0" prefHeight="39.0" prefWidth="50.0" text="To" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>

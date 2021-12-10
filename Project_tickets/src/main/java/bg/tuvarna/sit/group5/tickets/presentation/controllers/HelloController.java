@@ -1,6 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.User;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ButtonEffects;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.HelloModel;
@@ -11,7 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.effect.Glow;
+import javafx.scene.effect.Lighting;
+import javafx.scene.effect.Shadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+
 //implements EventHandler<MouseEvent>
 public class HelloController  {
   /*  @FXML
@@ -77,6 +83,15 @@ public class HelloController  {
          this.username.requestFocus();
      }
  }
+public void makeEffect(){
+     ButtonEffects.makeEffect(login);
+}
+public void removeEffect(){
+     ButtonEffects.removeEffect(login);
+}
+
+
+
 
 
 }

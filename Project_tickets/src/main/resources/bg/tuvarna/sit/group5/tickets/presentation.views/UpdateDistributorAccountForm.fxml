@@ -22,7 +22,6 @@
             <Image url="@../profile.png" />
          </image>
       </ImageView>
-      <ListView fx:id="loadList" layoutX="118.0" layoutY="171.0" opacity="0.83" prefHeight="179.0" prefWidth="996.0" style="-fx-background-color: #000000; -fx-text-fill: #a9861b;" />
       <Label fx:id="user" layoutX="139.0" layoutY="512.0" prefHeight="30.0" prefWidth="199.0" text="Change info for user: " textFill="#a9861b">
          <font>
             <Font size="20.0" />
@@ -50,5 +49,6 @@
             <Font size="19.0" />
          </font>
       </Button>
+      <ListView fx:id="loadList" layoutX="223.0" layoutY="175.0" prefHeight="200.0" prefWidth="816.0" />
    </children>
 </AnchorPane>

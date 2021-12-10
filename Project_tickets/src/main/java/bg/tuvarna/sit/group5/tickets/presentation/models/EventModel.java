@@ -15,6 +15,7 @@ public class EventModel {
     private LocalTime time;
     private String place;
     private Byte status;
+    private String stat;
     private String eventType;
     private String orgName;
 
@@ -25,13 +26,21 @@ public class EventModel {
         this.time = time;
         this.place = place;
         this.status = status;
+        if (status==1){
+            this.stat="Active event";
+        }
+        if (status==0){
+            this.stat="Unactive event";
+        }
+
         this.eventType = eventType.getTypeNamel();
         this.orgName = organizer.getUsername();
     }
 
     public String toString() {
-        return  String.format("%s %s %s %s %s %s %s ",name, date, time,
-                place, status, eventType,orgName);
+        return  String.format("%s                       %s                     %s   " +
+                        "                 %s                     %s                   %s                      %s ",
+                name, date, time, place, stat, eventType,orgName);
     }
 
 }

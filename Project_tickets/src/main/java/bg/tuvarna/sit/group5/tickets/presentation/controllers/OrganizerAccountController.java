@@ -8,6 +8,8 @@ import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import org.apache.log4j.Logger;
 
@@ -47,7 +49,10 @@ public class OrganizerAccountController {
     public void viewEvents(ActionEvent event){
         FXMLLoader loader = OpenForm.openNewForm("ViewEventsByOrganizerForm.fxml", "View Events");
         ViewEventsByOrganizerController next = loader.getController();
-      //  next.setUser();
-        CloseForm.closeForm(event);
+
+       next.setUser();
+
+       CloseForm.closeForm(event);
+
     }
 }

@@ -1,9 +1,6 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
-import bg.tuvarna.sit.group5.tickets.data.entities.Event;
-import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
-import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
-import bg.tuvarna.sit.group5.tickets.data.entities.Tickets;
+import bg.tuvarna.sit.group5.tickets.data.entities.*;
 import bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
 import javafx.collections.FXCollections;
@@ -11,9 +8,7 @@ import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class EventService {
@@ -91,17 +86,39 @@ public Event getByName(String name){
     return ret;
 }
     public ObservableList<EventModel> getAllByOrganizer(Organizer org) {
-        List<Event> events = repository.getAllEventsByOrganizer(org);
+        Set<Event> events = org.getEvents();
 
         return FXCollections.observableList(
                 events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
                         t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
     }
     public ObservableList<EventModel> getAllByDates(Organizer org, LocalDate date,LocalDate date2) {
-        List<Event> events = repository.getAllEventsByDates(org,date,date2);
+        Set<Event> temp=org.getEvents();
+        Set<Event> events=new HashSet<>();
+        for(Event e:temp){
+            if(e.getDate().compareTo(date)>=0&&e.getDate().compareTo(date2)<=0){
+                events.add(e);
+            }
+        }
 
         return FXCollections.observableList(
                 events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
                         t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
     }
+
+    public ObservableList<EventModel> getAllByDateDistributor(Distributor dist, LocalDate date, LocalDate date2){
+        Set<Event> temp=dist.getEventsByDistributor();
+        Set<Event> events=new HashSet<>();
+        for(Event e:temp){
+            if(e.getDate().compareTo(date)>=0&&e.getDate().compareTo(date2)<=0){
+             events.add(e);
+            }
+        }
+
+        return FXCollections.observableList(
+                events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
+                        t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
+
+    }
+
 }
