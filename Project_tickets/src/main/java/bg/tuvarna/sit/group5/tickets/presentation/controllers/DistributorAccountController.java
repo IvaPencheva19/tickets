@@ -45,4 +45,23 @@ public class DistributorAccountController {
         CloseForm.closeForm(event);
     }
 
+    public void sellTickets(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("SellTicketForm.fxml", "Sell ticket");
+        SellTicketController next = loader.getController();
+
+        next.setUser();
+        next.load();
+        CloseForm.closeForm(event);
+    }
+
+    public void rating(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("RatingDistributorForm.fxml", "Rate distributor");
+        RatingDistributorController next = loader.getController();
+
+        next.setUser();
+        next.load();
+
+        CloseForm.closeForm(event);
+    }
+
 }

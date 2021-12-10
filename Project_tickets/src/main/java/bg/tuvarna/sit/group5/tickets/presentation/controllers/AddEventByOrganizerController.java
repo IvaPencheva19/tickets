@@ -83,6 +83,7 @@ public class AddEventByOrganizerController {
         Double price=Double.parseDouble(this.price.getText());
         Integer count=Integer.parseInt(this.count.getText());
         Tickets ticket=new Tickets(type,price,count,null);
+        ticket.setStartCount(count);
        tickets.add(ticket);
        TicketsModel tModel=new TicketsModel(ticket.getType(),ticket.getPrice(),ticket.getCount(),null);
        addedTickets.getItems().add(tModel);
@@ -115,6 +116,7 @@ public class AddEventByOrganizerController {
             t.setEventByEventIdEvent(toAdd);
         }
 
+
         toAdd.setTicketsByIdEvent(tickets);
         //toAdd.setDistribEvent(distributors);
         String evname=toAdd.getName();
@@ -126,9 +128,6 @@ public class AddEventByOrganizerController {
 
          tickets.clear();
         distributors.clear();
-
-
-
     }
 
 }

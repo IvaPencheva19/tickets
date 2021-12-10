@@ -66,10 +66,10 @@ public class Event {
     @JoinColumn(name = "User_idUser", nullable = false)
     private Organizer organizer;
 
-    @OneToMany(mappedBy = "eventByEventIdEvent",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "eventByEventIdEvent",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Set<Tickets> ticketsByIdEvent=new HashSet<>();
 
-    @OneToMany(mappedBy = "event",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "event",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<SellTickets> sellTickets=new HashSet<>();
 
 

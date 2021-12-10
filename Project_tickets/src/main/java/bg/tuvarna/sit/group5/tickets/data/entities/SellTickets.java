@@ -34,12 +34,12 @@ public class SellTickets {
     public SellTickets(){}
 
     public SellTickets(Integer count, String custumer_name,
-                       Tickets ticket_type, Distributor distribEvent) {
+                       Tickets ticket_type, Distributor distribEvent, Event event) {
         this.count = count;
-
         this.custumer_name = custumer_name;
         this.ticket_type = ticket_type;
         this.distrib = distribEvent;
+        this.event=event;
     }
 
 
@@ -111,7 +111,10 @@ public class SellTickets {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SellTickets that = (SellTickets) o;
-        return idSell == that.idSell && Objects.equals(count, that.count)  && Objects.equals(custumer_name, that.custumer_name) && Objects.equals(ticket_type, that.ticket_type) && Objects.equals(distrib, that.distrib) && Objects.equals(event, that.event);
+        return idSell == that.idSell && Objects.equals(count, that.count) &&
+                Objects.equals(custumer_name, that.custumer_name) &&
+                Objects.equals(ticket_type, that.ticket_type) &&
+                Objects.equals(distrib, that.distrib) && Objects.equals(event, that.event);
     }
 
     @Override

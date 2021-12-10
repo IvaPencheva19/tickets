@@ -12,11 +12,10 @@ public class TicketsModel {
         this.type = type;
         this.price = price;
         this.count = count;
-        this.event = event;
     }
 
     public String toString() {
-        return  String.format("%s %s %s %s ",type, price,
-                count, event);
+        return  String.format("%s %s %s  ",type, price,
+                count);
     }
 }

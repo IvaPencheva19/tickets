@@ -181,3 +181,10 @@
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Field 'Event_idEvent1' doesn't have a default value
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.TicketsRepository  - Get type error: Type specified for TypedQuery [bg.tuvarna.sit.group5.tickets.data.entities.EventType] is incompatible with query return type [class bg.tuvarna.sit.group5.tickets.data.entities.Tickets]
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.TicketsRepository  - Get type error: Type specified for TypedQuery [bg.tuvarna.sit.group5.tickets.data.entities.EventType] is incompatible with query return type [class bg.tuvarna.sit.group5.tickets.data.entities.Tickets]
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.TicketsRepository  - Get type error: Type specified for TypedQuery [bg.tuvarna.sit.group5.tickets.data.entities.EventType] is incompatible with query return type [class bg.tuvarna.sit.group5.tickets.data.entities.Tickets]
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.TicketsRepository  - Get type error: org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private int bg.tuvarna.sit.group5.tickets.data.entities.Event.idEvent] by reflection for persistent property [bg.tuvarna.sit.group5.tickets.data.entities.Event#idEvent] : 1
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
