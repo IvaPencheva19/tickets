@@ -54,7 +54,7 @@ public class TicketsService {
         repository.update(tickets);
     }
 
-    public ObservableList<TicketsModel> getAllEvents() {
+    public ObservableList<TicketsModel> getAllTickets() {
         List<Tickets> tickets = repository.getAll();
 
         return FXCollections.observableList(

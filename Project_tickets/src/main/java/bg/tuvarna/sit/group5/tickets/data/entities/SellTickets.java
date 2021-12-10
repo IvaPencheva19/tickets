@@ -16,9 +16,7 @@ public class SellTickets {
     @Basic
     @Column(name = "count")
     private Integer count;
-    @Basic
-    @Column(name = "seat")
-    private Integer seat;
+
     @Basic
     @Column(name = "custumer_name")
     private String custumer_name;
@@ -35,10 +33,10 @@ public class SellTickets {
 
     public SellTickets(){}
 
-    public SellTickets(Integer count, Integer seat, String custumer_name,
+    public SellTickets(Integer count, String custumer_name,
                        Tickets ticket_type, Distributor distribEvent) {
         this.count = count;
-        this.seat = seat;
+
         this.custumer_name = custumer_name;
         this.ticket_type = ticket_type;
         this.distrib = distribEvent;
@@ -70,13 +68,7 @@ public class SellTickets {
         this.distrib = distribEvent;
     }
 
-    public Integer getSeat() {
-        return seat;
-    }
 
-    public void setSeat(Integer seat) {
-        this.seat = seat;
-    }
 
     public String getCustumer_name() {
         return custumer_name;
@@ -119,12 +111,12 @@ public class SellTickets {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SellTickets that = (SellTickets) o;
-        return idSell == that.idSell && Objects.equals(count, that.count) && Objects.equals(seat, that.seat) && Objects.equals(custumer_name, that.custumer_name) && Objects.equals(ticket_type, that.ticket_type) && Objects.equals(distrib, that.distrib) && Objects.equals(event, that.event);
+        return idSell == that.idSell && Objects.equals(count, that.count)  && Objects.equals(custumer_name, that.custumer_name) && Objects.equals(ticket_type, that.ticket_type) && Objects.equals(distrib, that.distrib) && Objects.equals(event, that.event);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idSell, count, seat, custumer_name, ticket_type, distrib, event);
+        return Objects.hash(idSell, count, custumer_name, ticket_type, distrib, event);
     }
 }
 

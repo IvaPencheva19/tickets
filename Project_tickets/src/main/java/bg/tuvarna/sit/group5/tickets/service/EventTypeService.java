@@ -29,17 +29,12 @@ public class EventTypeService {
         return FXCollections.observableList(
                 types.stream().map(t -> new EventTypeModel(t.getTypeNamel())).collect(Collectors.toList()));
     }
-    public ObservableList<EventTypeModel> getType() {
-        List<EventType> types=new LinkedList<>();
 
-    types.add(repository.getById(1));
-        return FXCollections.observableList(
-                types.stream().map(t -> new EventTypeModel(t.getTypeNamel())).collect(Collectors.toList()));
-    }
     public EventType getEventByName(String name){
         EventType ret= repository.getByName(name);
         return ret;
     }
+
     public void createEventType(EventType evType){
         repository.save(evType);
     }
