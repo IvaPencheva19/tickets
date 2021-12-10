@@ -25,94 +25,94 @@
                 <Font size="19.0" />
             </font>
         </Button>
-        <Pane layoutX="309.0" layoutY="146.0" prefHeight="599.0" prefWidth="548.0" style="-fx-border-color: #bac2ff;" />
-        <Pane layoutX="319.0" layoutY="156.0" prefHeight="598.0" prefWidth="548.0" style="-fx-border-color: #bac2ff;">
+        <Pane layoutX="309.0" layoutY="146.0" prefHeight="599.0" prefWidth="645.0" style="-fx-border-color: #bac2ff;" />
+        <Pane layoutX="319.0" layoutY="158.0" prefHeight="597.0" prefWidth="647.0" style="-fx-border-color: #bac2ff;">
             <children>
-                <ImageView fitHeight="175.0" fitWidth="172.0" layoutX="190.0" layoutY="19.0">
-                    <image>
-                        <Image url="@../user2.png" />
-                    </image>
-                </ImageView>
-                <Label layoutX="137.0" layoutY="228.0" prefHeight="39.0" prefWidth="147.0" text="Username:" textFill="WHITE">
+                <Label layoutX="179.0" layoutY="225.0" prefHeight="39.0" prefWidth="147.0" text="Username:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label layoutX="137.0" layoutY="308.0" prefHeight="39.0" prefWidth="151.0" text="First Name:" textFill="WHITE">
+                <Label layoutX="179.0" layoutY="305.0" prefHeight="39.0" prefWidth="151.0" text="First Name:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label layoutX="137.0" layoutY="266.0" prefHeight="39.0" prefWidth="129.0" text="Password:" textFill="WHITE">
+                <Label layoutX="179.0" layoutY="263.0" prefHeight="39.0" prefWidth="129.0" text="Password:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label layoutX="138.0" layoutY="351.0" prefHeight="39.0" prefWidth="129.0" text="Last Name:" textFill="WHITE">
+                <Label layoutX="180.0" layoutY="348.0" prefHeight="39.0" prefWidth="129.0" text="Last Name:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label layoutX="140.0" layoutY="397.0" prefHeight="39.0" prefWidth="129.0" text="Phone:" textFill="WHITE">
+                <Label layoutX="182.0" layoutY="394.0" prefHeight="39.0" prefWidth="129.0" text="Phone:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label layoutX="140.0" layoutY="438.0" prefHeight="39.0" prefWidth="118.0" text="Email:" textFill="WHITE">
+                <Label layoutX="182.0" layoutY="435.0" prefHeight="39.0" prefWidth="118.0" text="Email:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label layoutX="139.0" layoutY="477.0" prefHeight="39.0" prefWidth="113.0" text="Honor:" textFill="WHITE">
+                <Label layoutX="181.0" layoutY="474.0" prefHeight="39.0" prefWidth="113.0" text="Honor:" textFill="WHITE">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
                 </Label>
-                <Label fx:id="username" layoutX="326.0" layoutY="232.0" prefHeight="31.0" prefWidth="176.0" text="Label" textFill="#6b95b4">
+                <Label fx:id="username" layoutX="354.0" layoutY="231.0" prefHeight="31.0" prefWidth="176.0" text="Label" textFill="#bac2ff">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="password" layoutX="326.0" layoutY="271.0" prefHeight="31.0" prefWidth="155.0" text="Label" textFill="#6b95b4">
+                <Label fx:id="password" layoutX="354.0" layoutY="270.0" prefHeight="31.0" prefWidth="155.0" text="Label" textFill="#bac2ff">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="fname" layoutX="325.0" layoutY="313.0" prefHeight="31.0" prefWidth="158.0" text="Label" textFill="#6b95b4">
+                <Label fx:id="fname" layoutX="353.0" layoutY="312.0" prefHeight="31.0" prefWidth="158.0" text="Label" textFill="#bac2ff">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="lname" layoutX="325.0" layoutY="355.0" prefHeight="31.0" prefWidth="151.0" text="Label" textFill="#6b95b4">
+                <Label fx:id="lname" layoutX="353.0" layoutY="354.0" prefHeight="31.0" prefWidth="151.0" text="Label" textFill="#bac2ff">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="phone" layoutX="324.0" layoutY="402.0" prefHeight="31.0" prefWidth="163.0" text="Label" textFill="#6b95b4">
+                <Label fx:id="phone" layoutX="352.0" layoutY="401.0" prefHeight="31.0" prefWidth="163.0" text="Label" textFill="#bac2ff">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="email" layoutX="323.0" layoutY="442.0" prefHeight="31.0" prefWidth="181.0" text="Label" textFill="#6b95b4">
+                <Label fx:id="email" layoutX="351.0" layoutY="441.0" prefHeight="31.0" prefWidth="256.0" text="Label" textFill="#bac2ff">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-            <Label layoutX="137.0" layoutY="523.0" prefHeight="39.0" prefWidth="113.0" text="Rating:" textFill="WHITE">
+            <Label layoutX="179.0" layoutY="520.0" prefHeight="39.0" prefWidth="113.0" text="Rating:" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB" size="27.0" />
                </font>
             </Label>
-            <Label fx:id="rating" layoutX="320.0" layoutY="527.0" prefHeight="31.0" prefWidth="76.0" text="Label" textFill="#6b95b4">
+            <Label fx:id="rating" layoutX="351.0" layoutY="523.0" prefHeight="31.0" prefWidth="76.0" text="Label" textFill="#bac2ff">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label fx:id="honor" layoutX="322.0" layoutY="481.0" prefHeight="31.0" prefWidth="76.0" text="Label" textFill="#6b95b4">
+            <Label fx:id="honor" layoutX="350.0" layoutY="480.0" prefHeight="31.0" prefWidth="76.0" text="Label" textFill="#bac2ff">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="219.0" layoutY="14.0">
+               <image>
+                  <Image url="@../acinf.png" />
+               </image>
+            </ImageView>
             </children>
         </Pane>
     </children>
