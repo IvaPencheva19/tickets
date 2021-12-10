@@ -32,7 +32,7 @@ public class Distributor extends User{
     inverseJoinColumns=@JoinColumn(name="event_idEvent"))
     private Set<Event> eventsByDistributor=new HashSet<>();
 
-    @OneToMany(mappedBy = "distrib",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "distrib",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<SellTickets> sellTickets;
 
 

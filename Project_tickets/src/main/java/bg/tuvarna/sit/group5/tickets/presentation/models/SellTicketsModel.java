@@ -6,25 +6,25 @@ import bg.tuvarna.sit.group5.tickets.data.entities.Tickets;
 
 public class SellTicketsModel {
     private int count;
-    private int seat;
+
     private String customerName;
     private Tickets ticketsType;
     //private DistribEvent distribEvent;
 
-    public SellTicketsModel(int count, int seat, String customerName,
+    public SellTicketsModel(int count,  String customerName,
                             Tickets ticketsType) {
         this.count = count;
-        this.seat = seat;
+
         this.customerName = customerName;
         this.ticketsType = ticketsType;
 
     }
 
-    public SellTicketsModel(Integer count, Integer seat, String custumer_name, Tickets ticket_type, Distributor distributor) {
+    public SellTicketsModel(Integer count, String custumer_name, Tickets ticket_type, Distributor distributor) {
     }
 
     public String toString() {
-        return  String.format("%s %s %s %s %s  ",count, seat,
+        return  String.format("%s %s %s %s   ",count,
                 customerName, ticketsType);
     }
 }

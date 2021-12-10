@@ -18,7 +18,7 @@
             <Image url="@../profile_dist.png" />
          </image>
       </ImageView>
-      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Sell ticket">
+      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" onAction="#sellTickets" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Sell ticket">
          <font>
             <Font size="19.0" />
          </font>
@@ -38,7 +38,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="rating" layoutX="933.0" layoutY="426.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="173.0" style="-fx-background-color: #e8c4ff;" text="Rating">
+      <Button fx:id="rating" layoutX="933.0" layoutY="426.0" mnemonicParsing="false" onAction="#rating" prefHeight="41.0" prefWidth="173.0" style="-fx-background-color: #e8c4ff;" text="Rating">
          <font>
             <Font size="19.0" />
          </font>
@@ -53,7 +53,7 @@
             <Image url="@../acinf.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="534.0" layoutY="228.0">
+      <ImageView fitHeight="178.0" fitWidth="200.0" layoutX="536.0" layoutY="245.0">
          <image>
             <Image url="@../cal.png" />
          </image>

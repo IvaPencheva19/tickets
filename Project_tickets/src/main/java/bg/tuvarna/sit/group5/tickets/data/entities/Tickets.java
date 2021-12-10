@@ -23,9 +23,12 @@ public class Tickets {
     @Column(name = "count")
     private Integer count;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Event_idEvent", nullable = false)
     private Event eventByEventIdEvent;
+    @Basic
+    @Column(name = "startCount")
+    private Integer startCount;
 
     public Tickets(){}
 
@@ -80,6 +83,13 @@ public class Tickets {
         this.eventByEventIdEvent = eventByEventIdEvent;
     }
 
+    public Integer getStartCount() {
+        return startCount;
+    }
+
+    public void setStartCount(Integer startCount) {
+        this.startCount = startCount;
+    }
 
     public boolean equals(Object o) {
         if (this == o) return true;

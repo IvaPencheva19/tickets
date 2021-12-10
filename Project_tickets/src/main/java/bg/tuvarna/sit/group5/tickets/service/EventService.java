@@ -92,6 +92,37 @@ public Event getByName(String name){
                 events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
                         t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
     }
+
+    public ObservableList<EventModel> getAllByDistributor(Distributor dist) {
+        Set<Event> events = dist.getEventsByDistributor();
+
+        return FXCollections.observableList(
+                events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
+                        t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
+    }
+
+    public ObservableList<EventModel> getAllByStatus(Distributor dist, byte status) {
+        Set<Event> events = new HashSet<>();
+        for(Event e:dist.getEventsByDistributor() ){
+            if(e.getStatus()==status){
+                events.add(e);
+            }
+        }
+
+        return FXCollections.observableList(
+                events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
+                        t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
+    }
+
+    public Set<Event> getByStatus(Distributor dist, byte status) {
+        Set<Event> events = new HashSet<>();
+        for (Event e : dist.getEventsByDistributor()) {
+            if (e.getStatus() == status) {
+                events.add(e);
+            }
+        }
+return events;
+    }
     public ObservableList<EventModel> getAllByDates(Organizer org, LocalDate date,LocalDate date2) {
         Set<Event> temp=org.getEvents();
         Set<Event> events=new HashSet<>();

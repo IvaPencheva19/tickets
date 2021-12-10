@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class TicketsService {
@@ -60,6 +61,20 @@ public class TicketsService {
         return FXCollections.observableList(
                 tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount(),
                         t.getEventByEventIdEvent())).collect(Collectors.toList()));
+    }
+
+    public ObservableList<TicketsModel> getAllTicketsByEvent(Event event) {
+        Set<Tickets> tickets = event.getTicketsByIdEvent();
+
+        return FXCollections.observableList(
+                tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount(),
+                        t.getEventByEventIdEvent())).collect(Collectors.toList()));
+    }
+
+    public Tickets getByType(String name,Event ev){
+
+        Tickets ret = repository.getByType(name,ev);
+        return ret;
     }
 
 
