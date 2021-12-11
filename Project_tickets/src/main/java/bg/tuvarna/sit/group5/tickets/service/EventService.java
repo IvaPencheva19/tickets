@@ -152,4 +152,17 @@ return events;
 
     }
 
+    public Set<Event> getAllByDistOrg(Distributor dist,  Organizer org){
+        Set<Event> temp=dist.getEventsByDistributor();
+       Set<Event> events=new HashSet<>();
+        for(Event e:temp){
+      if(e.getOrganizer().getUsername().equals(org.getUsername()))
+                events.add(e);
+
+        }
+
+       return events;
+
+    }
+
 }

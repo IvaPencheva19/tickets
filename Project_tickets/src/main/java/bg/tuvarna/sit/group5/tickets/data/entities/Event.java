@@ -151,7 +151,7 @@ public class Event {
     }
 
 
-    public User getOrganizer() {
+    public Organizer getOrganizer() {
         return organizer;
     }
 
