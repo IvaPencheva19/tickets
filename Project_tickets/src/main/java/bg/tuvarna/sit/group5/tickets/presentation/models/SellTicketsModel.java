@@ -8,7 +8,7 @@ public class SellTicketsModel {
     private int count;
 
     private String customerName;
-    private Tickets ticketsType;
+    private String ticketsType;
     //private DistribEvent distribEvent;
 
     public SellTicketsModel(int count,  String customerName,
@@ -16,15 +16,14 @@ public class SellTicketsModel {
         this.count = count;
 
         this.customerName = customerName;
-        this.ticketsType = ticketsType;
+        this.ticketsType = ticketsType.getType();
 
     }
 
-    public SellTicketsModel(Integer count, String custumer_name, Tickets ticket_type, Distributor distributor) {
-    }
+
 
     public String toString() {
-        return  String.format("%s %s %s %s   ",count,
+        return  String.format("%s                                       %s                                                                        %s ",count,
                 customerName, ticketsType);
     }
 }

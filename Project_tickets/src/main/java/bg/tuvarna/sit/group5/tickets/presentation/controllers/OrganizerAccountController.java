@@ -55,4 +55,14 @@ public class OrganizerAccountController {
        CloseForm.closeForm(event);
 
     }
+
+    public void viewDistributors(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("ViewDistributorForm.fxml", "View Distributors");
+        ViewDistributorController next = loader.getController();
+
+        next.setUser();
+
+        CloseForm.closeForm(event);
+
+    }
 }

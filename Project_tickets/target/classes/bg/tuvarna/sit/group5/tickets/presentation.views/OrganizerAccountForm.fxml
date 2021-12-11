@@ -43,7 +43,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button id="viewDistributors" layoutX="932.0" layoutY="401.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="194.0" style="-fx-background-color: #bac2ff;" text="View distributors">
+      <Button id="viewDistributors" layoutX="932.0" layoutY="401.0" mnemonicParsing="false" onAction="#viewDistributors" prefHeight="42.0" prefWidth="194.0" style="-fx-background-color: #bac2ff;" text="View distributors">
          <font>
             <Font size="19.0" />
          </font>

@@ -66,7 +66,7 @@ public class RatingDistributorController {
      }
 
     rating=(((double)countsold/(double)limit)*100);
-   
+
 
         BigDecimal bd = new BigDecimal(rating).setScale(2, RoundingMode.HALF_UP);
         rating=bd.doubleValue();
