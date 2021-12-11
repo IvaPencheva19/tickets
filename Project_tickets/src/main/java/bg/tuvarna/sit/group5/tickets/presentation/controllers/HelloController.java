@@ -73,6 +73,7 @@ public class HelloController  {
          String name=user.getUsername();
         // res.setText("Hello"+name);
          user.loadController();
+
          CloseForm.closeForm(event);
 
      } else
@@ -83,6 +84,8 @@ public class HelloController  {
          this.username.requestFocus();
      }
  }
+
+
 public void makeEffect(){
      ButtonEffects.makeEffect(login);
 }

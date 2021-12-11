@@ -3,6 +3,7 @@ package bg.tuvarna.sit.group5.tickets.data.entities;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
 import bg.tuvarna.sit.group5.tickets.presentation.controllers.AdminAccountController;
 
+import bg.tuvarna.sit.group5.tickets.service.EventService;
 import javafx.fxml.FXMLLoader;
 
 import javax.persistence.*;
@@ -23,6 +24,8 @@ public class Admin extends User{
         FXMLLoader loader = OpenForm.openNewForm("AdminAccountForm.fxml", "Admin");
         AdminAccountController next = loader.getController();
         next.setUser(this);
+        EventService eserv=EventService.getInstance();
+        eserv.makeUnactiveEvents();
     }
 
 }

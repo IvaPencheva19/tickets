@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -163,6 +164,85 @@ return events;
 
        return events;
 
+    }
+
+    public void makeUnactiveEvents(){
+        List<Event> events=repository.getAll();
+        EventService eserv=EventService.getInstance();
+        LocalDate lt = LocalDate.now();
+        for (Event e: events){
+            if (e.getDate().compareTo(lt)<0){
+                eserv.changeStatus(e,(byte)0);
+            }
+        }
+    }
+    public void makeNotifEvent(){
+
+        NotificationsService nserv=NotificationsService.getInstance();
+        List<Event> events=repository.getAll();
+        LocalDate lt = LocalDate.now();
+        Long daysBetween;
+        Set<Notifications>onots;
+        Notifications newNot;
+        boolean check=false;
+
+        for (Event e: events){
+            onots=e.getOrganizer().getNotifs();
+
+            daysBetween = ChronoUnit.DAYS.between(lt,e.getDate());
+
+            if (daysBetween<5 && daysBetween>0){
+                newNot=new Notifications(e.getName()+" is after "+daysBetween.toString()+" days",e.getOrganizer());
+
+
+                for (Notifications n:onots){
+                    if(n.getMessage().equals(newNot.getMessage())){
+                        check=true;
+                    }
+                }
+                if (check==false){
+                    nserv.createNotification(newNot);
+                }
+                check=false;
+
+            }
+        }
+    }
+
+    public void makeNotifEventDist(){
+
+
+        NotificationsService nserv=NotificationsService.getInstance();
+
+        List<Event> events=repository.getAll();
+        LocalDate lt = LocalDate.now();
+        Long daysBetween;
+
+
+        Set<Notifications>dnots;
+
+        Notifications newNot2;
+        boolean check=false;
+
+        for (Event e: events){
+            daysBetween = ChronoUnit.DAYS.between(lt,e.getDate());
+            if (daysBetween<5 && daysBetween>0){
+                for(Distributor d:e.getDistribEvent()) {
+                    newNot2 = new Notifications(e.getName() + " is after only " + daysBetween.toString() + " days", d);
+                    dnots=d.getNotifs();
+                    for (Notifications n:dnots){
+                        if(n.getMessage().equals(newNot2.getMessage())){
+                            check=true;
+                        }
+                    }
+                    if (check==false){
+                        nserv.createNotification(newNot2);
+                    }
+                    check=false;
+                }
+
+            }
+        }
     }
 
 }

@@ -1,11 +1,12 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
 import bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController;
+import bg.tuvarna.sit.group5.tickets.presentation.controllers.HelloController;
+import bg.tuvarna.sit.group5.tickets.service.EventService;
+import bg.tuvarna.sit.group5.tickets.service.UserService;
 import javafx.fxml.FXMLLoader;
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 @Entity
@@ -27,6 +28,7 @@ public class Distributor extends User{
 
     @OneToMany(mappedBy = "distrib",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<SellTickets> sellTickets;
+
 
 
     public Distributor(){}
@@ -81,6 +83,7 @@ public class Distributor extends User{
     }
 
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,5 +104,12 @@ public class Distributor extends User{
         FXMLLoader loader = OpenForm.openNewForm("DistributorAccountForm.fxml", "Distributor");
         DistributorAccountController next = loader.getController();
         next.setUser(this);
+        UserService userv=UserService.getInstance();
+        if(!(userv.isAllSeen(HelloController.user))){
+            next.setIcon(true);
+        }
+        EventService eserv=EventService.getInstance();
+        eserv.makeUnactiveEvents();
+        eserv.makeNotifEventDist();
     }
 }

@@ -4,7 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="4c5b1c06-ebff-4791-8567-a73f2a459015" />
+          <unit-entry name="hibernate.cfg.xml" value="506a115c-0378-4e6d-8e7b-5b3def7f67f3" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/bg/tuvarna/sit/group5/tickets/configuration/hibernate.cfg.xml" />

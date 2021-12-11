@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController">
@@ -33,7 +34,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="notifications" layoutX="344.0" layoutY="709.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #e8c4ff;" text="Notifications">
+      <Button fx:id="notifications" layoutX="344.0" layoutY="709.0" mnemonicParsing="false" onAction="#viewNotifications" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #e8c4ff;" text="Notifications">
          <font>
             <Font size="19.0" />
          </font>
@@ -73,5 +74,14 @@
             <Font size="19.0" />
          </font>
       </Button>
+      <Pane fx:id="paneIcon" layoutX="444.0" layoutY="480.0" prefHeight="81.0" prefWidth="86.0" visible="false">
+         <children>
+            <ImageView fx:id="notifIcon" fitHeight="70.0" fitWidth="68.0" layoutX="5.0" layoutY="9.0">
+               <image>
+                  <Image url="@../warning-sign.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

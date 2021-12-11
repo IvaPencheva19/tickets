@@ -1,13 +1,14 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
+import bg.tuvarna.sit.group5.tickets.presentation.controllers.HelloController;
 import bg.tuvarna.sit.group5.tickets.presentation.controllers.OrganizerAccountController;
+import bg.tuvarna.sit.group5.tickets.service.EventService;
+import bg.tuvarna.sit.group5.tickets.service.UserService;
 import javafx.fxml.FXMLLoader;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 @Entity
@@ -22,6 +23,8 @@ public class Organizer extends User{
 
     @OneToMany(mappedBy = "organizer",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Event> events=new HashSet<>();
+
+
 
     public Organizer() {}
 
@@ -51,6 +54,8 @@ public class Organizer extends User{
         events.add(event);
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,5 +72,12 @@ public class Organizer extends User{
         FXMLLoader loader = OpenForm.openNewForm("OrganizerAccountForm.fxml", "Organizer");
         OrganizerAccountController next = loader.getController();
         next.setUser(this);
+        UserService userv=UserService.getInstance();
+        if(!(userv.isAllSeen(HelloController.user))){
+            next.setIcon(true);
+        }
+        EventService eserv=EventService.getInstance();
+        eserv.makeUnactiveEvents();
+        eserv.makeNotifEvent();
     }
 }

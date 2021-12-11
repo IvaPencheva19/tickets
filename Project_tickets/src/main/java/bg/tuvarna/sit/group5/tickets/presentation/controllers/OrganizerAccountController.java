@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import org.apache.log4j.Logger;
 
 public class OrganizerAccountController {
@@ -18,7 +19,14 @@ public class OrganizerAccountController {
     private  static final Logger log=Logger.getLogger(DistributorAccountController.class);
     @FXML
     private Label helloDist;
+    @FXML
+    private Pane paneIcon;
+
     private Organizer org;
+
+    public  void setIcon(boolean st){
+        paneIcon.setVisible(st);
+    }
     public void setUser(User user) {
         org = (Organizer) user;
 
@@ -64,5 +72,13 @@ public class OrganizerAccountController {
 
         CloseForm.closeForm(event);
 
+    }
+    public void viewNotifications(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("NotificationsOrganizerForm.fxml", "View notifications");
+        NotificationsOrganizerController next = loader.getController();
+        next.load();
+        next.setUser();
+
+        CloseForm.closeForm(event);
     }
 }

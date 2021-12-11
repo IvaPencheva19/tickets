@@ -113,19 +113,23 @@ public class AddEventByOrganizerController {
             t.setEventByEventIdEvent(toAdd);
         }
 
-
         toAdd.setTicketsByIdEvent(tickets);
-        //toAdd.setDistribEvent(distributors);
         String evname=toAdd.getName();
         evserv.createEvent(toAdd);
 
+        Notifications nots;
+        NotificationsService nserv=NotificationsService.getInstance();
         for(Distributor d:distributors){
             dserv.addEvent(d,toAdd);
+            nots=new Notifications("You have new event: "+toAdd.getName(),(User)d);
+            nserv.createNotification(nots);
+            d.addNotif(nots);
         }
 
          tickets.clear();
         distributors.clear();
         clear();
+
     }
 
     public void clear(){

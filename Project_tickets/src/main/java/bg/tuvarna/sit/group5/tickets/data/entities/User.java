@@ -1,7 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.*;
 
 
 @Entity
@@ -33,6 +33,11 @@ public abstract class User {
     @Basic
     @Column(name = "email")
     private String email;
+
+    @OneToMany(mappedBy = "userNot",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Set<Notifications> notifs=new HashSet<>();
+
+
 
     public User(){}
     public User(String username, String password, String firstname, String lastname, String phone, String email) {
@@ -101,6 +106,17 @@ public abstract class User {
         this.email = email;
     }
 
+
+    public Set<Notifications> getNotifs() {
+        return notifs;
+    }
+
+    public void setNotifs(Set<Notifications> notifs) {
+        this.notifs = notifs;
+    }
+    public void addNotif(Notifications not){
+        notifs.add(not);
+    }
 
     @Override
     public boolean equals(Object o) {

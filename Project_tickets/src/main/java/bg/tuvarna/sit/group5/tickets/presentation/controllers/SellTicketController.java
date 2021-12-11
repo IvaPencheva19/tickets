@@ -5,6 +5,7 @@ import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.TicketsModel;
 import bg.tuvarna.sit.group5.tickets.service.EventService;
+import bg.tuvarna.sit.group5.tickets.service.NotificationsService;
 import bg.tuvarna.sit.group5.tickets.service.SellTicketsService;
 import bg.tuvarna.sit.group5.tickets.service.TicketsService;
 import javafx.collections.ObservableList;
@@ -108,6 +109,12 @@ public class SellTicketController {
         SellTickets tickets = new SellTickets(count, cname, tick, (Distributor) HelloController.user, event);
         stServ.createSellTickets(tickets);
         }
+        NotificationsService nserv=NotificationsService.getInstance();
+        Notifications not=new Notifications
+                (HelloController.user.getUsername()+" sold "+count+" tickets for "+
+                        event.getName(),event.getOrganizer());
+   nserv.createNotification(not);
+
         evname.clear();
         cusname.clear();
         tcount.clear();

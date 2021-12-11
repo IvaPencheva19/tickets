@@ -1,5 +1,6 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.Notifications;
 import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 
@@ -18,5 +19,12 @@ public class UserService {
 
     public void deleteUser(User user){
         repository.delete(user);
+    }
+    public boolean isAllSeen(User user){
+        boolean seen=true;
+        for (Notifications n:user.getNotifs()){
+            if(n.getSeen()==0) seen=false;
+        }
+        return seen;
     }
 }

@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -17,7 +19,15 @@ public class DistributorAccountController {
     private  static final Logger log=Logger.getLogger(DistributorAccountController.class);
     @FXML
     private Label helloDist;
+    @FXML
+    private Image notificon;
     private Distributor dist;
+    @FXML
+    private Pane paneIcon;
+
+    public  void setIcon(boolean st){
+       paneIcon.setVisible(st);
+    }
     public void setUser(User user) {
         dist = (Distributor) user;
 
@@ -63,5 +73,14 @@ public class DistributorAccountController {
 
         CloseForm.closeForm(event);
     }
+    public void viewNotifications(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("NotificationsDistributorForm.fxml", "View notifications");
+      NotificationsDistributorController next = loader.getController();
+        this.setIcon(false);
+        next.setUser();
+        next.load();
+        CloseForm.closeForm(event);
+    }
+
 
 }
