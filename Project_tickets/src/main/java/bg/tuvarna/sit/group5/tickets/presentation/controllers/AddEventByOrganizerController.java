@@ -10,14 +10,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
+
 
 public class AddEventByOrganizerController {
     @FXML
@@ -128,6 +125,22 @@ public class AddEventByOrganizerController {
 
          tickets.clear();
         distributors.clear();
+        clear();
     }
+
+    public void clear(){
+        type.clear();
+       price.clear();
+        count.clear();
+        username.clear();
+
+      time.clear();
+        place.clear();
+        name.clear();
+       description.clear();
+        addedTickets.getItems().clear();
+        addedDistributors.getItems().clear();
+    }
+
 
 }

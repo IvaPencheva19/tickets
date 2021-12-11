@@ -1,7 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Admin;
-import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
+
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 
 public class AdminService {

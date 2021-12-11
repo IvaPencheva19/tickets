@@ -1,24 +1,17 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
-
-import bg.tuvarna.sit.group5.tickets.data.entities.Admin;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
-import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
-import bg.tuvarna.sit.group5.tickets.service.LoginService;
 import bg.tuvarna.sit.group5.tickets.service.OrganizerService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import org.apache.log4j.Logger;
 
 public class AddOrganizerAccountController {
 
     private OrganizerService orgService=new OrganizerService();
-    @FXML
-    private Button add;
+
     @FXML
     private TextField username;
     @FXML
@@ -47,6 +40,12 @@ public class AddOrganizerAccountController {
        double hon= Double.parseDouble(honor.getText());
         Organizer newOrg= new Organizer(uname,pass,fn,ln,ph,em,hon);
         orgService.createOrganizer(newOrg);
+        username.clear();
+        password.clear();
+        fname.clear();
+        lname.clear();
+        phone.clear();
+        email.clear();
 
     }
     public void goBack(ActionEvent event){

@@ -2,7 +2,7 @@ package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
-import javafx.event.ActionEvent;
+
 
 public class LoginService {
 

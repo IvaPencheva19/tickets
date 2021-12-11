@@ -2,7 +2,7 @@ package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
 import bg.tuvarna.sit.group5.tickets.presentation.controllers.AdminAccountController;
-import bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController;
+
 import javafx.fxml.FXMLLoader;
 
 import javax.persistence.*;

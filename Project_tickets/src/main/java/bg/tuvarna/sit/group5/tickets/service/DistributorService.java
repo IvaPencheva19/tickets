@@ -2,7 +2,7 @@ package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
-import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
+
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
 import javafx.collections.FXCollections;

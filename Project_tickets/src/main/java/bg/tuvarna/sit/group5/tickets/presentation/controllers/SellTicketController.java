@@ -38,7 +38,7 @@ public class SellTicketController {
     @FXML
     private Label lcount;
     @FXML
-    private TextField count;
+    private TextField tcount;
     @FXML
     private Button buyTickets;
 
@@ -82,7 +82,7 @@ public class SellTicketController {
             lticktype.setVisible(true);
             ticktype.setVisible(true);
             lcount.setVisible(true);
-            count.setVisible(true);
+            tcount.setVisible(true);
             buyTickets.setVisible(true);
             listTickets.setVisible(true);
             for(Tickets t: tick){
@@ -95,7 +95,7 @@ public class SellTicketController {
 
     public void buyTickets(){
         String cname = cusname.getText();
-        Integer count = Integer.parseInt(this.count.getText());
+        Integer count = Integer.parseInt(this.tcount.getText());
         String type = ticktype.getValue().toString();
         Tickets tick = tService.getByType(type,event);
         if(tick.getCount()<count){
@@ -108,6 +108,9 @@ public class SellTicketController {
         SellTickets tickets = new SellTickets(count, cname, tick, (Distributor) HelloController.user, event);
         stServ.createSellTickets(tickets);
         }
+        evname.clear();
+        cusname.clear();
+        tcount.clear();
 
     }
 }

@@ -1,14 +1,12 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
-import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
+
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.repositories.EventTypeRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventTypeModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 

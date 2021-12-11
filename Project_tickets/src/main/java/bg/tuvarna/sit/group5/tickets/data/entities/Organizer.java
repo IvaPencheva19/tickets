@@ -1,7 +1,6 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
 
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
-import bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController;
 import bg.tuvarna.sit.group5.tickets.presentation.controllers.OrganizerAccountController;
 import javafx.fxml.FXMLLoader;
 
@@ -9,7 +8,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.TreeSet;
+
 
 @Entity
 @DiscriminatorValue("organizer")

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.SellTicketController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.SellTicketController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="952.0" prefWidth="1283.0">
          <children>
@@ -95,7 +95,7 @@
                         <Font name="Berlin Sans FB Demi Bold" size="27.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="count" layoutX="894.0" layoutY="680.0" prefHeight="26.0" prefWidth="293.0" visible="false" />
+                  <TextField fx:id="tcount" layoutX="894.0" layoutY="680.0" prefHeight="26.0" prefWidth="293.0" visible="false" />
                   <ComboBox fx:id="ticktype" layoutX="898.0" layoutY="626.0" prefHeight="26.0" prefWidth="291.0" visible="false" />
                   <Button id="viewEvents" layoutX="351.0" layoutY="662.0" mnemonicParsing="false" onAction="#checkTickets" prefHeight="42.0" prefWidth="183.0" style="-fx-background-color: #e8c4ff;" text="Check for tickets">
                      <font>

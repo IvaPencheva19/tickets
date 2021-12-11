@@ -1,19 +1,12 @@
 package bg.tuvarna.sit.group5.tickets.data.entities;
-
-
-import bg.tuvarna.sit.group5.tickets.common.Constants;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.OpenForm;
 import bg.tuvarna.sit.group5.tickets.presentation.controllers.DistributorAccountController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-
 import javax.persistence.*;
-import java.net.URL;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.TreeSet;
+
 
 @Entity
 @DiscriminatorValue("distributor")

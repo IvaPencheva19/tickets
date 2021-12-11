@@ -1,17 +1,11 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
-import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.data.entities.Tickets;
-import bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository;
 import bg.tuvarna.sit.group5.tickets.data.repositories.TicketsRepository;
-import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
-import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.TicketsModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.sql.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
