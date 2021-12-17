@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 
@@ -80,8 +79,6 @@ public class ViewDistributorController {
     }
 
     public void search(){
-
-
         String evName=comboEvents.getValue().toString();
         Event ret=eServ.getByName(evName);
         Set<SellTickets> tsell=ret.getSellTickets();
@@ -96,12 +93,5 @@ public class ViewDistributorController {
         for(Event e: events){
             comboEvents.getItems().addAll(e.getName());
         }
-
-
-
-
-
     }
-
-
 }

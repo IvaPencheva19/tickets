@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.SellTicketController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.SellTicketController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="952.0" prefWidth="1283.0">
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="952.0" prefWidth="1280.0" style="-fx-background-color: #000000;">
                <children>
-                  <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#ffccdd">
+                  <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#e8c4ff">
                      <font>
                         <Font size="27.0" />
                      </font>
@@ -27,7 +27,7 @@
                         <Image url="@../profile1.png" />
                      </image>
                   </ImageView>
-                  <Button id="viewEvents" fx:id="goBack" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #e8c4ff;" text="Back">
+                  <Button id="viewEvents" fx:id="goBack" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsDistributor.css" text="Back">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -74,40 +74,40 @@
                      </font>
                   </Label>
                   <TextField fx:id="evname" layoutX="288.0" layoutY="577.0" prefHeight="26.0" prefWidth="293.0" />
-                  <TextField fx:id="cusname" layoutX="903.0" layoutY="575.0" prefHeight="26.0" prefWidth="285.0" visible="false" />
-                  <Label fx:id="lcusname" layoutX="668.0" layoutY="564.0" prefHeight="39.0" prefWidth="195.0" text="Customer name" textFill="#ffccdd" visible="false">
+                  <TextField fx:id="cusname" layoutX="897.0" layoutY="575.0" prefHeight="26.0" prefWidth="292.0" visible="false" />
+                  <Label fx:id="lcusname" layoutX="674.0" layoutY="565.0" prefHeight="39.0" prefWidth="195.0" text="Customer name" textFill="#ffccdd" visible="false">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Label layoutX="103.0" layoutY="571.0" prefHeight="39.0" prefWidth="146.0" text="Event name" textFill="#ffccdd">
+                  <Label layoutX="100.0" layoutY="570.0" prefHeight="39.0" prefWidth="146.0" text="Event name" textFill="#ffccdd">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lcount" layoutX="699.0" layoutY="679.0" prefHeight="39.0" prefWidth="99.0" text="Count" textFill="#ffccdd" visible="false">
+                  <Label fx:id="lcount" layoutX="680.0" layoutY="674.0" prefHeight="39.0" prefWidth="99.0" text="Count" textFill="#ffccdd" visible="false">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lticktype" layoutX="690.0" layoutY="619.0" prefHeight="39.0" prefWidth="161.0" text="Ticket type" textFill="#ffccdd" visible="false">
+                  <Label fx:id="lticktype" layoutX="677.0" layoutY="619.0" prefHeight="39.0" prefWidth="161.0" text="Ticket type" textFill="#ffccdd" visible="false">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="27.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tcount" layoutX="894.0" layoutY="680.0" prefHeight="26.0" prefWidth="293.0" visible="false" />
-                  <ComboBox fx:id="ticktype" layoutX="898.0" layoutY="626.0" prefHeight="26.0" prefWidth="291.0" visible="false" />
-                  <Button id="viewEvents" layoutX="351.0" layoutY="662.0" mnemonicParsing="false" onAction="#checkTickets" prefHeight="42.0" prefWidth="183.0" style="-fx-background-color: #e8c4ff;" text="Check for tickets">
+                  <TextField fx:id="tcount" layoutX="898.0" layoutY="680.0" prefHeight="26.0" prefWidth="293.0" visible="false" />
+                  <ComboBox fx:id="ticktype" layoutX="899.0" layoutY="626.0" prefHeight="26.0" prefWidth="290.0" visible="false" />
+                  <Button id="viewEvents" layoutX="338.0" layoutY="655.0" mnemonicParsing="false" onAction="#checkTickets" prefHeight="42.0" prefWidth="183.0" stylesheets="@css/ButtonsDistributor.css" text="Check for tickets">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button id="viewEvents" fx:id="buyTickets" layoutX="938.0" layoutY="788.0" mnemonicParsing="false" onAction="#buyTickets" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #e8c4ff;" text="Buy tickets" visible="false">
+                  <Button id="viewEvents" fx:id="buyTickets" layoutX="938.0" layoutY="788.0" mnemonicParsing="false" onAction="#buyTickets" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsDistributor.css" text="Buy tickets" visible="false">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <ListView fx:id="listTickets" layoutX="81.0" layoutY="762.0" prefHeight="103.0" prefWidth="436.0" visible="false" />
+                  <ListView fx:id="listTickets" layoutX="93.0" layoutY="762.0" prefHeight="103.0" prefWidth="499.0" visible="false" />
                </children>
             </AnchorPane>
          </children></AnchorPane>

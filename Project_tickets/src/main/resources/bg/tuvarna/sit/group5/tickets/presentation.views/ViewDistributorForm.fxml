@@ -23,7 +23,7 @@
             <Image url="@../profile1.png" />
          </image>
       </ImageView>
-      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
+      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Back">
          <font>
             <Font size="19.0" />
          </font>
@@ -108,14 +108,14 @@
          </font>
       </Label>
       <TextField fx:id="userDist" layoutX="62.0" layoutY="265.0" prefHeight="41.0" prefWidth="271.0" />
-      <Button id="viewEvents" fx:id="show" layoutX="117.0" layoutY="339.0" mnemonicParsing="false" onAction="#show" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Show">
+      <Button id="viewEvents" fx:id="show" layoutX="117.0" layoutY="339.0" mnemonicParsing="false" onAction="#show" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Show">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
       <Pane fx:id="infoPaneEv" disable="true" layoutX="30.0" layoutY="452.0" prefHeight="303.0" prefWidth="1178.0" style="-fx-border-color: #bac2ff;">
          <children>
-            <Button id="viewEvents" fx:id="search" layoutX="70.0" layoutY="193.0" mnemonicParsing="false" onAction="#search" prefHeight="42.0" prefWidth="171.0" style="-fx-background-color: #bac2ff;" text="Search">
+            <Button id="viewEvents" fx:id="search" layoutX="70.0" layoutY="193.0" mnemonicParsing="false" onAction="#search" prefHeight="42.0" prefWidth="171.0" stylesheets="@css/ButtonsOrganizer.css" text="Search">
                <font>
                   <Font size="19.0" />
                </font>

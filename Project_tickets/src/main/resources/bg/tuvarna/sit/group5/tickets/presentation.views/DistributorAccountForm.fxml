@@ -19,27 +19,27 @@
             <Image url="@../profile_dist.png" />
          </image>
       </ImageView>
-      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" onAction="#sellTickets" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Sell ticket">
+      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" onAction="#sellTickets" prefHeight="30.0" prefWidth="159.0" stylesheets="@css/ButtonsDistributor.css" text="Sell ticket">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="events" layoutX="558.0" layoutY="428.0" mnemonicParsing="false" onAction="#viewEvents" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #e8c4ff;" text="Events">
+      <Button fx:id="events" layoutX="558.0" layoutY="428.0" mnemonicParsing="false" onAction="#viewEvents" prefHeight="30.0" prefWidth="159.0" stylesheets="@css/ButtonsDistributor.css" text="Events">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="accountinfo" layoutX="752.0" layoutY="709.0" mnemonicParsing="false" onAction="#accInfo" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: #e8c4ff;" text="Account information">
+      <Button fx:id="accountinfo" layoutX="752.0" layoutY="709.0" mnemonicParsing="false" onAction="#accInfo" prefHeight="42.0" prefWidth="215.0" stylesheets="@css/ButtonsDistributor.css" text="Account information">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="notifications" layoutX="344.0" layoutY="709.0" mnemonicParsing="false" onAction="#viewNotifications" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #e8c4ff;" text="Notifications">
+      <Button fx:id="notifications" layoutX="344.0" layoutY="709.0" mnemonicParsing="false" onAction="#viewNotifications" prefHeight="41.0" prefWidth="182.0" stylesheets="@css/ButtonsDistributor.css" text="Notifications">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="rating" layoutX="933.0" layoutY="426.0" mnemonicParsing="false" onAction="#rating" prefHeight="41.0" prefWidth="173.0" style="-fx-background-color: #e8c4ff;" text="Rating">
+      <Button fx:id="rating" layoutX="933.0" layoutY="426.0" mnemonicParsing="false" onAction="#rating" prefHeight="41.0" prefWidth="173.0" stylesheets="@css/ButtonsDistributor.css" text="Rating">
          <font>
             <Font size="19.0" />
          </font>
@@ -69,7 +69,7 @@
             <Image url="@../3163690.png" />
          </image>
       </ImageView>
-      <Button fx:id="logout" layoutX="1071.0" layoutY="52.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #e8c4ff;" text="Log out">
+      <Button fx:id="logout" layoutX="1071.0" layoutY="52.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="159.0" stylesheets="@css/ButtonsDistributor.css" text="Log out">
          <font>
             <Font size="19.0" />
          </font>

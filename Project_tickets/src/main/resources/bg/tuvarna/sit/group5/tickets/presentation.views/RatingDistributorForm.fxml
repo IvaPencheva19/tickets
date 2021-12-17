@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="780.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tuvarna.sit.group5.tickets.presentation.controllers.RatingDistributorController">
    <children>
-      <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#bac2ff">
+      <Label fx:id="hello" layoutX="138.0" layoutY="58.0" prefHeight="38.0" prefWidth="321.0" text="Hello Organizer" textFill="#e8c4ff">
          <font>
             <Font size="27.0" />
          </font>
@@ -19,7 +19,7 @@
             <Image url="@../profile1.png" />
          </image>
       </ImageView>
-      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
+      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsDistributor.css" text="Back">
          <font>
             <Font size="19.0" />
          </font>
@@ -50,11 +50,6 @@
          </font>
       </Label>
       <Label fx:id="lrating" layoutX="492.0" layoutY="339.0" prefHeight="39.0" prefWidth="99.0" text="Name" textFill="#ffccdd">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
-         </font>
-      </Label>
-      <Label fx:id="lim" layoutX="299.0" layoutY="435.0" prefHeight="39.0" prefWidth="99.0" text="Name" textFill="#ffccdd">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>

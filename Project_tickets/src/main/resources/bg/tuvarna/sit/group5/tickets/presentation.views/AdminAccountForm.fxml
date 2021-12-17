@@ -13,23 +13,23 @@
             <font>
                 <Font size="27.0" />
             </font></Label>
-        <Button fx:id="addOrg" layoutX="166.0" layoutY="419.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add organizer">
+        <Button fx:id="addOrg" layoutX="166.0" layoutY="419.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="30.0" prefWidth="159.0" stylesheets="@css/ButtonsAdmin.css" text="Add organizer">
             <font>
                 <Font size="19.0" />
             </font></Button>
-        <Button fx:id="addDist" layoutX="548.0" layoutY="418.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Add distributor">
+        <Button fx:id="addDist" layoutX="548.0" layoutY="418.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="30.0" prefWidth="159.0" stylesheets="@css/ButtonsAdmin.css" text="Add distributor">
             <font>
                 <Font size="19.0" />
             </font></Button>
-        <Button layoutX="335.0" layoutY="693.0" mnemonicParsing="false" onAction="#updateOrganizerAccount" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update organizer">
+        <Button layoutX="335.0" layoutY="693.0" mnemonicParsing="false" onAction="#updateOrganizerAccount" prefHeight="41.0" prefWidth="182.0" stylesheets="@css/ButtonsAdmin.css" text="Update organizer">
             <font>
                 <Font size="19.0" />
             </font></Button>
-        <Button layoutX="751.0" layoutY="689.0" mnemonicParsing="false" onAction="#updateDistributorAccount" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #b2d0a1;" text="Update distributor">
+        <Button layoutX="741.0" layoutY="689.0" mnemonicParsing="false" onAction="#updateDistributorAccount" prefHeight="42.0" prefWidth="192.0" stylesheets="@css/ButtonsAdmin.css" text="Update distributor">
             <font>
                 <Font size="19.0" />
             </font></Button>
-        <Button layoutX="923.0" layoutY="416.0" mnemonicParsing="false" onAction="#changeAccount" prefHeight="41.0" prefWidth="173.0" style="-fx-background-color: #b2d0a1;" text="Change account">
+        <Button layoutX="923.0" layoutY="416.0" mnemonicParsing="false" onAction="#changeAccount" prefHeight="41.0" prefWidth="173.0" stylesheets="@css/ButtonsAdmin.css" text="Change account">
             <font>
                 <Font size="19.0" />
             </font></Button>
@@ -63,7 +63,7 @@
                 <Image url="@../user%20(2).png" />
             </image>
         </ImageView>
-        <Button fx:id="logout" layoutX="1059.0" layoutY="40.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #b2d0a1;" text="Log out">
+        <Button fx:id="logout" layoutX="1059.0" layoutY="40.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="159.0" stylesheets="@css/ButtonsAdmin.css" text="Log out">
             <font>
                 <Font size="19.0" />
             </font>

@@ -24,7 +24,7 @@
                         <Font size="27.0" />
                      </font>
                   </Label>
-                  <Button id="addChangeEvent" fx:id="addEvent" layoutX="541.0" layoutY="1159.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Add event">
+                  <Button id="addChangeEvent" fx:id="addEvent" layoutX="541.0" layoutY="1159.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Add event">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -34,13 +34,13 @@
                         <Image url="@../profile1.png" />
                      </image>
                   </ImageView>
-                  <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
+                  <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Back">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
                   <TextField fx:id="time" layoutX="285.0" layoutY="283.0" prefHeight="26.0" prefWidth="176.0" />
-                  <TextField fx:id="place" layoutX="282.0" layoutY="345.0" prefHeight="26.0" prefWidth="176.0" />
+                  <TextField fx:id="place" layoutX="284.0" layoutY="345.0" prefHeight="26.0" prefWidth="176.0" />
                   <DatePicker fx:id="date" layoutX="284.0" layoutY="233.0" />
                   <Label layoutX="162.0" layoutY="224.0" prefHeight="18.0" prefWidth="84.0" text="Date" textFill="#bac2ff">
                      <font>
@@ -52,24 +52,24 @@
                         <Font size="34.0" />
                      </font>
                   </Label>
-                  <Label layoutX="164.0" layoutY="334.0" prefHeight="18.0" prefWidth="84.0" text="Place" textFill="#bac2ff">
+                  <Label layoutX="160.0" layoutY="334.0" prefHeight="18.0" prefWidth="84.0" text="Place" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="types" layoutX="285.0" layoutY="400.0" prefHeight="26.0" prefWidth="169.0" />
-                  <Label layoutX="168.0" layoutY="389.0" prefHeight="18.0" prefWidth="84.0" text="Type" textFill="#bac2ff">
+                  <ComboBox fx:id="types" layoutX="287.0" layoutY="400.0" prefHeight="26.0" prefWidth="169.0" />
+                  <Label layoutX="159.0" layoutY="389.0" prefHeight="18.0" prefWidth="84.0" text="Type" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Label>
-                  <Label layoutX="166.0" layoutY="453.0" prefHeight="50.0" prefWidth="109.0" text="Name" textFill="#bac2ff">
+                  <Label layoutX="157.0" layoutY="453.0" prefHeight="50.0" prefWidth="109.0" text="Name" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Label>
                   <TextArea fx:id="description" layoutX="593.0" layoutY="306.0" prefHeight="150.0" prefWidth="482.0" />
-                  <TextField fx:id="name" layoutX="281.0" layoutY="466.0" prefHeight="26.0" prefWidth="176.0" />
+                  <TextField fx:id="name" layoutX="284.0" layoutY="466.0" prefHeight="26.0" prefWidth="176.0" />
                   <Label layoutX="592.0" layoutY="232.0" prefHeight="50.0" prefWidth="182.0" text="Description" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
@@ -77,18 +77,18 @@
                   </Label>
                   <TextField fx:id="type" layoutX="270.0" layoutY="649.0" prefHeight="26.0" prefWidth="176.0" />
                   <TextField fx:id="price" layoutX="267.0" layoutY="711.0" prefHeight="26.0" prefWidth="176.0" />
-                  <Label layoutX="147.0" layoutY="639.0" prefHeight="18.0" prefWidth="84.0" text="Type" textFill="#bac2ff">
+                  <Label layoutX="137.0" layoutY="639.0" prefHeight="18.0" prefWidth="84.0" text="Type" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Label>
-                  <Label layoutX="149.0" layoutY="700.0" prefHeight="18.0" prefWidth="84.0" text="Price" textFill="#bac2ff">
+                  <Label layoutX="139.0" layoutY="700.0" prefHeight="18.0" prefWidth="84.0" text="Price" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Label>
                   <TextField fx:id="count" layoutX="269.0" layoutY="781.0" prefHeight="26.0" prefWidth="176.0" />
-                  <Label layoutX="138.0" layoutY="765.0" prefHeight="50.0" prefWidth="124.0" text="Count" textFill="#bac2ff">
+                  <Label layoutX="140.0" layoutY="765.0" prefHeight="50.0" prefWidth="124.0" text="Count" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>
@@ -103,19 +103,19 @@
                         <Font size="34.0" />
                      </font>
                   </Label>
-                  <Button id="addChangeEvent" layoutX="180.0" layoutY="888.0" mnemonicParsing="false" onAction="#addTicket" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Add ticket ">
+                  <Button id="addChangeEvent" layoutX="180.0" layoutY="888.0" mnemonicParsing="false" onAction="#addTicket" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Add ticket ">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button id="addChangeEvent" layoutX="872.0" layoutY="939.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Add distributor">
+                  <Button id="addChangeEvent" layoutX="872.0" layoutY="939.0" mnemonicParsing="false" onAction="#addDistributor" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Add distributor">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
                   <ListView fx:id="distList" layoutX="823.0" layoutY="623.0" prefHeight="193.0" prefWidth="358.0" />
-                  <TextField fx:id="username" layoutX="1022.0" layoutY="876.0" />
-                  <Label layoutX="798.0" layoutY="860.0" prefHeight="50.0" prefWidth="161.0" text="Username" textFill="#bac2ff">
+                  <TextField fx:id="username" layoutX="1022.0" layoutY="876.0" prefHeight="26.0" prefWidth="157.0" />
+                  <Label layoutX="820.0" layoutY="860.0" prefHeight="50.0" prefWidth="161.0" text="Username" textFill="#bac2ff">
                      <font>
                         <Font size="34.0" />
                      </font>

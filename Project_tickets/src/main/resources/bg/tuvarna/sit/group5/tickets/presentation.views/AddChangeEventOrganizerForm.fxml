@@ -14,7 +14,7 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Button id="addChangeEvent" layoutX="188.0" layoutY="409.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Add event">
+      <Button id="addChangeEvent" layoutX="174.0" layoutY="475.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Add event">
          <font>
             <Font size="19.0" />
          </font>
@@ -24,20 +24,35 @@
             <Image url="@../profile1.png" />
          </image>
       </ImageView>
-      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
+      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Back">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button id="addChangeEvent" layoutX="529.0" layoutY="409.0" mnemonicParsing="false" onAction="#changeEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Change event">
+      <Button id="addChangeEvent" layoutX="515.0" layoutY="475.0" mnemonicParsing="false" onAction="#changeEvent" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Change event">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button id="addChangeEvent" layoutX="882.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Delete event">
+      <Button id="addChangeEvent" layoutX="868.0" layoutY="476.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Delete event">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="877.0" layoutY="255.0">
+         <image>
+            <Image url="@../delete_event.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="529.0" layoutY="243.0">
+         <image>
+            <Image url="@../event.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="195.0" layoutY="259.0">
+         <image>
+            <Image url="@../add-event.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -23,14 +23,14 @@
       </ImageView>
       <TextField fx:id="newValue" layoutX="514.0" layoutY="321.0" prefHeight="43.0" prefWidth="232.0" />
       <ComboBox fx:id="changeCombo" layoutX="327.0" layoutY="231.0" prefHeight="45.0" prefWidth="630.0" />
-      <Button layoutX="554.0" layoutY="408.0" mnemonicParsing="false" onAction="#changeValue" prefHeight="46.0" prefWidth="147.0" style="-fx-background-color: #b2d0a1;" text="Change">
+      <Button layoutX="554.0" layoutY="408.0" mnemonicParsing="false" onAction="#changeValue" prefHeight="46.0" prefWidth="147.0" stylesheets="@css/ButtonsAdmin.css" text="Change">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="1127.0" layoutY="87.0" mnemonicParsing="false" onAction="#goBack" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: #b2d0a1;" text="Back ">
+      <Button fx:id="back" layoutX="1127.0" layoutY="87.0" mnemonicParsing="false" onAction="#goBack" prefHeight="40.0" prefWidth="126.0" stylesheets="@css/ButtonsAdmin.css" text="Back ">
          <font>
-            <Font size="25.0" />
+            <Font size="19.0" />
          </font>
       </Button>
    </children>
