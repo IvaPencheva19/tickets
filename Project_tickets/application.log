@@ -210,3 +210,4 @@
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.access.Connection  - Initial SessionFactory created failed org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
 [JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown database 'test'
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.access.Connection  - Initial SessionFactory created failed org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query

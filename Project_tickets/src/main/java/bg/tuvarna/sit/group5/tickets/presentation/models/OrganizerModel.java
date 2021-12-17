@@ -24,7 +24,8 @@ public class OrganizerModel {
 
     @Override
     public String toString() {
-        return  String.format("%s %s %s %s %s %s %s",username, password,
+        return  String.format("%s                                    %s                                  %s                   " +
+                        "               %s                        %s         %s    %s",username, password,
                 firstName, lastName, phone,email, honor);
     }
 }
