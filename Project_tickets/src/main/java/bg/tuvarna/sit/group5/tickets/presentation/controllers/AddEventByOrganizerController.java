@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.*;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ShowWarning;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventTypeModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.TicketsModel;
@@ -48,9 +49,9 @@ public class AddEventByOrganizerController {
 
 
 
-    private DistributorService dserv=new DistributorService();
-    private EventTypeService eserv=new EventTypeService();
-    private EventService evserv=new EventService();
+    private DistributorService dserv=DistributorService.getInstance();
+    private EventTypeService eserv=EventTypeService.getInstance();
+    private EventService evserv=EventService.getInstance();
 
     private TicketsService tserv=new TicketsService();
     private OrganizerService oserv=new OrganizerService();
@@ -64,8 +65,8 @@ public class AddEventByOrganizerController {
     }
 
     public void load(){
-        EventTypeService service=new EventTypeService();
-        ObservableList<EventTypeModel> allTypes=service.getAll();
+
+        ObservableList<EventTypeModel> allTypes=eserv.getAll();
         types.setItems(allTypes);
 
         ObservableList<DistributorModel> distributors=dserv.getAllDistributors();
@@ -82,18 +83,21 @@ public class AddEventByOrganizerController {
         Tickets ticket=new Tickets(type,price,count,null);
         ticket.setStartCount(count);
        tickets.add(ticket);
-       TicketsModel tModel=new TicketsModel(ticket.getType(),ticket.getPrice(),ticket.getCount(),null);
+       TicketsModel tModel=new TicketsModel(ticket.getType(),ticket.getPrice(),ticket.getCount());
        addedTickets.getItems().add(tModel);
     }
 
     public void addDistributor(){
         String username=this.username.getText();
         Distributor dist=dserv.getByUsername(username);
-        distributors.add(dist);
-        DistributorModel dModel=new DistributorModel(dist.getUsername(),dist.getPassword(),
-                dist.getFirstname(),dist.getLastname(),dist.getPhone(),dist.getEmail(),
-                dist.getHonor(),dist.getRating());
-        addedDistributors.getItems().add(dModel);
+        if (dist==null) ShowWarning.showWarning("There is no distributor with this username!");
+        else {
+            distributors.add(dist);
+            DistributorModel dModel = new DistributorModel(dist.getUsername(), dist.getPassword(),
+                    dist.getFirstname(), dist.getLastname(), dist.getPhone(), dist.getEmail(),
+                    dist.getHonor(), dist.getRating());
+            addedDistributors.getItems().add(dModel);
+        }
 
     }
     public void addEvent(){

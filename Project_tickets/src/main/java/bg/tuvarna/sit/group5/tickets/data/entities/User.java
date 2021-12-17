@@ -120,12 +120,14 @@ public abstract class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return idUser == user.idUser && Objects.equals(username, user.username) && Objects.equals(password, user.password)
-                && Objects.equals(firstname, user.firstname) && Objects.equals(lastname, user.lastname)
-                && Objects.equals(phone, user.phone) && Objects.equals(email, user.email);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        User other = (User)o;
+        return Objects.equals(idUser, other.getIdUser());
     }
 
     @Override

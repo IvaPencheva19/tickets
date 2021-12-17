@@ -7,12 +7,12 @@ import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 public class AdminService {
     private final UserRepository repository = UserRepository.getInstance();
 
-    public static UserService getInstance() {
+    public static AdminService getInstance() {
         return AdminService.UserHolder.INSTANCE;
     }
 
     private static class UserHolder {
-        public static final UserService INSTANCE = new UserService();
+        public static final AdminService INSTANCE = new AdminService();
     }
     public void changeUserName(Admin adm, String username){
         adm.setUsername(username);

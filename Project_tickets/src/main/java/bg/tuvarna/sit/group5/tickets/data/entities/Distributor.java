@@ -86,11 +86,14 @@ public class Distributor extends User{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Distributor that = (Distributor) o;
-        return Objects.equals(honor, that.honor) && Objects.equals(rating, that.rating) && Objects.equals(eventsByDistributor, that.eventsByDistributor) && Objects.equals(sellTickets, that.sellTickets);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        Distributor other = (Distributor) o;
+        return Objects.equals(getIdUser(), other.getIdUser());
     }
 
     @Override

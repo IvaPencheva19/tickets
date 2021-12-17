@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.*;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ShowWarning;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.TicketsModel;
 import bg.tuvarna.sit.group5.tickets.service.EventService;
@@ -12,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 
 import java.util.Set;
 
@@ -42,13 +44,17 @@ public class SellTicketController {
     private TextField tcount;
     @FXML
     private Button buyTickets;
+     @FXML
+     private Pane buyPane;
+     @FXML
+     private Pane ticksPane;
 
     private Event event;
 
 
-    private EventService service = new EventService();
-    private TicketsService tService = new TicketsService();
-    private SellTicketsService stServ = new SellTicketsService();
+    private EventService service = EventService.getInstance();
+    private TicketsService tService = TicketsService.getInstance();
+    private SellTicketsService stServ = SellTicketsService.getInstance();
     public void goBack(ActionEvent event){
         HelloController.user.loadController();
         CloseForm.closeForm(event);
@@ -66,31 +72,36 @@ public class SellTicketController {
     public void checkTickets(){
         String name = evname.getText();
         event = service.getByName(name);
-        Set<Tickets> tick = event.getTicketsByIdEvent();
-        int br=0;
-        for(Tickets t : tick){
-            br=br+t.getCount();
+        evname.clear();
+        cusname.clear();
+        tcount.clear();
+        if (event==null) {
+            ShowWarning.showWarning("There is no event with this name!");
+            buyPane.setVisible(false);
+            ticksPane.setVisible(false);
         }
-        if(br==0){
-            Alert a = new Alert(Alert.AlertType.WARNING);
-            a.setContentText("No available tickets!");
-            a.show();
-
-        }
-        else{
-            lcusname.setVisible(true);
-            cusname.setVisible(true);
-            lticktype.setVisible(true);
-            ticktype.setVisible(true);
-            lcount.setVisible(true);
-            tcount.setVisible(true);
-            buyTickets.setVisible(true);
-            listTickets.setVisible(true);
-            for(Tickets t: tick){
-                ticktype.getItems().addAll(t.getType());
+        else {
+            Set<Tickets> tick = event.getTicketsByIdEvent();
+            int br = 0;
+            for (Tickets t : tick) {
+                br = br + t.getCount();
             }
-            ObservableList<TicketsModel> ticks = tService.getAllTicketsByEvent(event);
-            listTickets.setItems(ticks);
+            if (br == 0) {
+                Alert a = new Alert(Alert.AlertType.WARNING);
+                a.setContentText("No available tickets!");
+                a.show();
+                buyPane.setVisible(false);
+                ticksPane.setVisible(false);
+
+            } else {
+                buyPane.setVisible(true);
+                ticksPane.setVisible(true);
+                for (Tickets t : tick) {
+                    ticktype.getItems().addAll(t.getType());
+                }
+                ObservableList<TicketsModel> ticks = tService.getAllTicketsByEvent(event);
+                listTickets.setItems(ticks);
+            }
         }
     }
 
@@ -108,16 +119,18 @@ public class SellTicketController {
         tService.changeCount(tick, tick.getCount()-count);
         SellTickets tickets = new SellTickets(count, cname, tick, (Distributor) HelloController.user, event);
         stServ.createSellTickets(tickets);
+            NotificationsService nserv=NotificationsService.getInstance();
+            Notifications not=new Notifications
+                    (HelloController.user.getUsername()+" sold "+count+" tickets for "+
+                            event.getName(),event.getOrganizer());
+            nserv.createNotification(not);
+            evname.clear();
+            cusname.clear();
+            tcount.clear();
         }
-        NotificationsService nserv=NotificationsService.getInstance();
-        Notifications not=new Notifications
-                (HelloController.user.getUsername()+" sold "+count+" tickets for "+
-                        event.getName(),event.getOrganizer());
-   nserv.createNotification(not);
-
-        evname.clear();
-        cusname.clear();
         tcount.clear();
+
+
 
     }
 }

@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.*;
 import bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository;
+import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,11 +14,16 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class EventService {
+
     private final EventRepository repository = EventRepository.getInstance();
+    private final UserRepository drepository = UserRepository.getInstance();
+   private final DistributorService dserv=DistributorService.getInstance();
+    private final NotificationsService nrep=NotificationsService.getInstance();
 
     public static EventService getInstance() {
         return EventService.UserHolder.INSTANCE;
     }
+
 
     private static class UserHolder {
         public static final EventService INSTANCE = new EventService();
@@ -77,6 +83,10 @@ public class EventService {
     }
     public void addTickets(Event event, Set<Tickets> tickets){
      event.setTicketsByIdEvent(tickets);
+    }
+    public void addTicket(Event event, Tickets ticket){
+        event.getTicketsByIdEvent().add(ticket);
+        repository.update(event);
     }
 public Event getById(int id){
         Event ret=repository.getById(id);
@@ -244,5 +254,24 @@ return events;
             }
         }
     }
+
+    public void addDistributor(Event event,Distributor dist){
+        event.getDistribEvent().add(dist);
+        repository.update(event);
+        dserv.addEvent(dist,event);
+       Notifications not=new Notifications("You have new event: "+event.getName(),dist);
+        nrep.createNotification(not);
+
+    }
+    public void deleteDistributor(Event event,Distributor dist){
+        DistributorService dserv=DistributorService.getInstance();
+        dserv.removeEvent(dist,event);
+        (event.getDistribEvent()).remove(dist);
+        repository.update(event);
+       /* Notifications not=new Notifications("Your event "+event.getName()+" were removed from your account",dist);
+        nrep.createNotification(not);*/
+
+    }
+
 
 }

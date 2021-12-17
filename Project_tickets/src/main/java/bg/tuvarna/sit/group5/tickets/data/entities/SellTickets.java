@@ -108,13 +108,14 @@ public class SellTickets {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SellTickets that = (SellTickets) o;
-        return idSell == that.idSell && Objects.equals(count, that.count) &&
-                Objects.equals(custumer_name, that.custumer_name) &&
-                Objects.equals(ticket_type, that.ticket_type) &&
-                Objects.equals(distrib, that.distrib) && Objects.equals(event, that.event);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        SellTickets other = (SellTickets)o;
+        return Objects.equals(idSell, other.getIdSell());
     }
 
     @Override

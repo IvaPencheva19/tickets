@@ -26,7 +26,7 @@ public class DistributorAccountInformationController {
     @FXML
     private Label rating;
 
-    private DistributorService service=new DistributorService();
+    private DistributorService service=DistributorService.getInstance();
 
     public void loadDist(){
         Distributor dist=service.getByUsername(HelloController.user.getUsername());

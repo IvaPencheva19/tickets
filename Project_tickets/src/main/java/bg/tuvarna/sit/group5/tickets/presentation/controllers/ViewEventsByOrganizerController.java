@@ -22,7 +22,7 @@ public class ViewEventsByOrganizerController {
     private DatePicker toDate;
     @FXML
     ListView listEvents;
-    private EventService service=new EventService();
+    private EventService service=EventService.getInstance();
     public void goBack(ActionEvent event){
         HelloController.user.loadController();
         CloseForm.closeForm(event);
@@ -33,6 +33,7 @@ public class ViewEventsByOrganizerController {
     public void viewEvents(){
         LocalDate ldate1=fromDate.getValue();
         LocalDate ldate2=toDate.getValue();
+        listEvents.getItems().clear();
         ObservableList<EventModel> events = service.getAllByDates((Organizer)HelloController.user,ldate1,ldate2);
         listEvents.setItems(events);
     }

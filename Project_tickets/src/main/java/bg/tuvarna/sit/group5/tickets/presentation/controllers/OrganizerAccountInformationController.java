@@ -25,7 +25,7 @@ public class OrganizerAccountInformationController {
     @FXML
     private Label honor;
 
-    private OrganizerService service=new OrganizerService();
+    private OrganizerService service=OrganizerService.getInstance();
     public void load(){
         Organizer org=service.getByUsername(HelloController.user.getUsername());
         username.setText(org.getUsername());

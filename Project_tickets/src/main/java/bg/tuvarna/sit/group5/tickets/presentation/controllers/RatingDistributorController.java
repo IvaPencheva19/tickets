@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
 
 
 import java.math.BigDecimal;
@@ -28,11 +29,13 @@ public class RatingDistributorController {
 
     @FXML
     private Label lrating;
+    @FXML
+    private ProgressIndicator progress;
 
 
 
 
-    private EventService eventService = new EventService();
+    private EventService eventService = EventService.getInstance();
 
     public void setUser() {
         hello.setText (HelloController.user.getUsername());
@@ -70,9 +73,10 @@ public class RatingDistributorController {
 
         BigDecimal bd = new BigDecimal(rating).setScale(2, RoundingMode.HALF_UP);
         rating=bd.doubleValue();
-        lrating.setText(rating.toString());
+        lrating.setText(rating.toString()+"%");
         DistributorService dis=new DistributorService();
 
         dis.changeRating((Distributor) HelloController.user,rating);
+        progress.setProgress(rating/100);
     }
 }

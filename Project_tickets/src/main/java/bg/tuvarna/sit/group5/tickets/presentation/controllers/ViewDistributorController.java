@@ -5,6 +5,7 @@ import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.data.entities.SellTickets;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ShowWarning;
 import bg.tuvarna.sit.group5.tickets.presentation.models.SellTicketsModel;
 import bg.tuvarna.sit.group5.tickets.service.DistributorService;
 import bg.tuvarna.sit.group5.tickets.service.EventService;
@@ -49,8 +50,8 @@ public class ViewDistributorController {
     private ListView soldList;
 
 
-    private DistributorService distServ =  new DistributorService();
-    private EventService eServ = new EventService();
+    private DistributorService distServ =  DistributorService.getInstance();
+    private EventService eServ = EventService.getInstance();
     private Distributor dist;
 
 
@@ -64,18 +65,23 @@ public class ViewDistributorController {
     }
 
     public void show(){
-        infoPane.setDisable(false);
-        infoPaneEv.setDisable(false);
+        comboEvents.getItems().clear();
         String usedist = userDist.getText();
         dist=distServ.getByUsername(usedist);
-        username.setText(dist.getUsername());
-        fname.setText(dist.getFirstname());
-        lname.setText(dist.getLastname());
-        phone.setText(dist.getPhone());
-        email.setText(dist.getEmail());
-        honor.setText(dist.getHonor().toString());
-        rating.setText(dist.getRating().toString());
-        loadCombo();
+        if (dist==null) ShowWarning.showWarning("There is no distributor with this username!");
+        else {
+            username.setText(dist.getUsername());
+            fname.setText(dist.getFirstname());
+            lname.setText(dist.getLastname());
+            phone.setText(dist.getPhone());
+            email.setText(dist.getEmail());
+            honor.setText(dist.getHonor().toString());
+            rating.setText(dist.getRating().toString());
+            loadCombo();
+            infoPane.setDisable(false);
+            infoPaneEv.setDisable(false);
+        }
+        userDist.clear();
     }
 
     public void search(){

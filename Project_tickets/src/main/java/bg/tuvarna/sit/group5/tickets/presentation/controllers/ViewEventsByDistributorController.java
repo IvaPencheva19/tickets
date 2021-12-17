@@ -23,7 +23,7 @@ public class ViewEventsByDistributorController {
     private DatePicker toDate;
     @FXML
     ListView listEvents;
-    private EventService service=new EventService();
+    private EventService service=EventService.getInstance();
     public void setUser() {
         hello.setText (HelloController.user.getUsername());
     }
@@ -34,7 +34,7 @@ public class ViewEventsByDistributorController {
     public void viewEvents(){
         LocalDate ldate1=fromDate.getValue();
         LocalDate ldate2=toDate.getValue();
-
+        listEvents.getItems().clear();
         ObservableList<EventModel> events = service.getAllByDateDistributor((Distributor) HelloController.user,ldate1,ldate2);
         listEvents.setItems(events);
 

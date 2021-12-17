@@ -21,21 +21,56 @@
             <Image url="@../profile1.png" />
          </image>
       </ImageView>
-      <Button id="viewEvents" fx:id="back" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Back">
+      <Button id="viewEvents" fx:id="back" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button id="addChangeEvent" layoutX="528.0" layoutY="603.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Delete event">
+      <Button id="addChangeEvent" layoutX="546.0" layoutY="632.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #bac2ff;" text="Delete event">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <ListView fx:id="listEvents" layoutX="274.0" layoutY="230.0" prefHeight="200.0" prefWidth="703.0" />
-      <TextField fx:id="eventToDelete" layoutX="721.0" layoutY="480.0" />
-      <Label fx:id="hello1" layoutX="335.0" layoutY="473.0" prefHeight="39.0" prefWidth="386.0" text="Insert name of event to delete" textFill="#bac2ff">
+      <ListView fx:id="listEvents" layoutX="242.0" layoutY="280.0" prefHeight="223.0" prefWidth="810.0" />
+      <TextField fx:id="eventToDelete" layoutX="741.0" layoutY="559.0" />
+      <Label fx:id="hello1" layoutX="355.0" layoutY="552.0" prefHeight="39.0" prefWidth="386.0" text="Insert name of event to delete" textFill="#bac2ff">
          <font>
             <Font size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello2" layoutX="248.0" layoutY="224.0" prefHeight="39.0" prefWidth="99.0" text="Name" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello21" layoutX="380.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Date" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello211" layoutX="492.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Time" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello2111" layoutX="592.0" layoutY="221.0" prefHeight="39.0" prefWidth="99.0" text="Place" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello21111" layoutX="697.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Status" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello21112" layoutX="823.0" layoutY="222.0" prefHeight="39.0" prefWidth="99.0" text="Type" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="hello21113" layoutX="916.0" layoutY="221.0" prefHeight="39.0" prefWidth="131.0" text="Organizer" textFill="#bac2ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Label>
    </children>
