@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class AddDistributorAccountController {
-    private DistributorService distService=new DistributorService();
+    private DistributorService distService=DistributorService.getInstance();
     @FXML
     private Button add;
     @FXML

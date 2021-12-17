@@ -85,8 +85,10 @@ public class EventTypeRepository implements DAORepository<EventType>{
         EventType retEvType;
 
         try {
-            String jql="SELECT et FROM EventType et WHERE et.id=idEventType";
-           retEvType=session.createQuery(jql, EventType.class).getSingleResult();
+            String jql = "SELECT u FROM EventType u WHERE idEventType = :id";
+            Query query = session.createQuery(jql,EventType.class);
+            query.setParameter("id", id);
+            retEvType= (EventType)query.getSingleResult();
             log.info("Get event type by id");
         }
         catch (Exception ex){

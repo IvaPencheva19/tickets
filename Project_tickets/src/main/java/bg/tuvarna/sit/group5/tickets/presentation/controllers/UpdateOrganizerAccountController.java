@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ShowWarning;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventTypeModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.OrganizerModel;
 import bg.tuvarna.sit.group5.tickets.service.OrganizerService;
@@ -25,7 +26,7 @@ public class UpdateOrganizerAccountController {
     @FXML
     private ComboBox changeCombo;
 
-    private OrganizerService service=new OrganizerService();
+    private OrganizerService service=OrganizerService.getInstance();
 
     public void load() {
         ObservableList<OrganizerModel> organizers=service.getAllOrganizers();
@@ -36,40 +37,42 @@ public class UpdateOrganizerAccountController {
     public void changeOrganizer(){
         String uname=userName.getText();
         Organizer org=service.getByUsername(uname);
-        String newVal=newValue.getText();
+        if (org==null) ShowWarning.showWarning("There is no organizer with this username");
+        else {
+            String newVal = newValue.getText();
+            String val = this.newValue.getText();
+            String res = this.changeCombo.getValue().toString();
+
+            if (res.equals("username")) {
+                service.changeUserName(org, newVal);
+            }
+
+            if (res.equals("password")) {
+                service.changePassword(org, newVal);
+            }
+
+            if (res.equals("firstname")) {
+                service.changeFirstName(org, newVal);
+            }
+            if (res.equals("lastname")) {
+                service.changeLastName(org, newVal);
+            }
+
+            if (res.equals("phone")) {
+                service.changePhone(org, newVal);
+            }
+
+            if (res.equals("email")) {
+                service.changeEmail(org, newVal);
+            }
+            if (res.equals("honor")) {
+
+                double hon = Double.parseDouble(newVal);
+                service.changeHonor(org, hon);
+            }
 
 
-        String val= this.newValue.getText();
-        String res=this.changeCombo.getValue().toString();
-
-        if(res.equals("username")){
-            service.changeUserName(org, newVal);
         }
-
-        if(res.equals("password")){
-            service.changePassword(org, newVal);
-        }
-
-        if(res.equals("firstname")){
-            service.changeFirstName(org, newVal);
-        }
-        if(res.equals("lastname")){
-            service.changeLastName(org, newVal);
-        }
-
-        if(res.equals("phone")){
-            service.changePhone(org, newVal);
-        }
-
-        if(res.equals("email")){
-            service.changeEmail(org, newVal);
-        }
-        if(res.equals("honor")){
-
-            double hon= Double.parseDouble(newVal);
-            service.changeHonor(org, hon);
-        }
-
         newValue.clear();
         userName.clear();
     }
@@ -77,7 +80,8 @@ public class UpdateOrganizerAccountController {
     public void deleteOrganizer(){
         String uname=userName.getText();
         Organizer org=service.getByUsername(uname);
-
+        if (org==null) ShowWarning.showWarning("There is no distributor with this username!");
+        else
         service.deleteOrganizer(org);
     }
 

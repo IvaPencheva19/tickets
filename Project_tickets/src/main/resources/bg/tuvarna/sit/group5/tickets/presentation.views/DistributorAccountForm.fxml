@@ -19,7 +19,7 @@
             <Image url="@../profile_dist.png" />
          </image>
       </ImageView>
-      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" onAction="#sellTickets" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: e8c4ff;" text="Sell ticket">
+      <Button fx:id="sell" layoutX="181.0" layoutY="429.0" mnemonicParsing="false" onAction="#sellTickets" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #e8c4ff;" text="Sell ticket">
          <font>
             <Font size="19.0" />
          </font>

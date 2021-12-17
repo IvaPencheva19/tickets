@@ -37,6 +37,7 @@ public class Tickets {
         this.price = price;
         this.count = count;
         this.eventByEventIdEvent=event;
+        this.startCount=count;
 
     }
 
@@ -91,13 +92,20 @@ public class Tickets {
         this.startCount = startCount;
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tickets tickets = (Tickets) o;
-        return idTickets == tickets.idTickets && Objects.equals(type, tickets.type) && Objects.equals(price, tickets.price) && Objects.equals(count, tickets.count) && Objects.equals(eventByEventIdEvent, tickets.eventByEventIdEvent);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        Tickets other = (Tickets)o;
+        return Objects.equals(idTickets, other.getIdTickets());
     }
 
-
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(idTickets, type, price, count, eventByEventIdEvent, startCount);
+    }
 }

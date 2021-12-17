@@ -14,12 +14,12 @@ import java.util.stream.Collectors;
 public class DistributorService {
     private final UserRepository repository = UserRepository.getInstance();
 
-    public static UserService getInstance() {
+    public static DistributorService getInstance() {
         return DistributorService.UserHolder.INSTANCE;
     }
 
     private static class UserHolder {
-        public static final UserService INSTANCE = new UserService();
+        public static final DistributorService INSTANCE = new DistributorService();
     }
 
     public void createDistributor(Distributor distributor){

@@ -5,7 +5,7 @@ import org.hibernate.cfg.Configuration;
 import org.apache.log4j.Logger;
 public class Connection {
 private static final Logger log=Logger.getLogger(Connection.class);
-private static SessionFactory sessionFactory;
+public static SessionFactory sessionFactory;
 static{
     try{
         sessionFactory=new Configuration().configure().buildSessionFactory();

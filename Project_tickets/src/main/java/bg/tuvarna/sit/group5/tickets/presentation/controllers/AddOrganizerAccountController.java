@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 
 public class AddOrganizerAccountController {
 
-    private OrganizerService orgService=new OrganizerService();
+    private OrganizerService orgService=OrganizerService.getInstance();
 
     @FXML
     private TextField username;

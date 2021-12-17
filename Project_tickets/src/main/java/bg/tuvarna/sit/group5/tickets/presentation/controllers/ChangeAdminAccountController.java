@@ -20,7 +20,7 @@ public class ChangeAdminAccountController {
         changeCombo.getItems().addAll("username", "password", "firstname", "lastname", "phone",
                 "email");
     }
-    private AdminService admSer= new AdminService();
+    private AdminService admSer= AdminService.getInstance();
     private Admin adm=(Admin)HelloController.user;
     public void changeValue(){
         String val= this.newValue.getText();
@@ -54,6 +54,7 @@ public class ChangeAdminAccountController {
             admSer.changeEmail(adm, val);
             newValue.clear();
         }
+        newValue.clear();
     }
 
     public void goBack(ActionEvent event){

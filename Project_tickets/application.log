@@ -204,3 +204,39 @@
 [JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Access denied for user ''@'localhost' (using password: NO)
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.access.Connection  - Initial SessionFactory created failed org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
 [JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.access.Connection  - Initial SessionFactory created failed org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: bg.tuvarna.sit.group5.tickets.data.entities.User.ticketsByIdEvent[bg.tuvarna.sit.group5.tickets.data.entities.Notifications]
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository  - Get User error: No entity found for query
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry '20-43' for key 'distrib_event.PRIMARY'
+[JavaFX Application Thread] ERROR bg.tuvarna.sit.group5.tickets.data.repositories.EventRepository  - Get event error: No entity found for query
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Cannot delete or update a parent row: a foreign key constraint fails (`tickets_oop`.`sell_tickets`, CONSTRAINT `fk_sell_tickets_tickets1` FOREIGN KEY (`tickets_idTickets`) REFERENCES `tickets` (`idTickets`))
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Cannot delete or update a parent row: a foreign key constraint fails (`tickets_oop`.`sell_tickets`, CONSTRAINT `fk_sell_tickets_tickets1` FOREIGN KEY (`tickets_idTickets`) REFERENCES `tickets` (`idTickets`))
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Cannot delete or update a parent row: a foreign key constraint fails (`tickets_oop`.`sell_tickets`, CONSTRAINT `fk_sell_tickets_tickets1` FOREIGN KEY (`tickets_idTickets`) REFERENCES `tickets` (`idTickets`))
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Cannot delete or update a parent row: a foreign key constraint fails (`tickets_oop`.`sell_tickets`, CONSTRAINT `fk_sell_tickets_tickets1` FOREIGN KEY (`tickets_idTickets`) REFERENCES `tickets` (`idTickets`))
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Cannot delete or update a parent row: a foreign key constraint fails (`tickets_oop`.`sell_tickets`, CONSTRAINT `fk_sell_tickets_tickets1` FOREIGN KEY (`tickets_idTickets`) REFERENCES `tickets` (`idTickets`))
+[JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Cannot delete or update a parent row: a foreign key constraint fails (`tickets_oop`.`sell_tickets`, CONSTRAINT `fk_sell_tickets_tickets1` FOREIGN KEY (`tickets_idTickets`) REFERENCES `tickets` (`idTickets`))

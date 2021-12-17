@@ -6,16 +6,16 @@ public class TicketsModel {
     private String type;
     private double price;
     private int count;
-    private Event event;
 
-    public TicketsModel(String type, double price, int count, Event event) {
+
+    public TicketsModel(String type, double price, int count) {
         this.type = type;
         this.price = price;
         this.count = count;
     }
 
     public String toString() {
-        return  String.format("%s %s %s  ",type, price,
+            return  String.format("   %s                                              %s$                                         %s  ",type, price,
                 count);
     }
 }

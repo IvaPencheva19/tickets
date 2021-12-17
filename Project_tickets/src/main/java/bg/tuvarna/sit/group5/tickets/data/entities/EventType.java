@@ -48,10 +48,14 @@ public class EventType {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EventType that = (EventType) o;
-        return idEventType == that.idEventType && Objects.equals(typeNamel, that.typeNamel);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        EventType other = (EventType) o;
+        return Objects.equals(idEventType, other.getIdEventType());
     }
 
     @Override

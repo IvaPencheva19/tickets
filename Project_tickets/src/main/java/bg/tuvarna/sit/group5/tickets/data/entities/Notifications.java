@@ -63,10 +63,14 @@ public class Notifications {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Notifications that = (Notifications) o;
-        return idNotif == that.idNotif && Objects.equals(message, that.message) && Objects.equals(seen, that.seen);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+       Notifications other = (Notifications) o;
+        return Objects.equals(idNotif, other.getIdNotif());
     }
 
     @Override

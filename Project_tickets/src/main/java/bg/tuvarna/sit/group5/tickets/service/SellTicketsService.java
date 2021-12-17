@@ -1,6 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.service;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.SellTickets;
+import bg.tuvarna.sit.group5.tickets.data.entities.Tickets;
 import bg.tuvarna.sit.group5.tickets.data.repositories.SellTicketsRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.SellTicketsModel;
 import javafx.collections.FXCollections;
@@ -26,6 +27,14 @@ public class SellTicketsService {
 
     public void deleteEvent(SellTickets sellTickets){
         repository.delete(sellTickets);
+    }
+    public boolean checkSellTickets(Tickets tick){
+        List<SellTickets>stickets=repository.getAll();
+        for(SellTickets t:stickets){
+            if (t.getTicket_type().equals(tick))
+                return true;
+        }
+        return false;
     }
 
 

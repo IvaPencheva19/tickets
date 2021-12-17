@@ -25,7 +25,7 @@ public class TicketsService {
         repository.save(tickets);
     }
 
-    public void deleteEvent(Tickets tickets){
+    public void deleteTickets(Tickets tickets){
         repository.delete(tickets);
     }
 
@@ -53,16 +53,16 @@ public class TicketsService {
         List<Tickets> tickets = repository.getAll();
 
         return FXCollections.observableList(
-                tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount(),
-                        t.getEventByEventIdEvent())).collect(Collectors.toList()));
+                tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount()
+                       )).collect(Collectors.toList()));
     }
 
     public ObservableList<TicketsModel> getAllTicketsByEvent(Event event) {
         Set<Tickets> tickets = event.getTicketsByIdEvent();
 
         return FXCollections.observableList(
-                tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount(),
-                        t.getEventByEventIdEvent())).collect(Collectors.toList()));
+                tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount()
+                        )).collect(Collectors.toList()));
     }
 
     public Tickets getByType(String name,Event ev){

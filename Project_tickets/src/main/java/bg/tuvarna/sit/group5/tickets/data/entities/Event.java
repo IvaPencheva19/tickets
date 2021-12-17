@@ -181,10 +181,14 @@ public class Event {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Event event = (Event) o;
-        return idEvent == event.idEvent && Objects.equals(name, event.name) && Objects.equals(description, event.description) && Objects.equals(date, event.date) && Objects.equals(time, event.time) && Objects.equals(place, event.place) && Objects.equals(status, event.status) && Objects.equals(distribEvent, event.distribEvent) && Objects.equals(eventType, event.eventType) && Objects.equals(organizer, event.organizer) && Objects.equals(ticketsByIdEvent, event.ticketsByIdEvent);
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        Event other = (Event)o;
+        return Objects.equals(idEvent, other.getIdEvent());
     }
 
 
