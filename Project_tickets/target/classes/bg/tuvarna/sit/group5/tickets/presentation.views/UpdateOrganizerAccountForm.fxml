@@ -28,7 +28,7 @@
          </font>
       </Label>
       <TextField fx:id="userName" layoutX="361.0" layoutY="514.0" />
-      <Button layoutX="520.0" layoutY="595.0" mnemonicParsing="false" onAction="#changeOrganizer" prefHeight="46.0" prefWidth="156.0" style="-fx-background-color: #b2d0a1;" text="Change">
+      <Button layoutX="520.0" layoutY="595.0" mnemonicParsing="false" onAction="#changeOrganizer" prefHeight="46.0" prefWidth="156.0" stylesheets="@css/ButtonsAdmin.css" text="Change">
          <font>
             <Font size="19.0" />
          </font></Button>
@@ -39,11 +39,11 @@
          </font>
       </Label>
       <ComboBox fx:id="changeCombo" layoutX="222.0" layoutY="414.0" prefHeight="26.0" prefWidth="815.0" style="-fx-background-color: #b2d0a1;" />
-      <Button layoutX="1113.0" layoutY="52.0" mnemonicParsing="false" onAction="#goBack" prefHeight="43.0" prefWidth="98.0" style="-fx-background-color: #b2d0a1;" text="Back">
+      <Button layoutX="1113.0" layoutY="52.0" mnemonicParsing="false" onAction="#goBack" prefHeight="43.0" prefWidth="98.0" stylesheets="@css/ButtonsAdmin.css" text="Back">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="521.0" layoutY="675.0" mnemonicParsing="false" onAction="#deleteOrganizer" prefHeight="47.0" prefWidth="156.0" style="-fx-background-color: #b2d0a1;" text="Delete user">
+      <Button layoutX="521.0" layoutY="675.0" mnemonicParsing="false" onAction="#deleteOrganizer" prefHeight="47.0" prefWidth="156.0" stylesheets="@css/ButtonsAdmin.css" text="Delete user">
          <font>
             <Font size="19.0" />
          </font>

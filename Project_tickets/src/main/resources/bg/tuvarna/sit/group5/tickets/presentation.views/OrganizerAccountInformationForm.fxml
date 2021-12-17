@@ -20,7 +20,7 @@
             <Image url="@../profile1.png" />
          </image>
       </ImageView>
-      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" style="-fx-background-color: #bac2ff;" text="Back">
+      <Button id="viewEvents" fx:id="logout" layoutX="1035.0" layoutY="61.0" mnemonicParsing="false" onAction="#goBack" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Back">
          <font>
             <Font size="19.0" />
          </font>
@@ -53,17 +53,17 @@
                   <Font name="Berlin Sans FB" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="140.0" layoutY="397.0" prefHeight="39.0" prefWidth="129.0" text="Phone:" textFill="WHITE">
+            <Label layoutX="138.0" layoutY="397.0" prefHeight="39.0" prefWidth="129.0" text="Phone:" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="140.0" layoutY="438.0" prefHeight="39.0" prefWidth="118.0" text="Email:" textFill="WHITE">
+            <Label layoutX="138.0" layoutY="438.0" prefHeight="39.0" prefWidth="118.0" text="Email:" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="139.0" layoutY="477.0" prefHeight="39.0" prefWidth="113.0" text="Honor:" textFill="WHITE">
+            <Label layoutX="137.0" layoutY="477.0" prefHeight="39.0" prefWidth="113.0" text="Honor:" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB" size="27.0" />
                </font>
