@@ -30,17 +30,17 @@
          <children>
             <Pane layoutX="12.0" layoutY="10.0" prefHeight="603.0" prefWidth="638.0" style="-fx-border-color: #ffe6b3;">
                <children>
-                  <TextField fx:id="username" layoutX="327.0" layoutY="67.0" />
+                  <TextField fx:id="username" layoutX="327.0" layoutY="67.0" promptText="username" />
                   <Button fx:id="add" layoutX="283.0" layoutY="509.0" mnemonicParsing="false" onAction="#addOrganizer" prefHeight="53.0" prefWidth="112.0" stylesheets="@css/ButtonsAdmin.css" text="Add">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <TextField fx:id="password" layoutX="327.0" layoutY="134.0" />
-                  <TextField fx:id="fname" layoutX="327.0" layoutY="199.0" />
-                  <TextField fx:id="lname" layoutX="326.0" layoutY="262.0" />
-                  <TextField fx:id="phone" layoutX="327.0" layoutY="325.0" />
-                  <TextField fx:id="email" layoutX="326.0" layoutY="383.0" />
+                  <TextField fx:id="password" layoutX="327.0" layoutY="134.0" promptText="password" />
+                  <TextField fx:id="fname" layoutX="327.0" layoutY="199.0" promptText="first name" />
+                  <TextField fx:id="lname" layoutX="326.0" layoutY="262.0" promptText="last name" />
+                  <TextField fx:id="phone" layoutX="327.0" layoutY="325.0" promptText="phone" />
+                  <TextField fx:id="email" layoutX="326.0" layoutY="383.0" promptText="email" />
                   <Label layoutX="172.0" layoutY="62.0" text="Username" textFill="#a9861b">
                      <font>
                         <Font size="25.0" />
@@ -71,7 +71,7 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="honor" layoutX="327.0" layoutY="445.0" />
+                  <TextField fx:id="honor" layoutX="327.0" layoutY="445.0" promptText="honor" />
                   <Label layoutX="178.0" layoutY="439.0" prefHeight="36.0" prefWidth="79.0" text="Honor" textFill="#a9861b">
                      <font>
                         <Font size="25.0" />
