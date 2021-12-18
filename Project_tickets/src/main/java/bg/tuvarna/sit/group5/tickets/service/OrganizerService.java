@@ -74,8 +74,8 @@ public class OrganizerService {
         Organizer ret=(Organizer)repository.getByUsername(username);
         return ret;
     }
-    public void addEvent(Organizer org, Event event){
+   /* public void addEvent(Organizer org, Event event){
         org.addEvent(event);
         repository.update(org);
-    }
+    }*/
 }

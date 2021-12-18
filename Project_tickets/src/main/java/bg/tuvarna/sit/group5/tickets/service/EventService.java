@@ -60,10 +60,10 @@ public class EventService {
         event.setEventType(eType);
         repository.update(event);
     }
-    public void changeOrganizer(Event event, Organizer organizer){
+    /*public void changeOrganizer(Event event, Organizer organizer){
         event.setOrganizer(organizer);
         repository.update(event);
-    }
+    }*/
     public void changeName(Event event, String name){
         event.setName(name);
         repository.update(event);
@@ -74,16 +74,16 @@ public class EventService {
     }
 
 
-    public ObservableList<EventModel> getAllEvents() {
+   /* public ObservableList<EventModel> getAllEvents() {
         List<Event> events = repository.getAll();
 
         return FXCollections.observableList(
                 events.stream().map(t -> new EventModel(t.getName(),t.getDescription(),t.getDate(),t.getTime(),t.getPlace(),
                         t.getStatus(), t.getEventType(), (Organizer) t.getOrganizer())).collect(Collectors.toList()));
-    }
-    public void addTickets(Event event, Set<Tickets> tickets){
+    }*/
+    /*public void addTickets(Event event, Set<Tickets> tickets){
      event.setTicketsByIdEvent(tickets);
-    }
+    }*/
     public void addTicket(Event event, Tickets ticket){
         event.getTicketsByIdEvent().add(ticket);
         repository.update(event);
@@ -163,7 +163,7 @@ return events;
 
     }
 
-    public Set<Event> getAllByDistOrg(Distributor dist,  Organizer org){
+    public Set<Event> getAllByDistOrg(Distributor dist, Organizer org){
         Set<Event> temp=dist.getEventsByDistributor();
        Set<Event> events=new HashSet<>();
         for(Event e:temp){

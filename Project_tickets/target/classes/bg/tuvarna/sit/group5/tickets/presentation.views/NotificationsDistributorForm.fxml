@@ -31,5 +31,10 @@
          </image>
       </ImageView>
       <ListView fx:id="listNotifs" layoutX="352.0" layoutY="427.0" prefHeight="195.0" prefWidth="580.0" />
+      <Button id="viewEvents" layoutX="550.0" layoutY="660.0" mnemonicParsing="false" onAction="#deleteAll" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsDistributor.css" text="Delete all">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

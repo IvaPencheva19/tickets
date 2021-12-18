@@ -31,5 +31,10 @@
          </image>
       </ImageView>
       <ListView fx:id="listNotifs" layoutX="362.0" layoutY="437.0" prefHeight="195.0" prefWidth="580.0" />
+      <Button id="viewEvents" layoutX="567.0" layoutY="667.0" mnemonicParsing="false" onAction="#deleteAll" prefHeight="42.0" prefWidth="157.0" stylesheets="@css/ButtonsOrganizer.css" text="Log out">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

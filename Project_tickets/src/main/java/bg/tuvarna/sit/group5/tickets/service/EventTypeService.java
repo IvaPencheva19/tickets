@@ -41,9 +41,9 @@ public class EventTypeService {
         repository.delete(evType);
     }
 
-    public void addEvent(EventType et, Event event){
+    /*public void addEvent(EventType et, Event event){
         et.addEvent(event);
         repository.update(et);
-    }
+    }*/
 
 }

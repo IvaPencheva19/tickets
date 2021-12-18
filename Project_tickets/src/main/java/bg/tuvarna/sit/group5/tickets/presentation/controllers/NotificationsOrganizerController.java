@@ -1,6 +1,8 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Notifications;
+import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.service.NotificationsService;
 import javafx.event.ActionEvent;
@@ -28,5 +30,10 @@ public class NotificationsOrganizerController {
             nserv.setSeen(n, (byte) 1);
         }
     }
-
+    public void deleteAll(){
+        nserv.deleteByOrganizer((Organizer)HelloController.user);
+        listNotifs.getItems().clear();
     }
+
+
+}

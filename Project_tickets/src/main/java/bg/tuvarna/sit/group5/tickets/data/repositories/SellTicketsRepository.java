@@ -1,6 +1,7 @@
 package bg.tuvarna.sit.group5.tickets.data.repositories;
 
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
+import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.entities.SellTickets;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -84,8 +85,10 @@ public class SellTicketsRepository implements DAORepository<SellTickets>{
         SellTickets retSellTickets;
 
         try {
-            String jql="SELECT st FROM SellTickets st WHERE st.id=idSell";
-            retSellTickets=session.createQuery(jql, SellTickets.class).getSingleResult();
+            String jql = "SELECT u FROM SellTickets u WHERE idSell = :id";
+            Query query = session.createQuery(jql, SellTickets.class);
+            query.setParameter("id", id);
+            retSellTickets= (SellTickets) query.getSingleResult();
             log.info("Get sell tickets by id");
         }
         catch (Exception ex){

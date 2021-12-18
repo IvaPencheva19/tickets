@@ -5,6 +5,7 @@ import bg.tuvarna.sit.group5.tickets.data.entities.Event;
 
 import bg.tuvarna.sit.group5.tickets.data.repositories.UserRepository;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
+import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorShortModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -77,6 +78,13 @@ public class DistributorService {
                         t.getLastname(), t.getPhone(), t.getEmail(), t.getHonor(), t.getRating())).collect(Collectors.toList()));
     }
 
+    public ObservableList<DistributorShortModel> getAllDistributorsShort() {
+        List<Distributor> distribs = repository.getAllDistributors();
+
+        return FXCollections.observableList(
+                distribs.stream().map(t -> new DistributorShortModel(t.getUsername(),t.getFirstname(),
+                        t.getLastname())).collect(Collectors.toList()));
+    }
     public Distributor getByUsername(String username){
         Distributor ret=(Distributor) repository.getByUsername(username);
         return ret;

@@ -91,8 +91,10 @@ public class EventRepository implements DAORepository<Event>{
         Event retEvent;
 
         try {
-            String jql="SELECT e FROM Event e WHERE e.idEvent=id";
-            retEvent=session.createQuery(jql, Event.class).getSingleResult();
+            String jql = "SELECT u FROM Event u WHERE idEvent = :id";
+            Query query = session.createQuery(jql,Event.class);
+            query.setParameter("id", id);
+            retEvent= (Event)query.getSingleResult();
             log.info("Get event by id");
         }
         catch (Exception ex){

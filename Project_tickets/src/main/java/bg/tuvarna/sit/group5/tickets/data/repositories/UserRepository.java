@@ -3,6 +3,7 @@ package bg.tuvarna.sit.group5.tickets.data.repositories;
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
 import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Organizer;
+import bg.tuvarna.sit.group5.tickets.data.entities.SellTickets;
 import bg.tuvarna.sit.group5.tickets.data.entities.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -85,8 +86,10 @@ public class UserRepository implements DAORepository<User>,DAOUser{
         Transaction transaction=session.beginTransaction();
         User retUser;
         try {
-            String jql="SELECT u FROM User u WHERE u.idUser=id";
-            retUser=(session.createQuery(jql, User.class)).getSingleResult();
+            String jql = "SELECT u FROM User u WHERE idUser = :id";
+            Query query = session.createQuery(jql, User.class);
+            query.setParameter("id", id);
+            retUser= (User) query.getSingleResult();
             log.info("Get user by id");
         }
         catch (Exception ex){

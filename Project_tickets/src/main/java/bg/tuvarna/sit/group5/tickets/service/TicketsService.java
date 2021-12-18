@@ -44,18 +44,6 @@ public class TicketsService {
         repository.update(tickets);
     }
 
-    public void changeEvent(Tickets tickets, Event event){
-        tickets.setEventByEventIdEvent(event);
-        repository.update(tickets);
-    }
-
-    public ObservableList<TicketsModel> getAllTickets() {
-        List<Tickets> tickets = repository.getAll();
-
-        return FXCollections.observableList(
-                tickets.stream().map(t -> new TicketsModel(t.getType(),t.getPrice(),t.getCount()
-                       )).collect(Collectors.toList()));
-    }
 
     public ObservableList<TicketsModel> getAllTicketsByEvent(Event event) {
         Set<Tickets> tickets = event.getTicketsByIdEvent();

@@ -2,11 +2,13 @@ package bg.tuvarna.sit.group5.tickets.data.repositories;
 
 import bg.tuvarna.sit.group5.tickets.data.access.Connection;
 import bg.tuvarna.sit.group5.tickets.data.entities.Event;
+import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.data.entities.Notifications;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -81,8 +83,10 @@ public class NotificationsRepository implements  DAORepository<Notifications>{
         Notifications retNotif;
 
         try {
-            String jql="SELECT e FROM Notifications e WHERE e.idNotif=id";
-            retNotif=session.createQuery(jql, Notifications.class).getSingleResult();
+            String jql = "SELECT u FROM Notifications u WHERE idNotif = :id";
+            Query query = session.createQuery(jql, Notifications.class);
+            query.setParameter("id", id);
+            retNotif= (Notifications) query.getSingleResult();
             log.info("Get event by id");
         }
         catch (Exception ex){

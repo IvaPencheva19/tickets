@@ -1,5 +1,6 @@
 package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
+import bg.tuvarna.sit.group5.tickets.data.entities.Distributor;
 import bg.tuvarna.sit.group5.tickets.data.entities.Notifications;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.service.NotificationsService;
@@ -28,13 +29,19 @@ private NotificationsService nserv=NotificationsService.getInstance();
 
 
     }
-    public void load(){
-        for (Notifications n:(HelloController.user.getNotifs())){
-        listNotifs.getItems().addAll( n.getMessage());
-        nserv.setSeen(n,(byte)1);
+    public void load() {
+        for (Notifications n : (HelloController.user.getNotifs())) {
+            listNotifs.getItems().addAll(n.getMessage());
+            nserv.setSeen(n, (byte) 1);
         }
-
-
-
     }
+    public void deleteAll(){
+        nserv.deleteByDistributor((Distributor)HelloController.user);
+        listNotifs.getItems().clear();
+    }
+
+
+
+
+
 }

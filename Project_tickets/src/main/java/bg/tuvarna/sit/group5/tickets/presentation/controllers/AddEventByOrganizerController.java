@@ -4,6 +4,7 @@ import bg.tuvarna.sit.group5.tickets.data.entities.*;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ShowWarning;
 import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorModel;
+import bg.tuvarna.sit.group5.tickets.presentation.models.DistributorShortModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventTypeModel;
 import bg.tuvarna.sit.group5.tickets.presentation.models.TicketsModel;
 import bg.tuvarna.sit.group5.tickets.service.*;
@@ -69,7 +70,7 @@ public class AddEventByOrganizerController {
         ObservableList<EventTypeModel> allTypes=eserv.getAll();
         types.setItems(allTypes);
 
-        ObservableList<DistributorModel> distributors=dserv.getAllDistributors();
+        ObservableList<DistributorShortModel> distributors=dserv.getAllDistributorsShort();
         distList.setItems(distributors);
 
     }
@@ -93,9 +94,8 @@ public class AddEventByOrganizerController {
         if (dist==null) ShowWarning.showWarning("There is no distributor with this username!");
         else {
             distributors.add(dist);
-            DistributorModel dModel = new DistributorModel(dist.getUsername(), dist.getPassword(),
-                    dist.getFirstname(), dist.getLastname(), dist.getPhone(), dist.getEmail(),
-                    dist.getHonor(), dist.getRating());
+            DistributorShortModel dModel = new DistributorShortModel(dist.getUsername(),
+                    dist.getFirstname(), dist.getLastname());
             addedDistributors.getItems().add(dModel);
         }
 

@@ -25,9 +25,9 @@ public class SellTicketsService {
         repository.save(sellTickets);
     }
 
-    public void deleteEvent(SellTickets sellTickets){
+    /*public void deleteEvent(SellTickets sellTickets){
         repository.delete(sellTickets);
-    }
+    }*/
     public boolean checkSellTickets(Tickets tick){
         List<SellTickets>stickets=repository.getAll();
         for(SellTickets t:stickets){

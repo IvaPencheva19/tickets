@@ -39,5 +39,12 @@ public class AddChangeEventOrganizerController {
        next.load();
         CloseForm.closeForm(event);
     }
+    public void manageEventTypes(ActionEvent event){
+        FXMLLoader loader = OpenForm.openNewForm("AddDeleteEventType.fxml", "Manage Event Types");
+        AddDeleteEventTypeController next = loader.getController();
+        next.setUser();
+        next.load();
+        CloseForm.closeForm(event);
+    }
 
 }

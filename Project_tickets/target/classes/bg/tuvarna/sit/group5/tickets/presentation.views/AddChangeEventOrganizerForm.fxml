@@ -54,5 +54,10 @@
             <Image url="@../add-event.png" />
          </image>
       </ImageView>
+      <Button id="addChangeEvent" layoutX="515.0" layoutY="539.0" mnemonicParsing="false" onAction="#manageEventTypes" prefHeight="42.0" prefWidth="234.0" stylesheets="@css/ButtonsOrganizer.css" text="Manage event types">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
