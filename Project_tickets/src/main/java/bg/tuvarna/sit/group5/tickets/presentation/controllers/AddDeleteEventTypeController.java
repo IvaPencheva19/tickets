@@ -2,6 +2,7 @@ package bg.tuvarna.sit.group5.tickets.presentation.controllers;
 
 import bg.tuvarna.sit.group5.tickets.data.entities.EventType;
 import bg.tuvarna.sit.group5.tickets.presentation.FormActions.CloseForm;
+import bg.tuvarna.sit.group5.tickets.presentation.FormActions.ShowWarning;
 import bg.tuvarna.sit.group5.tickets.presentation.models.EventTypeModel;
 import bg.tuvarna.sit.group5.tickets.service.EventTypeService;
 import javafx.collections.ObservableList;
@@ -40,6 +41,9 @@ public class AddDeleteEventTypeController {
     public void deleteType(){
         String newType=typeVal.getText();
         EventType toDelete= etserv.getEventByName(newType);
-        etserv.deleteEventType(toDelete);
+        if (toDelete==null) ShowWarning.showWarning("There is no event type with this name!");
+        else{
+            etserv.deleteEventType(toDelete);
+        }
     }
 }

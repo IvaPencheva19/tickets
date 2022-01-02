@@ -73,7 +73,7 @@ public class ChangeTicketsEventController {
             Double nprice=Double.parseDouble(this.newVal.getText());
             tserv.changePrice(tick,nprice);
         }
-        if(choice=="price"){
+        if(choice=="count"){
             Integer ncount=Integer.parseInt(this.newVal.getText());
             tserv.changeCount(tick,ncount);
         }
