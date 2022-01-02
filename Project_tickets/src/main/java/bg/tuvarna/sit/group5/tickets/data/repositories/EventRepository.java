@@ -153,11 +153,4 @@ public class EventRepository implements DAORepository<Event>{
         }
         return retEvent;
     }
-
-
-
-
-
-
-
 }
