@@ -12,7 +12,6 @@ import org.hibernate.Transaction;
 import javax.persistence.Query;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 public class UserRepository implements DAORepository<User>,DAOUser{
 

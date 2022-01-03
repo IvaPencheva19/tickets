@@ -90,9 +90,9 @@ public class SellTickets {
         this.count = count;
     }
 
-    public Distributor getDistrib() {
+    /*public Distributor getDistrib() {
         return distrib;
-    }
+    }*/
 
     public void setDistrib(Distributor distrib) {
         this.distrib = distrib;
